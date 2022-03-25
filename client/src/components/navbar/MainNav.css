@@ -1,0 +1,7 @@
+nav .navUl a{
+    color: black;
+    font-weight: 500;
+}
+nav .navUl a:hover{
+    color: rgb(83, 146, 249);
+}

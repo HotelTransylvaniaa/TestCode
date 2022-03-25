@@ -1,0 +1,7 @@
+a{
+    font-size: 13px;
+  }
+  a:hover{
+    background-color: rgb(83, 146, 249);
+    color: white;
+  }

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Topdestination.css"
+import { useEffect,useState } from "react";
+import { useDispatch} from "react-redux";
+import { getHotelsCity } from "../store/actions/hotels";
 export default function TopDestination() {
   const destinations = [
     {
@@ -39,6 +42,15 @@ export default function TopDestination() {
       description: "343 accommodations",
     },
   ];
+  const [city,setCity]=useState("");
+  const dispatch = useDispatch();
+  const getCity=(city)=>{
+    console.log(city)
+    setCity(city);
+  }
+  useEffect(() => {
+    dispatch(getHotelsCity(city));
+  }, [city]);
   return (
     <div className="container">
       <div className="row">
@@ -46,7 +58,7 @@ export default function TopDestination() {
         {destinations.map((destination) => (
           <div className="col-6 col-md-2">
             <div>
-            <Link to={`/hotels/${destination.city}`}> <img src={destination.image} className="rounded-circle mx-auto d-block w-75"alt="destination"/></Link>
+            <Link to={`/hotels/city/${destination.city}`}> <img src={destination.image} className="rounded-circle mx-auto d-block w-75"alt="destination" onClick={()=>getCity(destination.city)}/></Link>
               <h5 className="text-center my-2">{destination.city}</h5>
               <p className="text-muted text-center my-2">
                 {destination.description}

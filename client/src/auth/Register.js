@@ -3,12 +3,10 @@ import RegisterForm from "../components/RegisterForm";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { register } from "../store/actions/auth";
-import {Redirect} from "react-router-dom"
-// import history from '../../node_modules/history';
-
-
+import { useNavigate } from "react-router-dom"
 
 export default function Register({history}) {
+  let navigate=useNavigate();
   const emailPattern= new RegExp("^[^\\s@]+@([^\\s@.,]+\\.)+[^\\s@.,]{2,}$")
   const namePattern=new RegExp("^[a-z]*$")
   const passPattern=new  RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})")
@@ -32,7 +30,7 @@ const handleFormSubmit= async(e)=>{
   try{
    await register(userForm)
    toast.success("Register Success Please Login");
-    history.push("/login")
+    navigate("/login");
   }
   catch(err){
     toast.error(err.response.data)

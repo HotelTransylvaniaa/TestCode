@@ -8,31 +8,8 @@ router.get("/hotels",(req,res,next)=>{
     const data =controlHotels.find({}).then((data)=>{
         res.json(data);
     }).catch((err)=>{
-        console.log(err)
         res.status(404).end()
     })
-})
-
-
-//get all hotels in city
-router.get("/hotels/:city",(req,res,next)=>{
-    console.log(req.params.city)
-  // if(req.url==="/"){
-    const data =controlHotels.findByCity(req.params.city).then((data)=>{
-        res.json(data);
-    }).catch((err)=>{
-        console.log(err)
-        res.status(404).end()
-    })
-   //}
-//    else{
-//     controlHotels.findByCity(req.query.city).then((data)=>{
-//         res.json(data);
-//     }).catch((err)=>{
-//         console.log(err)
-//         res.status(404).end()
-//     })
-//    }
 })
 
 //get hotel by id
@@ -46,6 +23,17 @@ router.get("/hotels/:id",(req,res,next)=>{
         res.status(404).json({"err":"in valid id"})
     })
 })
+
+//get all hotels in city
+router.get("/hotels/city/:city",(req,res,next)=>{
+      console.log("hereeee")
+    const data =controlHotels.findByCity(req.params.city).then((data)=>{
+        res.json(data);
+    }).catch((err)=>{
+        res.status(404).json({"err":"in valid city"})
+    })
+})
+
 
 router.delete("/hotels/:id",(req,res,next)=>{
     const id=req.params

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function HotelCard({h}){
    return (
        <>
- <div className="card my-3 shadow" style={{maxWidth: "55rem"}}>
+ <div className="card my-3 shadow" style={{maxWidth: "58rem"}}>
   <div className="row g-0">
     <div className="col-md-4">
       <img src={h.images[0]} className="img-fluid h-100 p-1" alt="hotel"/>
@@ -12,7 +12,7 @@ export default function HotelCard({h}){
       <div className="card-body">
         <h5 className="card-title">{h.name}</h5>
         <div className="d-flex"> 
-         {new Array(h.rating).fill(0).map(() => (<i class="fa-solid fa-star text-warning mt-1"></i>))}   
+         {new Array(h.rating).fill(0).map(() => (<i className="fa-solid fa-star text-warning mt-1"></i>))}   
           <i className="bi bi-geo-alt-fill text-primary ms-1 mt-0"></i>
           <p className="text-primary">{h.address.city}</p>
         </div>
@@ -31,7 +31,7 @@ export default function HotelCard({h}){
           </div>
         </div>
         <p className="text-danger fs-5">$ 85</p>
-       <Link to={`/hotel-details/${h._id}`}><button className="btn btn-primary mt-5">Select room</button></Link> 
+        <Link to={`/hotel-details/${h._id}`}><button className="btn btn-primary mt-5">Select room</button></Link> 
       </div>
     </div>
   </div>
