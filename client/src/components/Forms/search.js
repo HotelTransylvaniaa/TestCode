@@ -71,6 +71,7 @@ const Search = () => {
               onChange={({ suggestion }) => setLocation(suggestion.value)}
               style={{ height: "50px" }}
             />
+            {/* <input className="form-control" placeholder="location" type="text" options={top100Films} value={location} onChange={(e)=>setLocation(e.target.value)}></input> */}
             </div>
             <div className="col-2">
             <DatePicker

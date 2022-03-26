@@ -1,4 +1,3 @@
-import axios from "axios";
 import { axiosInstance } from "../../network/axios"
 
 // export const allHotels=()=>axiosInstance.get("/hotels")
@@ -27,20 +26,19 @@ export const getHotelsCity = (city) => (dispatch) => {
   .catch((err) => console.log(err,"from"));
 }
 
-export const userHotelBookings = async (token)=>
-await axios.get(`${process.env.REACT_APP_API}/user-hotel-bookings`,{
-  headers:{
-    Authorization: `Bearer ${token}`,
-  },
-});
- export const isAlreadyBooked = async (token, hotelId)=>
- await axios.get(`${process.env.REACT_APP_API}/is-already-booked/${hotelId}`,{
-   headers: {
-     Authorization : `Bearer ${token}`,
-   },
- });
+// export const userHotelBookings = async (token)=>
+// await axios.get(`${process.env.REACT_APP_API}/user-hotel-bookings`,{
+//   headers:{
+//     Authorization: `Bearer ${token}`,
+//   },
+// });
+//  export const isAlreadyBooked = async (token, hotelId)=>
+//  await axios.get(`${process.env.REACT_APP_API}/is-already-booked/${hotelId}`,{
+//    headers: {
+//      Authorization : `Bearer ${token}`,
+//    },
+//  });
 
- export const searchListings = async(query) => await axios.post(`${process.env.REACT_APP_API}/search-listings`, query)
 export const getHotelDetails = (params) => (dispatch) => {
   console.log(params.id);
   axiosInstance
@@ -53,3 +51,4 @@ export const getHotelDetails = (params) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+export const searchListings = async(query) => await axiosInstance.post(`/hotels/search-listings`, query)
