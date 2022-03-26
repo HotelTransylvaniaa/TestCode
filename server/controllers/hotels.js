@@ -14,7 +14,11 @@ const findByCityAndRating = (city) => {
   return Hotels.find({"address.city":city,rating:5});
 };
 
-
+//for search listing
+// const findBysearchData = (body) => {
+//      console.log(body);
+//   return true;
+// };
 // get all hotels in city
 const findByCity = (city) => {
   console.log(city)
@@ -38,12 +42,14 @@ const editOne = (id, body) => {
 
 const searchListings = async (req, res) => {
   const {location, date ,room} = req.body
-  // console.log(location, date ,room)
-  // console.log(date);
-  const fromDate = date.split(',');
+   console.log(location, date ,room)
+  console.log(location);
+  //const fromDate = date.split(',');
   // console.log(fromDate[0]);
-  let result = await Hotels.find({from: {$gte: new Date(FormData[0])}, location }).select('-image.data').exec();
-  res.json(result);
+ // let result = await Hotels.find({from: {$gte: new Date(FormData[0])}, location }).select('-image.data').exec();
+  let result = await Hotels.find({"address.city" :location }).select('-image.data').exec();
+  console.log(result);
+  //res.json(result);
 }
 
 module.exports = {
@@ -54,4 +60,5 @@ module.exports = {
   find,
   delOne,
   editOne,
+  searchListings
 };

@@ -32,9 +32,7 @@ router.get("/hotels/city/:city",(req,res,next)=>{
     }).catch((err)=>{
         res.status(404).json({"err":"in valid city"})
     })
-    
 })
-
 
 router.delete("/hotels/:id",(req,res,next)=>{
     const id=req.params
@@ -62,13 +60,25 @@ router.patch("/hotels/:id",(req,res,next)=>{
     })
 })
 
-router.post("/search-listings",(req,res,next)=>{
-    console.log(req.body)
-    searchListings.findOne(id,req.body).then((hotel)=>{
-        res.json(hotel);
-    }).catch((err)=>{
-        res.status(422).send(err.message)
-    })
-})
+// router.post("/hotels/search-listings",(req,res,next)=>{
+//     console.log(req.body)
+//     searchListings.searchListings(req.body).then((hotel)=>{
+//         res.json(hotel);
+//     }).catch((err)=>{
+//         res.status(422).send(err.message)
+//     })
+// })
+
+//hotels for search results
+// router.post("/hotels/search-listings",(req,res,next)=>{
+//     console.log("in search")
+//     controlHotels.findBysearchData(req.body).then((data)=>{
+//         res.json(data);
+//         console.log(data)
+//     }).catch((err)=>{
+//         res.status(404).json({"err":"in valid city"})
+//     })
+// })
+router.post("/hotels/search-listings",controlHotels.searchListings);
 
 module.exports=router;

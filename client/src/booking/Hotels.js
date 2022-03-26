@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HotelCard from "../components/cards/HotelCard";
 import { getHotelsList } from "../store/actions/hotels";
@@ -9,7 +9,6 @@ export default function Hotels() {
   console.log(hotels)
    useEffect(() => {
     dispatch(getHotelsList());
-    console.log("rerender")
   }, []);
   return (
     <div className="container">
