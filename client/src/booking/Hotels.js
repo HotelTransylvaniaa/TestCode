@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HotelCard from "../components/cards/HotelCard";
 import { getHotelsList } from "../store/actions/hotels";
 import Filter from "../components/Filter";
 export default function Hotels() {
   let hotels = useSelector((state) => state.hotels.hotelsList);
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
+  console.log(hotels)
    useEffect(() => {
     dispatch(getHotelsList());
+    console.log("rerender")
   }, []);
   return (
     <div className="container">
@@ -18,7 +20,7 @@ export default function Hotels() {
         <div className="col-8">
           <div className="container-fluid">
             {hotels.map((h) => (
-              <HotelCard h={h} key={h._id} />
+              <HotelCard h={h} key={h.id} />
             ))}
           </div>
         </div>

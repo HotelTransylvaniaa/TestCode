@@ -95,7 +95,6 @@ export default function Filter() {
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -142,7 +141,6 @@ export default function Filter() {
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -194,9 +192,9 @@ export default function Filter() {
 
       <hr></hr>
 
-      <div class=" row">
+      <div className=" row">
         <h3>Distance to center</h3>
-        <div class="col-md-12">
+        <div className="col-md-12">
           <input type="checkbox"></input>
           <span>Inside city center (1)</span>
         </div>

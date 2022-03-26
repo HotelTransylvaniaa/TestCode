@@ -11,15 +11,14 @@ const find = () => {
 
 // for top destination
 const findByCityAndRating = (city) => {
-  // console.log(city)
-  return Hotels.findOne({"address.city":city,rating:5});
+  return Hotels.find({"address.city":city,rating:5});
 };
 
 
 // get all hotels in city
 const findByCity = (city) => {
-  // console.log(city)
-  return Hotels.findOne({"address.city":city});
+  console.log(city)
+  return  Hotels.find({"address.city":city});
 };
 
 const create = (body) => {
