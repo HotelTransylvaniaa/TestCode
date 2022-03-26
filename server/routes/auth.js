@@ -9,7 +9,7 @@ router.post("/register",(req,res,next)=>{
     console.log(err.message)
     res.status(422).send(err.message)
 })
-})
+});
 
 router.post("/login",(req,res,next)=>{
     console.log("in login")
@@ -19,7 +19,6 @@ router.post("/login",(req,res,next)=>{
      console.log(err.message);
      res.status(422).send("wrong please try again")
  })
- })
-
+ });
 
 module.exports=router

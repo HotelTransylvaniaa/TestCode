@@ -1,6 +1,7 @@
 const Hotels = require("../models/hotels");
 //find 
 const findOne = (id) => {
+  console.log(id)
   return Hotels.findById(id);
 };
 
@@ -10,14 +11,14 @@ const find = () => {
 
 // for top destination
 const findByCityAndRating = (city) => {
-  console.log(city)
+  // console.log(city)
   return Hotels.findOne({"address.city":city,rating:5});
 };
 
 
 // get all hotels in city
 const findByCity = (city) => {
-  console.log(city)
+  // console.log(city)
   return Hotels.findOne({"address.city":city});
 };
 

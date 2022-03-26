@@ -1,11 +1,8 @@
 import Home from "./booking/Home";
 import Login from "./auth/Login";
-import Register from "./auth/Register"; 
-import Navbar from "./components/Navbar";
-import Dashboard from "./admin/Dashboard";
-// import PrivateRoute from "./components/PrivateRoute";
-import DashboardSeller from "./admin/DashboardSeller";
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Register from "./auth/Register";
+import Navbar from "./components/navbar/MainNav";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hotels from "./booking/Hotels";
 import HotelDetails from "./booking/HotelDetails";
 import SearchResult from './components/hotels/SearchResult'

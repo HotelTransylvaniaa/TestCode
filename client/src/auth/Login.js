@@ -3,8 +3,9 @@ import LoginForm from "../components/LoginForm";
 import {login} from "../store/actions/auth"
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch} from "react-redux";
-import {Redirect} from "react-router-dom"
-function Login({history}) {
+import { useNavigate } from "react-router-dom"
+function Login() {
+  let navigate=useNavigate();
   const emailPattern= new RegExp("^[^\\s@]+@([^\\s@.,]+\\.)+[^\\s@.,]{2,}$")
   const dispatch =useDispatch()
  const [userForm,setUserForm]=useState({
@@ -24,7 +25,6 @@ const handleFormSubmit=async (e)=>{
     let res = await login(userForm)
     toast.success("Success Login");
      if(res.data){
-        //  console.log("SAVE USER DATA IN REDUX AND LOCAL STORAGE",res.data)
         //save user and token in localstorage
          console.log("here")
         window.localStorage.setItem("auth",JSON.stringify(res.data))
@@ -33,6 +33,7 @@ const handleFormSubmit=async (e)=>{
           type:"LOGGED_IN_USER",
           payload:res.data
         })
+        navigate("/");
      }
    }
    catch(err){
