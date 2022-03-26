@@ -70,15 +70,15 @@ const handelFormChange=(e)=>{
     else if(e.target.name==="password"){
       setUserForm({
         ...userForm,
-        userEmail: e.target.value,
+        password: e.target.value,
       });
       setUserFormError({
         ...userFormErrors,
-        userEmailErr:
+        passwordErr:
           e.target.value.length === 0
             ? "this filed is requird"
-            : !emailPattern.test(e.target.value)
-            ? "email not valid"
+            : !passPattern.test(e.target.value)
+            ? "password lenght not less than 8 characters , contains at least one upercase"
             : null,
       });
     } 

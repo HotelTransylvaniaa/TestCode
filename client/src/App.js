@@ -18,9 +18,7 @@ function App() {
        <Route exact path="/hotel-details/:id" element ={<HotelDetails/>}/>
        <Route exact path="/login" element ={<Login/>} />
        <Route exact path="/register" element ={<Register/>} />
-       <Route exact path="/dashboard" element ={<Dashboard/>} />
        <Route exact path="/search-result" element ={<SearchResult/>} />
-       <Route exact path="/dashboard/seller" element ={<DashboardSeller/>} />
      </Routes>
     </BrowserRouter>
   );
