@@ -36,6 +36,16 @@ const editOne = (id, body) => {
   return Hotels.findByIdAndUpdate(id.id, body, { new: true });
 };
 
+const searchListings = async (req, res) => {
+  const {location, date ,room} = req.body
+  // console.log(location, date ,room)
+  // console.log(date);
+  const fromDate = date.split(',');
+  // console.log(fromDate[0]);
+  let result = await Hotels.find({from: {$gte: new Date(FormData[0])}, location }).select('-image.data').exec();
+  res.json(result);
+}
+
 module.exports = {
   create,
   findOne,
