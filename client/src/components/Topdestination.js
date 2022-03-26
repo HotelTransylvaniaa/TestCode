@@ -44,21 +44,22 @@ export default function TopDestination() {
   ];
   const [city,setCity]=useState("");
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   console.log("in use effect",city)
+    
+  // }, [city]);
+
   const getCity=(city)=>{
-    console.log(city)
     setCity(city);
   }
-  useEffect(() => {
-    dispatch(getHotelsCity(city));
-  }, [city]);
   return (
     <div className="container">
       <div className="row">
         <h3 className="text-center my-5">Top destinations in Egypt</h3>
         {destinations.map((destination) => (
-          <div className="col-6 col-md-2">
+          <div className="col-6 col-md-2" key={destination.city}>
             <div>
-            <Link to={`/hotels/city/${destination.city}`}> <img src={destination.image} className="rounded-circle mx-auto d-block w-75"alt="destination" onClick={()=>getCity(destination.city)}/></Link>
+            <Link to={`/hotels/city/${destination.city}`}> <img src={destination.image} className="rounded-circle mx-auto d-block w-75"alt="destination" onClick={()=>dispatch(getHotelsCity(destination.city))}/></Link>
               <h5 className="text-center my-2">{destination.city}</h5>
               <p className="text-muted text-center my-2">
                 {destination.description}

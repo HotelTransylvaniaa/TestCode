@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   };
   
   export default function hotels(state = INITIAL_STATE, action) {
+    console.log(action.type)
     switch (action.type) {
       case "GET_HOTELS_LIST":
         return {

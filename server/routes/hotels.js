@@ -27,12 +27,12 @@ router.get("/hotels/:id",(req,res,next)=>{
 
 //get all hotels in city
 router.get("/hotels/city/:city",(req,res,next)=>{
-      console.log("hereeee")
-    const data =controlHotels.findByCity(req.params.city).then((data)=>{
+    const data =controlHotels.findByCityAndRating(req.params.city).then((data)=>{
         res.json(data);
     }).catch((err)=>{
         res.status(404).json({"err":"in valid city"})
     })
+    
 })
 
 

@@ -15,7 +15,7 @@ export const getHotelsList = () => (dispatch) => {
 };
 
 export const getHotelsCity = (city) => (dispatch) => {
- console.log(city,"inaction")
+ console.log(city,"in action");
   axiosInstance
   .get(`/hotels/city/${city}`)
   .then((res) =>
@@ -24,7 +24,7 @@ export const getHotelsCity = (city) => (dispatch) => {
       payload: res.data,
     })
   )
-  .catch((err) => console.log(err));
+  .catch((err) => console.log(err,"from"));
 }
 
 export const userHotelBookings = async (token)=>
