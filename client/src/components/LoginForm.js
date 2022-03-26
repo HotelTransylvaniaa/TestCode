@@ -1,6 +1,6 @@
 export default function LoginForm({handelFormChange,userFormErrors,handleFormSubmit, userForm}){
    return(
-    <form className='w-50 m-5'onSubmit={(e) => handleFormSubmit(e)}>
+    <form className='w-50 m-5 p-5 bg-light shadow'onSubmit={(e) => handleFormSubmit(e)}>
     <div className="mb-3 form-group" controlid="formBasicEmail">
       <label className='form-label' >Email address</label>
       <input className='form-control' type="email" placeholder="Enter email" name='userEmail' aria-describedby='useremail' value={userForm.userEmail} onChange={(e)=>handelFormChange(e)}/>

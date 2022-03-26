@@ -2,7 +2,7 @@ export default function RegisterForm({handelFormChange,userFormErrors,handleForm
   console.log(userForm)
     return (
         <>
-      <form className='w-50 m-5'onSubmit={(e) => handleFormSubmit(e)}>
+      <form className='w-50 m-5 p-5 bg-light shadow'onSubmit={(e) => handleFormSubmit(e)}>
            <div className="mb-3 form-group" controlid="formBasicEmail">
           <label className='form-label'>Name</label>
           <input className='form-control' type="text" placeholder="Enter Name" name='userName' aria-describedby='userename' value={userForm.userName} onChange={(e)=>handelFormChange(e)}/>
