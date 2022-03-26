@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RegisterForm from "../components/RegisterForm";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { register } from "../store/actions/auth";
 import { useNavigate } from "react-router-dom"
 
@@ -70,46 +70,50 @@ const handelFormChange=(e)=>{
     else if(e.target.name==="password"){
       setUserForm({
         ...userForm,
-        password:e.target.value,
-      })
+        userEmail: e.target.value,
+      });
       setUserFormError({
         ...userFormErrors,
-        passwordErr:
-         e.target.value.length===0
-         ?"this filed is requird"
-         :!passPattern.test(e.target.value) 
-         ?"password length not less than 8 characters , contains at least one lowercase , one uppercase ,  at least one digit and special character" 
-         : null
-      })
-    }
-    else if(e.target.name==="confirmpassword"){
+        userEmailErr:
+          e.target.value.length === 0
+            ? "this filed is requird"
+            : !emailPattern.test(e.target.value)
+            ? "email not valid"
+            : null,
+      });
+    } 
+     else if (e.target.name === "confirmpassword") {
       setUserForm({
         ...userForm,
-        confirmPass:e.target.value,
-      })
+        confirmPass: e.target.value,
+      });
       setUserFormError({
         ...userFormErrors,
         confirmPassErr:
-        e.target.value.length===0
-        ?"this filed is requird"
-         :e.target.value !=userForm.password
-         ?"Doesnt Match"
-         : null
-      })
+          e.target.value.length === 0
+            ? "this filed is requird"
+            : e.target.value != userForm.password
+            ? "Doesnt Match"
+            : null,
+      });
     }
-}
+  }
   return (
-      <>
+    <>
       <div className="container-fluid p-2 bg-secondary text-white text-center">
-          <h1>Register</h1>
+        <h1>Register</h1>
       </div>
-      <ToastContainer position="top-center"/>
-    <div className='container'>
-      <div className='row d-flex flex-column align-content-center'>
-          <RegisterForm handelFormChange={handelFormChange} handleFormSubmit={handleFormSubmit} userForm={userForm} userFormErrors={userFormErrors}/>
-    </div>
-    </div>
+      <ToastContainer position="top-center" />
+      <div className="container">
+        <div className="row d-flex flex-column align-content-center">
+          <RegisterForm
+            handelFormChange={handelFormChange}
+            handleFormSubmit={handleFormSubmit}
+            userForm={userForm}
+            userFormErrors={userFormErrors}
+          />
+        </div>
+      </div>
     </>
   );
 }
-

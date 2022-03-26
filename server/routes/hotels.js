@@ -2,6 +2,7 @@
 const express=require("express");
 const controlHotels=require("../controllers/hotels");
 const router=express.Router();
+const searchListings = require('../controllers/hotels')
 
 //get all hotels in db
 router.get("/hotels",(req,res,next)=>{
@@ -61,5 +62,13 @@ router.patch("/hotels/:id",(req,res,next)=>{
     })
 })
 
+router.post("/search-listings",(req,res,next)=>{
+    console.log(req.body)
+    searchListings.findOne(id,req.body).then((hotel)=>{
+        res.json(hotel);
+    }).catch((err)=>{
+        res.status(422).send(err.message)
+    })
+})
 
 module.exports=router;
