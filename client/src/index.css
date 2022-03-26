@@ -20,9 +20,12 @@ code {
 .css-1s2u09g-control{
 height: 50px;
 }
-/* .ap-input, .ap-hint {
-  width:100%
-} */
-/* .rmdp-input{
-  width: 150px;
-} */
+.ap-input{
+  width: 100%;
+}
+.rmdp-input{
+  width: 100%;
+}
+.rmdp-container{
+  width: 100%;
+}

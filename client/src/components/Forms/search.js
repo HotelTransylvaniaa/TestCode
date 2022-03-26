@@ -62,7 +62,7 @@ const Search = () => {
     <>
       <div className="bg-primary">
         <div className="container p-1 my-3">
-          <div className="row">
+          <div className="row gx-2">
             <div className="col-4">
             <AlgoliaPlaces
               placeholder="location"
