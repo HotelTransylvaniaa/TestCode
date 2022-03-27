@@ -4,10 +4,10 @@ import HotelCard from "../components/cards/HotelCard";
 import queryString from "query-string";
 import { getSearchHotel } from "../store/actions/hotels";
 import { getHotelsList } from "../store/actions/hotels";
-import Filter from "../components/Filter";
 import Search from "../components/Forms/search";
-
+import { useLocation } from "react-router-dom";
 export default function Hotels() {
+  const  {search}  = useLocation();
   let hotels = useSelector((state) => state.hotels.hotelsList);
    const dispatch = useDispatch();
   console.log(hotels)
@@ -15,9 +15,9 @@ export default function Hotels() {
     dispatch(getHotelsList());
   }, []);
   useEffect(() => {
-  const { location, date, room } = queryString.parse(window.location.search);
-   dispatch(getSearchHotel({ location, date, room }))
-  }, [window.location.search]);
+    const { location, date, room } = queryString.parse(window.location.search);
+     dispatch(getSearchHotel({ location, date, room }))
+  }, [search]);
   return (
     <>
     <Search/>

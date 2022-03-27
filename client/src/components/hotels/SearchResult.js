@@ -1,39 +1,20 @@
 import { useState, useEffect } from "react";
 import queryString from "query-string";
 import Search from "../Forms/search";
-import { searchListings } from "../../store/actions/hotels";
 import HotelCard from "../cards/HotelCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchHotel } from "../../store/actions/hotels";
 
+import { useLocation } from "react-router-dom";
 const SearchResult = () => {
-  const [searchLocation, setSearchLocation] = useState("");
-  const [searchInDate, setSearchInDate] = useState("");
-  const [searchOutDate, setSearchOutDate] = useState("");
-  const [searchRoom, setSearchRoom] = useState("");
-  const [hotels, setHotels] = useState([]);
-  const dispatch = useDispatch();
-
+  const  {search}  = useLocation();
+  const hotels = useSelector((state) => state.hotels.hotelsList);
+  console.log(search)
+  const dispatch=useDispatch();
   useEffect(() => {
-    const { location, checkInDate, checkOutDate, room } = queryString.parse(window.location.search);
-    console.table(location , checkInDate, checkOutDate, room)
-    searchListings({ location, checkInDate, checkOutDate, room }).then((res) => {
-      console.log("SEARCH RESULTS ===>", res.data);
-      setHotels(res.data);
-    });
-  }, [window.location.search]);
-
-  // const hotels = useSelector((state) => state.hotels.hotelsList);
-  // console.log(hotels)
-  // useEffect(() => {
-  //   const { location, date, room } = queryString.parse(window.location.search);
-  //   searchListings({ location, date, room }).then((res) => {
-  //     console.log("SEARCH RESULTS ===>", res.data);
-  //     setHotels(res.data);
-  //   });
-  // }, [window.location.search]);
-  // console.log(window.location.search)
-
+    const { location, date, room } = queryString.parse(window.location.search);
+     dispatch(getSearchHotel({ location, date, room }))
+    }, [search]);
 
   return (
     <div className="container">

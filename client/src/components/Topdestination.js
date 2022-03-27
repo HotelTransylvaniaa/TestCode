@@ -47,7 +47,7 @@ export default function TopDestination() {
           <div className="col-6 col-md-2" key={destination.city}>
             <div>
             <Link to={`/hotels/city/${destination.city}`}> 
-            <img src={destination.image} className="rounded-circle mx-auto d-block w-75"alt="destination"/></Link>
+            <img src={destination.image} className="rounded-circle mx-auto d-block w-75 topDestImg"alt="destination"/></Link>
               <h5 className="text-center my-2">{destination.city}</h5>
               <p className="text-muted text-center my-2">
                 {destination.description}
