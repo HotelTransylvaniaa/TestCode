@@ -7,8 +7,12 @@ import Header from "../components/Header";
 export default function Home() {
   return (
     <>
-      <Header />
-      <Search />
+      <div className="position-relative">
+        <Header />
+      </div>
+      <div className="position-absolute top-50 start-50 translate-middle w-75">
+        <Search />
+      </div>
       <TopDestination />
       <About />
     </>

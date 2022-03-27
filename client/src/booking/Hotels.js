@@ -13,8 +13,9 @@ export default function Hotels() {
     dispatch(getHotelsList());
   }, []);
   return (
+    <>
+    <Search/>
     <div className="container">
-      <Search/>
       <div className="row">
         <div className="col-4 shadow mt-3">
           {/* <Filter/> */}
@@ -28,5 +29,6 @@ export default function Hotels() {
         </div>
       </div>
     </div>
+    </>
   );
 }
