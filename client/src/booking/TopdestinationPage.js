@@ -17,7 +17,7 @@ export default function TopDestinationPage() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-4 shadow mt-3">
+        <div className="col-4 shadow">
           <Filter/>
           </div>
         <div className="col-8">
