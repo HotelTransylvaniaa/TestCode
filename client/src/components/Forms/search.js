@@ -34,8 +34,7 @@ const Search = () => {
     setCheckOutDate(date);
   };
 
-   const handleSubmit=(e)=> {
-     console.log("in event");
+  async function handleSubmit(e) {
     e.preventDefault();
     console.log(
       location,

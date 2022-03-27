@@ -23,6 +23,18 @@ const SearchResult = () => {
     });
   }, [window.location.search]);
 
+  // const hotels = useSelector((state) => state.hotels.hotelsList);
+  // console.log(hotels)
+  // useEffect(() => {
+  //   const { location, date, room } = queryString.parse(window.location.search);
+  //   searchListings({ location, date, room }).then((res) => {
+  //     console.log("SEARCH RESULTS ===>", res.data);
+  //     setHotels(res.data);
+  //   });
+  // }, [window.location.search]);
+  // console.log(window.location.search)
+
+
   return (
     <div className="container">
       <Search />
