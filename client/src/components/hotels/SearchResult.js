@@ -13,12 +13,13 @@ const SearchResult = () => {
 
   useEffect(() => {
     const { location, date, room } = queryString.parse(window.location.search);
-    // console.table({location , date, room})
+    console.table({location , date, room})
     searchListings({ location, date, room }).then((res) => {
       console.log("SEARCH RESULTS ===>", res.data);
       setHotels(res.data);
     });
   }, [window.location.search]);
+
 
   return (
     <>
