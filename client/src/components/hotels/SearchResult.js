@@ -7,14 +7,15 @@ import HotelCard from "../cards/HotelCard";
 
 const SearchResult = () => {
   const [searchLocation, setSearchLocation] = useState("");
-  const [searchDate, setSearchDate] = useState("");
+  const [searchInDate, setSearchInDate] = useState("");
+  const [searchOutDate, setSearchOutDate] = useState("");
   const [searchRoom, setSearchRoom] = useState("");
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
-    const { location, date, room } = queryString.parse(window.location.search);
-    console.table({location , date, room})
-    searchListings({ location, date, room }).then((res) => {
+    const { location, checkInDate, checkOutDate, room } = queryString.parse(window.location.search);
+    console.table(location , checkInDate, checkOutDate, room)
+    searchListings({ location, checkInDate, checkOutDate, room }).then((res) => {
       console.log("SEARCH RESULTS ===>", res.data);
       setHotels(res.data);
     });
