@@ -60,25 +60,19 @@ router.patch("/hotels/:id",(req,res,next)=>{
     })
 })
 
-// router.post("/hotels/search-listings",(req,res,next)=>{
-//     console.log(req.body)
-//     searchListings.searchListings(req.body).then((hotel)=>{
-//         res.json(hotel);
-//     }).catch((err)=>{
-//         res.status(422).send(err.message)
-//     })
-// })
+
 
 //hotels for search results
-// router.post("/hotels/search-listings",(req,res,next)=>{
-//     console.log("in search")
-//     controlHotels.findBysearchData(req.body).then((data)=>{
-//         res.json(data);
-//         console.log(data)
-//     }).catch((err)=>{
-//         res.status(404).json({"err":"in valid city"})
-//     })
-// })
-router.post("/hotels/search-listings",controlHotels.searchListings);
+router.post("/hotels/search-listings",(req,res,next)=>{
+    console.log("in search")
+    console.log(req.body)
+    controlHotels.searchListings(req.body).then((data)=>{
+        res.json(data);
+        console.log(data)
+    }).catch((err)=>{
+        res.status(404).json({"err":"in valid search result"})
+    })
+})
+//router.post("/hotels/search-listings",controlHotels.searchListings);
 
 module.exports=router;

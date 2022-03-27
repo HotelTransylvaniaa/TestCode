@@ -51,4 +51,14 @@ export const getHotelDetails = (params) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
-export const searchListings = async(query) => await axiosInstance.post(`/hotels/search-listings`, query)
+ export const searchListings = async(query) => await axiosInstance.post(`/hotels/search-listings`, query)
+export const getSearchHotel = (query) => (dispatch) => {
+  axiosInstance.post(`/hotels/search-listings`, query)
+    .then((res) =>
+      dispatch({
+        type: "GET_HOTELS_SEARCH",
+        payload: res.data,
+      })
+    )
+    .catch((err) => console.log(err));
+};

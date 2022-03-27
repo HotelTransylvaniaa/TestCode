@@ -40,7 +40,8 @@ const Search = () => {
     setCheckOutDate(date);
   };
 
-  async function handleSubmit(e) {
+   const handleSubmit=(e)=> {
+     console.log("in event");
     e.preventDefault();
     console.log(
       location,
