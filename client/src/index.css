@@ -17,9 +17,6 @@ code {
     monospace;
 }
 
-.css-1s2u09g-control{
-height: 50px;
-}
 .ap-input{
   width: 100%;
 }
@@ -28,4 +25,8 @@ height: 50px;
 }
 .rmdp-container{
   width: 100%;
+}
+.css-319lph-ValueContainer{
+ height: 50px;
+
 }

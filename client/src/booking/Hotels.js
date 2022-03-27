@@ -6,6 +6,7 @@ import { getSearchHotel } from "../store/actions/hotels";
 import { getHotelsList } from "../store/actions/hotels";
 import Filter from "../components/Filter";
 import Search from "../components/Forms/search";
+
 export default function Hotels() {
   let hotels = useSelector((state) => state.hotels.hotelsList);
    const dispatch = useDispatch();
@@ -18,8 +19,9 @@ export default function Hotels() {
    dispatch(getSearchHotel({ location, date, room }))
   }, [window.location.search]);
   return (
+    <>
+    <Search/>
     <div className="container">
-      <Search/>
       <div className="row">
         <div className="col-4 shadow mt-3">
           {/* <Filter/> */}
@@ -33,5 +35,6 @@ export default function Hotels() {
         </div>
       </div>
     </div>
+    </>
   );
 }

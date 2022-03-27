@@ -42,7 +42,7 @@ export default function TopDestination() {
   return (
     <div className="container">
       <div className="row">
-        <h3 className="text-center my-5">Top destinations in Egypt</h3>
+        <h3 className="text-center my-5">Top Destinations in Egypt</h3>
         {destinations.map((destination) => (
           <div className="col-6 col-md-2" key={destination.city}>
             <div>

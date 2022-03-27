@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-// import { Select } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import AlgoliaPlaces from "algolia-places-react";
-import moment from "moment";
-import DatePicker, {
-  DateObject,
-  getAllDatesInRange,
-} from "react-multi-date-picker";
-import DatePanel from "react-multi-date-picker/plugins/date_panel";
-import Dropdown from "react-dropdown";
+import DatePicker from "react-multi-date-picker";
 import "react-dropdown/style.css";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+import "../header.css";
 
 const { RangePicker } = DatePicker;
 const { option } = Select;
@@ -61,49 +55,48 @@ const Search = () => {
 
   return (
     <>
-      <div className="bg-primary">
-        <div className="container p-1 my-3">
-          <div className="row gx-2">
-            <div className="col-4">
-            <AlgoliaPlaces
-              placeholder="location"
-              defaultValue={location}
-              option={config}
-              onChange={({ suggestion }) => setLocation(suggestion.value)}
-              style={{ height: "50px" }}
-            />
-            {/* <input className="form-control" placeholder="location" type="text" options={top100Films} value={location} onChange={(e)=>setLocation(e.target.value)}></input> */}
+      <div className="searchBar p-0">
+        <div className="container-fluid p-1 my-1">
+          <div className="row gx-2 justify-content-center">
+            <div className="col-4 ms-1">
+              <AlgoliaPlaces
+                placeholder="location"
+                defaultValue={location}
+                option={config}
+                onChange={({ suggestion }) => setLocation(suggestion.value)}
+                style={{ height: "50px" }}
+              />
             </div>
             <div className="col-2">
-            <DatePicker
-              placeholder="checkInDate"
-              defaultValue={checkInDate}
-              value={checkInDate}
-              selected={checkInDate}
-              minDate={new Date()}
-              onChange={handleCheckInDate}
-              style={{ height: "50px" }}
-            />
+              <DatePicker
+                placeholder="checkInDate"
+                defaultValue={checkInDate}
+                value={checkInDate}
+                selected={checkInDate}
+                minDate={new Date()}
+                onChange={handleCheckInDate}
+                style={{ height: "50px" }}
+              />
             </div>
             <div className="col-2">
-            <DatePicker
-              placeholder="checkOutDate"
-              defaultValue={checkOutDate}
-              value={checkOutDate}
-              selected={checkOutDate}
-              minDate={checkInDate}
-              onChange={handleCheckOutDate}
-              style={{ height: "50px" }}
-            />
+              <DatePicker
+                placeholder="checkOutDate"
+                defaultValue={checkOutDate}
+                value={checkOutDate}
+                selected={checkOutDate}
+                minDate={checkInDate}
+                onChange={handleCheckOutDate}
+                style={{ height: "50px" }}
+              />
             </div>
             <div className="col-2">
-            <Select onChange={(value) => setRoom(value)} options={rooms} />
+              <Select onChange={(value) => setRoom(value)} options={rooms} />
             </div>
             <div className="col-1">
-            <SearchOutlined
-              onClick={handleSubmit}
-              className="btn btn-primary p-2 pe-3 ps-3 mt-1 btn-square"
-            />
+              <SearchOutlined
+                onClick={handleSubmit}
+                className="btn btn-primary p-2 pe-3 ps-3 mt-1 btn-square"
+              />
             </div>
           </div>
         </div>
