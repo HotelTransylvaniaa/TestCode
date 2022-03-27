@@ -1,7 +1,10 @@
 import './NavAccount.css'
 import { NavLink } from "react-router-dom";
 import {useDispatch } from "react-redux";
+import { useSelector } from 'react-redux';
 export default function NavAccount(){
+    const {auth}=useSelector((state)=>({...state}))
+     console.log(auth)
     const dispatch=useDispatch()
     const logout=()=>{
         dispatch({
@@ -13,8 +16,8 @@ export default function NavAccount(){
     return(
         <div className="ms-1 d-flex">
             <div className="alpha-name d-flex justify-content-center align-items-center">
-                <span className="alpha d-flex rounded-pill me-1 justify-content-center align-items-center fw-bold text-white fs-5">A</span>
-                <span>Ahmed B.</span>
+                <span className="alpha d-flex rounded-pill me-1 justify-content-center align-items-center fw-bold text-white fs-5 text-capitalize">{auth.userName.charAt(0)}</span>
+                <span className='text-capitalize'>{auth.userName}</span>
             </div>
             <div className="dropdown">
                 <button className="border-0 bg-white pt-1" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
