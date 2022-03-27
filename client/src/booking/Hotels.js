@@ -4,6 +4,7 @@ import HotelCard from "../components/cards/HotelCard";
 import { getHotelsList } from "../store/actions/hotels";
 import Filter from "../components/Filter";
 import Search from "../components/Forms/search";
+
 export default function Hotels() {
   let hotels = useSelector((state) => state.hotels.hotelsList);
    const dispatch = useDispatch();
