@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const About = () => {
   return (
@@ -6,7 +7,7 @@ const About = () => {
       <div className="container my-3">
         <div className="row justify-content-between">
           <div className="my-3">
-            <h2>Hotels</h2>
+            <h4>Hotels</h4>
             <p>
               Here at lastminute.com, we know hotels, and we aim to bring you
               the best price on a last minute booking. From modern apartments
@@ -19,7 +20,7 @@ const About = () => {
             </p>
           </div>
           <div className="mb-3">
-            <h2>Why book our hotels?</h2>
+            <h4>Why book our hotels?</h4>
             <p>
               By booking your hotel room through us, you’re sure to get a great
               deal thanks to our Price Match Guarantee, and we have plenty of
@@ -30,14 +31,17 @@ const About = () => {
               price, while our promo codes offer fantastic discounts.{" "}
             </p>
           </div>
-          <h2 className="text-center">Travel with confidence</h2>
+          <h4 className="text-center">Travel with confidence</h4>
           <p className="text-center mb-5">
             Many properties have updated us about their enhanced health and
-            safety measures. So, during your search, you may find details like:
+            safety measures. So, during your search, you may find details like
           </p>
           <div className="col">
-            <div className="shadow px-2 border text-center py-5 bg-light rounded">
-              <h2>Official health standards</h2>
+            <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
+              <i class="fa-solid fa-hand-holding-droplet fs-3"></i>
+              <h4 className="h-50 d-flex align-items-center justify-content-center">
+                Official health standards
+              </h4>
               <p>
                 Properties adhering to corporate/organizational sanitization
                 guidelines.
@@ -46,7 +50,10 @@ const About = () => {
           </div>
           <div className="col">
             <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
-              <h2>Essentials at the property</h2>
+              <i class="fa-solid fa-hand-sparkles fs-3"></i>
+              <h4 className="h-50 d-flex align-items-center justify-content-center">
+                Essentials at the property
+              </h4>
               <p>
                 Free hand sanitizer for guests and individually wrapped food
                 options.
@@ -55,7 +62,10 @@ const About = () => {
           </div>
           <div className="col">
             <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
-              <h2>Social distancing</h2>
+              <i class="fa-solid fa-handshake-simple-slash fs-3"></i>
+              <h4 className="h-50 d-flex align-items-center justify-content-center">
+                Social distancing
+              </h4>
               <p>
                 Contactless check-in and check-out along with other social
                 distancing measures.
@@ -64,7 +74,10 @@ const About = () => {
           </div>
           <div className="col">
             <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
-              <h2>Hygiene and sanitization</h2>
+            <i class="fa-solid fa-pump-soap fs-3"></i>
+              <h4 className="h-50 d-flex align-items-center justify-content-center">
+                Hygiene and sanitization
+              </h4>
               <p>
                 The use of disinfectant and whether properties enforce a gap
                 period between stays.

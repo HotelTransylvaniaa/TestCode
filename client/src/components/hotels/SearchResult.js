@@ -4,6 +4,7 @@ import Search from "../Forms/search";
 import HotelCard from "../cards/HotelCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getSearchHotel } from "../../store/actions/hotels";
+
 import { useLocation } from "react-router-dom";
 const SearchResult = () => {
   const  {search}  = useLocation();
@@ -17,20 +18,18 @@ const SearchResult = () => {
 
   return (
     <div className="container">
-    <Search/>
-    <div className="row">
-      <div className="col-4 shadow mt-3">
-        {/* <Filter/> */}
-        </div>
-      <div className="col-8">
-        <div className="container-fluid">
-          {hotels.map((h) => (
-            <HotelCard h={h} key={h._id} />
-          ))}
+      <Search />
+      <div className="row">
+        <div className="col-4 shadow mt-3">{/* <Filter/> */}</div>
+        <div className="col-8">
+          <div className="container-fluid">
+            {hotels.map((h) => (
+              <HotelCard h={h} key={h._id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
