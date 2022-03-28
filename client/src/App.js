@@ -7,6 +7,7 @@ import Hotels from "./booking/Hotels";
 import HotelDetails from "./booking/HotelDetails";
 import SearchResult from './components/hotels/SearchResult'
 import TopDestinationPage from "./booking/TopdestinationPage";
+import NotFound from "./booking/NotFound";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
        <Route exact path="/login" element ={<Login/>} />
        <Route exact path="/register" element ={<Register/>} />
        <Route exact path="/search-result" element ={<SearchResult/>} />
+       <Route path={"*"} element={<NotFound/>}/>
      </Routes>
     </BrowserRouter>
   );
