@@ -23,7 +23,7 @@ export default function Navbar(){
                         <NavLink className="me-3 text-decoration-none" to={""}>Resorts</NavLink>
                         <NavLink className="me-3 text-decoration-none" to={""}>Today’s deals</NavLink>
                         <NavLink className="me-3 text-decoration-none" to={""}>About</NavLink>
-                        <NavLink className="me-3 text-decoration-none" to={""}>Contact Us</NavLink>
+                        <NavLink className="me-3 text-decoration-none" to={"/contact-us"}>Contact Us</NavLink>
                     </div>
                     <div className="d-flex">
                         {auth!==null &&(<NavAccount/>)}

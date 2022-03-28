@@ -18,9 +18,13 @@ const login= async(body)=>{
         },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '8d' }),userEmail,userName}
     }
 }
+// const contactUs = async (req,res) =>{
+//    const {name ,email ,msg}= req.body
+// }
 
 
 module.exports={
     register,
-    login
+    login,
+    // contactUs
 }
