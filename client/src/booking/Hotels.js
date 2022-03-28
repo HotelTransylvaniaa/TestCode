@@ -14,6 +14,7 @@ export default function Hotels() {
  useEffect(() => {
     dispatch(getHotelsList());
   }, []);
+  
   useEffect(() => {
     const { location, date, room } = queryString.parse(window.location.search);
      dispatch(getSearchHotel({ location, date, room }))
