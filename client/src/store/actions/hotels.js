@@ -51,6 +51,7 @@ export const getHotelDetails = (params) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
 export const getSearchHotel = (query) => (dispatch) => {
   axiosInstance.post(`/hotels/search-listings`, query)
     .then((res) =>
