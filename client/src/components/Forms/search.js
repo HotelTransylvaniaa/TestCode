@@ -56,9 +56,31 @@ const Search = () => {
     <>
       <div className="searchBar p-0">
         <div className="container-fluid p-1 my-1">
-          <div className="row gx-2 justify-content-center">
+        <div className="row gx-2 justify-content-center">
             <div className="col-4 ms-1">
-              <AlgoliaPlaces
+              <label className="m-1">City</label>
+             
+            </div>
+            <div className="col-2">
+            <label className="m-1">Check-in date</label>
+              
+            </div>
+            <div className="col-2">
+            <label className="m-1">Check-out date</label>
+              
+            </div>
+            <div className="col-2">
+            <label className="m-1">Type</label>
+          
+            </div>
+            <div className="col-1">
+          
+            </div>
+          </div>
+          <div className="row gx-2 justify-content-center pb-4">
+            <div className="col-4 ms-1">
+          
+             <AlgoliaPlaces
                 placeholder="location"
                 defaultValue={location}
                 option={config}
@@ -67,6 +89,7 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
+      
               <DatePicker
                 placeholder="checkInDate"
                 defaultValue={checkInDate}
@@ -78,6 +101,7 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
+        
               <DatePicker
                 placeholder="checkOutDate"
                 defaultValue={checkOutDate}
@@ -89,12 +113,13 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
+     
               <Select onChange={(value) => setRoom(value)} options={rooms} />
             </div>
             <div className="col-1">
               <SearchOutlined
                 onClick={handleSubmit}
-                className="btn btn-primary p-2 pe-3 ps-3 mt-1 btn-square"
+                className="btn btn-primary btn-square h-100"
               />
             </div>
           </div>

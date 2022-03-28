@@ -7,7 +7,7 @@ const About = () => {
       <div className="container my-3">
         <div className="row justify-content-between">
           <div className="my-3">
-            <h2>Hotels</h2>
+            <h4>Hotels</h4>
             <p>
               Here at lastminute.com, we know hotels, and we aim to bring you
               the best price on a last minute booking. From modern apartments
@@ -20,7 +20,7 @@ const About = () => {
             </p>
           </div>
           <div className="mb-3">
-            <h2>Why book our hotels?</h2>
+            <h4>Why book our hotels?</h4>
             <p>
               By booking your hotel room through us, you’re sure to get a great
               deal thanks to our Price Match Guarantee, and we have plenty of
@@ -34,7 +34,7 @@ const About = () => {
           <h4 className="text-center">Travel with confidence</h4>
           <p className="text-center mb-5">
             Many properties have updated us about their enhanced health and
-            safety measures. So, during your search, you may find details like:
+            safety measures. So, during your search, you may find details like
           </p>
           <div className="col">
             <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
