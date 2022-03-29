@@ -1,9 +1,12 @@
 .bg1
 { 
-    background: url("https://schengenvisareservationhome.files.wordpress.com/2019/10/architecture-3121009_1920.jpg?w=1024");
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background: url("https://images.pexels.com/photos/4784507/pexels-photo-4784507.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
     position: fixed; 
-  top: 50; 
-  left: 0; 
+    top: 50; 
+    left: 0; 
+
 }
