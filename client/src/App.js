@@ -7,6 +7,7 @@ import Hotels from "./booking/Hotels";
 import HotelDetails from "./booking/HotelDetails";
 import SearchResult from './components/hotels/SearchResult'
 import TopDestinationPage from "./booking/TopdestinationPage";
+import ContactUs from './components/contactus'
 import NotFound from "./booking/NotFound";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
        <Route exact path="/hotels/city/:city" element ={<TopDestinationPage/>} />
        <Route exact path="/hotel-details/:id" element ={<HotelDetails/>}/>
        <Route exact path="/login" element ={<Login/>} />
+       <Route exact path="/contact-us" element ={<ContactUs/>} />
        <Route exact path="/register" element ={<Register/>} />
        <Route exact path="/search-result" element ={<SearchResult/>} />
        <Route path={"*"} element={<NotFound/>}/>
