@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { contactus } from "../store/actions/auth";
 
 export default function ContactUs() {
   const [name, setName] = useState("");
@@ -10,16 +9,14 @@ export default function ContactUs() {
   const [msg, setMsg] = useState("");
 
   const handelSubmit = async (e) => {
-    alert("send user msg to backend");
+    // alert("send user msg to backend");
     e.preventDefault();
     try {
       console.table({ name, email, msg });
-      toast.success("Your message send successful");
-      // const res = await axios.post('http://localhots:8000/api/contactus',{
-      //     name ,email ,msg
-      // })
-      
-      console.log("msg from contact us");
+      const res = contactus({ name, email, msg });
+      console.log("msg from contact us", res);
+      // toast.success("Your message send successful");
+      toast.success("Success Login");
     } catch (err) {
       console.log(err);
     }
@@ -107,6 +104,9 @@ export default function ContactUs() {
               <div className="d-flex">
                 <h4 className="mx-3">Websuit : </h4>
                 <p className="mt-1">ITI.gov.eg</p>
+              </div>
+              <div className="w-100 d-flex justify-content-center">
+                <i class="fa-brands fa-whatsapp"></i>
               </div>
             </div>
           </div>
