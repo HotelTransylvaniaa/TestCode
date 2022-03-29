@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const About = () => {
   return (
     <>
-      <div className="container my-3">
+      <div className="container my-5">
         <div className="row justify-content-between">
           <div className="my-3">
             <h4>Hotels</h4>
