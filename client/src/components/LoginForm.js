@@ -27,7 +27,7 @@ export default function LoginForm({
     // </form>
     <div className="container-fluid bg1 vh-100">
       <div className="row">
-        <div className="col-md-7 m-auto ">
+        <div className="col-md-7 m-auto">
           <div className="card mt-5 bg-dark opacity-75  ">
             <div className="card-title text-center mt-3">
               <img

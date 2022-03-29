@@ -56,31 +56,9 @@ const Search = () => {
     <>
       <div className="searchBar p-0">
         <div className="container-fluid p-1 my-1">
-        <div className="row gx-2 justify-content-center">
+          <div className="row gx-2 justify-content-center py-4">
             <div className="col-4 ms-1">
-              <label className="m-1">City</label>
-             
-            </div>
-            <div className="col-2">
-            <label className="m-1">Check-in date</label>
-              
-            </div>
-            <div className="col-2">
-            <label className="m-1">Check-out date</label>
-              
-            </div>
-            <div className="col-2">
-            <label className="m-1">Type</label>
-          
-            </div>
-            <div className="col-1">
-          
-            </div>
-          </div>
-          <div className="row gx-2 justify-content-center pb-4">
-            <div className="col-4 ms-1">
-          
-             <AlgoliaPlaces
+              <AlgoliaPlaces
                 placeholder="location"
                 defaultValue={location}
                 option={config}
@@ -89,7 +67,6 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
-      
               <DatePicker
                 placeholder="checkInDate"
                 defaultValue={checkInDate}
@@ -101,7 +78,6 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
-        
               <DatePicker
                 placeholder="checkOutDate"
                 defaultValue={checkOutDate}
@@ -113,7 +89,6 @@ const Search = () => {
               />
             </div>
             <div className="col-2">
-     
               <Select onChange={(value) => setRoom(value)} options={rooms} />
             </div>
             <div className="col-1">

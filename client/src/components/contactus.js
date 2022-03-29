@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { contactus } from "../store/actions/auth";
+import {Link} from "react-router-dom";
 
 export default function ContactUs() {
   const [name, setName] = useState("");
@@ -10,7 +11,6 @@ export default function ContactUs() {
 
   const handelSubmit = async (e) => {
     // alert("send user msg to backend");
-    e.preventDefault();
     try {
       console.table({ name, email, msg });
       const res = contactus({ name, email, msg });
@@ -99,15 +99,26 @@ export default function ContactUs() {
                 <p className="mt-1">ITI@gmail.com</p>
               </div>
             </div>
-            <div className="d-flex mb-3">
+            <div className="d-flex mb-4">
               <i className="fa-solid fa-earth-africa fs-5 mt-2"></i>{" "}
               <div className="d-flex">
                 <h4 className="mx-3">Websuit : </h4>
                 <p className="mt-1">ITI.gov.eg</p>
               </div>
-              <div className="w-100 d-flex justify-content-center">
-                <i class="fa-brands fa-whatsapp"></i>
-              </div>
+            </div>
+            <div className="w-100 mt-4 d-flex justify-content-center">
+              <a href="https://www.whatsapp.com" className="text-light">
+                <i class="fa-brands fa-whatsapp fs-3 me-5"></i>
+              </a>
+              <a href="https://www.facebook.com" className="text-light">
+                <i class="fa-brands fa-facebook fs-3 me-5"></i>
+              </a>
+              <a href="https://mail.google.com" className="text-light">
+                <i class="fa-solid fa-envelope fs-3 me-5"></i>
+              </a>
+              <a href="https://twitter.com/" className="text-light">
+                <i class="fa-brands fa-twitter fs-3 me-5"></i>
+              </a>
             </div>
           </div>
         </div>
