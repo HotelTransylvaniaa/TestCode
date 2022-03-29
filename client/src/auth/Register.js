@@ -100,8 +100,7 @@ const handelFormChange=(e)=>{
   }
   return (
     <>
-      <div className="container-fluid p-2 bg-secondary text-white text-center">
-        <h1>Register</h1>
+      <div>
       </div>
       <ToastContainer position="top-center" />
       <div className="container">

@@ -4,20 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const About = () => {
   return (
     <>
-      <div className="container-fluid bg-light py-3 my-5">
-        <div className="container my-5">
-          <div className="row justify-content-between">
-            <div className="">
-              <h4>Hotels</h4>
-              <p>
-                Here at lastminute.com, we know hotels, and we aim to bring you
-                the best price on a last minute booking. From modern apartments
-                and traditional guesthouses to well-known brands and boutique
-                accommodations; we’ve got a great choice of places to stay. If
-                you’re looking to save a bit of money on your holiday, check out
-                our selection of cheap rooms, or if you want to celebrate in
-                style, take a look at our 5-star luxury hotels. You could even
-                treat yourself to some pampering on one of our spa breaks.
+      <div className="container my-5">
+        <div className="row justify-content-between">
+          <div className="my-3">
+            <h4>Hotels</h4>
+            <p>
+              Here at lastminute.com, we know hotels, and we aim to bring you
+              the best price on a last minute booking. From modern apartments
+              and traditional guesthouses to well-known brands and boutique
+              accommodations; we’ve got a great choice of places to stay. If
+              you’re looking to save a bit of money on your holiday, check out
+              our selection of cheap rooms, or if you want to celebrate in
+              style, take a look at our 5-star luxury hotels. You could even
+              treat yourself to some pampering on one of our spa breaks.
               </p>
             </div>
             <div className="mb-3">
@@ -88,7 +87,6 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
