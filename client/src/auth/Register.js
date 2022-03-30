@@ -26,6 +26,7 @@ export default function Register({history}) {
   confirmPassErr:null
 });
 const handleFormSubmit= async(e)=>{
+  console.log("in form submit")
   e.preventDefault();
   try{
    await register(userForm)

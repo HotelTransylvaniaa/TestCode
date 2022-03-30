@@ -20,35 +20,13 @@ const userSchema=mongoose.Schema({
     
 },{timestamps:true})
 
-userSchema.pre("save",function(next){
-   let user=this;
-   if(user.isModified("password")){
-       return bcrypt.hash(user.password,12,function(err,hash){
-           if(err){
-               console.log("BCRYPT HASH ERR",err);
-               return next(err);
-           }
-           user.password=hash;
-           return next();
-       });
-   }
-   else{
-       return next();
-   }
+
+userSchema.pre('save',function(){
+    const salt = bcrypt.genSaltSync(10);
+    this.password = bcrypt.hashSync(this.password, salt);
+
 })
 
-
-// userSchema.methods.comparePassword=function(passowrd,next){
-//     bcrypt.compare(passowrd,this.passowrd,function(err,match){
-//         if(err){
-//             console.log("compare password err",err)
-//             return next(err,false)
-//         }
-//         //if no err we get null
-//         console.log("Match password".match);
-//         return next(err,match) // will return true 
-//     })
-// }
 
 const UserModel=mongoose.model("User",userSchema);
 module.exports=UserModel;
