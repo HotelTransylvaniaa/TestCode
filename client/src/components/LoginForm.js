@@ -27,8 +27,13 @@ export default function LoginForm({
     // </form>
     <div className="container-fluid bg1 vh-100">
       <div className="row">
+<<<<<<< HEAD
         <div className="col-md-7 m-auto ">
           <div className="card mt-5 ovaerlay">
+=======
+        <div className="col-md-7 m-auto">
+          <div className="card mt-5 bg-dark opacity-75  ">
+>>>>>>> c83b1c342bb159ed6f0058854754d6ffa1b89a62
             <div className="card-title text-center mt-3">
               <img
                 src="http://cognitive-physio.com/assets/images/user.jpg"

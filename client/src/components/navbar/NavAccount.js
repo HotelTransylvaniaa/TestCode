@@ -13,6 +13,7 @@ export default function NavAccount(){
         })
         window.localStorage.removeItem("auth")
     }
+    console.log(auth)
     return(
         <div className="ms-1 d-flex">
             <div className="alpha-name d-flex justify-content-center align-items-center">
@@ -44,7 +45,7 @@ export default function NavAccount(){
                         <NavLink className="text-decoration-none px-4 py-2" to={""}>Reviews</NavLink>
                     </li>
                     <li>
-                        <NavLink className="text-decoration-none px-4 py-2" to={""}>Profile</NavLink>
+                        <NavLink className="text-decoration-none px-4 py-2" to={"profile"}>Profile</NavLink>
                     </li>
                     <li className="px-4 pt-2">
                         <NavLink className="text-decoration-none d-inline-block py-2 px-2 border border-primary border-1 rounded w-100 text-center pointer" to={""} onClick={logout}>Sign Out</NavLink>

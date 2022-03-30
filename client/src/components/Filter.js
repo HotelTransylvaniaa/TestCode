@@ -11,7 +11,7 @@ export default function Filter() {
             <div className="tileMapWrapper">
               <img
                 alt=""
-                className=" w-25  one"
+                className=" w-25 one"
                 src="https://cdn6.agoda.net/images/MAPS-1213/default/bkg-map-entry.svg"
               ></img>
               <img

@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const bcrypt =require("bcrypt");
 const jwt=require("jsonwebtoken")
+const Contact = require("../models/contactus")
 
 const register=(body)=>{
     return User.create(body)
@@ -18,13 +19,15 @@ const login= async(body)=>{
         },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '8d' }),userEmail,userName}
     }
 }
-// const contactUs = async (req,res) =>{
-//    const {name ,email ,msg}= req.body
-// }
+const contactUs = async (body) =>{
+   const {name ,email ,msg} = body
+    console.log(body)
+    return Contact.create(body)
+}
 
 
 module.exports={
     register,
     login,
-    // contactUs
+    contactUs
 }

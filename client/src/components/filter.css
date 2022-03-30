@@ -1,7 +1,8 @@
 .one
 {
     position: absolute;
-    left: 140px;
-    top: 77px;
+    /* height: 30%; */
+    /* left: 140px;
+    top: 77px; */
     z-index: -1;
 }
