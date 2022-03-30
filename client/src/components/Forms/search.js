@@ -54,9 +54,9 @@ const Search = () => {
 
   return (
     <>
-      <div className="searchBar p-0">
-        <div className="container-fluid p-1 my-1">
-          <div className="row gx-2 justify-content-center py-4">
+      <div className="searchBar p-0 mt-5">
+        <div className="container my-1">
+          <div className="row gx-2  py-4">
             <div className="col-4 ms-1">
               <AlgoliaPlaces
                 placeholder="location"
@@ -94,7 +94,7 @@ const Search = () => {
             <div className="col-1">
               <SearchOutlined
                 onClick={handleSubmit}
-                className="btn btn-primary btn-square h-100"
+                className="btn btn-primary btn-square p-2 mt-1 px-2"
               />
             </div>
           </div>

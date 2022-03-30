@@ -5,3 +5,6 @@ nav .navUl a{
 nav .navUl a:hover{
     color: rgb(83, 146, 249);
 }
+.show{
+    margin-right: auto;
+}
