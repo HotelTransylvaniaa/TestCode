@@ -14,7 +14,6 @@ function Login() {
   });
   useEffect(() => {}, [userForm]);
 
-<<<<<<< HEAD
  const [userFormErrors, setUserFormError] = useState({
   userEmailErr: null,
   passwordErr: null,
@@ -28,21 +27,6 @@ const handleFormSubmit=async (e)=>{
         await toast.success("Success Login");
          console.log("here")
         window.localStorage.setItem("auth",JSON.stringify(res.data))
-=======
-  const [userFormErrors, setUserFormError] = useState({
-    userEmailErr: null,
-    passwordErr: null,
-  });
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      let res = await login(userForm);
-      if (res.data) {
-        //save user and token in localstorage
-        console.log("here");
-        window.localStorage.setItem("auth", JSON.stringify(res.data));
-        toast.success("Success Login");
->>>>>>> c83b1c342bb159ed6f0058854754d6ffa1b89a62
         //save user and token in redux
         dispatch({
           type: "LOGGED_IN_USER",
