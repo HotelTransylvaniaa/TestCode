@@ -50,8 +50,8 @@ export default function RegisterForm({
               <div className="card-title text-center mt-3">
                 <img
                   src="https://p7.hiclipart.com/preview/123/735/760/computer-icons-physician-login-medicine-user-avatar.jpg"
-                  width="13%"
-                  height="13%"
+                  width="80px"
+                  height="80px"
                   className="rounded-circle mt-3 text-white "
               alt=""  ></img>
               </div>

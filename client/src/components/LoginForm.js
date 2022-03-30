@@ -32,8 +32,8 @@ export default function LoginForm({
             <div className="card-title text-center mt-3">
               <img
                 src="http://cognitive-physio.com/assets/images/user.jpg"
-                width="13%"
-                height="13%"
+                width="80px"
+                height="80px"
                 className="rounded-circle mt-3 text-white"
              alt="" ></img>
             </div>
