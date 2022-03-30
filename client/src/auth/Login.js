@@ -23,9 +23,9 @@ const handleFormSubmit=async (e)=>{
   e.preventDefault();
   try{
     let res = await login(userForm)
-    toast.success("Success Login");
      if(res.data){
         //save user and token in localstorage
+        await toast.success("Success Login");
          console.log("here")
         window.localStorage.setItem("auth",JSON.stringify(res.data))
         //save user and token in redux

@@ -42,21 +42,22 @@ export default function RegisterForm({
         </button>
       </form> */}
 
-      <div className="container-fluid bg2 vh-100 vw-100">
+      <div className="container-fluid bg2 vh-100 vw-100 border-0">
         <div className="row">
-          <div className="col-md-7 m-auto ">
-            <div className="card mt-5 bg-dark opacity-75 ">
+          <div className="col-md-7 m-auto">
+            <div></div>
+            <div className="card mt-5 ovaerlay">
               <div className="card-title text-center mt-3">
                 <img
                   src="https://p7.hiclipart.com/preview/123/735/760/computer-icons-physician-login-medicine-user-avatar.jpg"
-                  width="100px"
-                  height="100px"
+                  width="13%"
+                  height="13%"
                   className="rounded-circle mt-3 text-white "
-                ></img>
+              alt=""  ></img>
               </div>
               <div className="card-body "></div>
               <form
-                className="w-75 m-auto mt-3"
+                className="w-50 m-auto mt-3"
                 onSubmit={(e) => handleFormSubmit(e)}
               >
                 <div className="mb-3 input-group" controlid="formBasicEmail">
