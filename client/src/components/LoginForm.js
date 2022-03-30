@@ -9,15 +9,15 @@ export default function LoginForm({
     
     <div className="container-fluid bg1 vh-100">
       <div className="row">
-        <div className="col-md-7 m-auto">
-          <div className="card mt-5 bg-dark opacity-75  ">
+        <div className="col-md-7 m-auto ">
+          <div className="card mt-5 ovaerlay">
             <div className="card-title text-center mt-3">
               <img
                 src="http://cognitive-physio.com/assets/images/user.jpg"
-                width="100px"
-                height="100px"
+                width="80px"
+                height="80px"
                 className="rounded-circle mt-3 text-white"
-              ></img>
+             alt="" ></img>
             </div>
             <div className="card-body "></div>
             <form

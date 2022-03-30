@@ -14,19 +14,19 @@ function Login() {
   });
   useEffect(() => {}, [userForm]);
 
-  const [userFormErrors, setUserFormError] = useState({
-    userEmailErr: null,
-    passwordErr: null,
-  });
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      let res = await login(userForm);
-      if (res.data) {
+ const [userFormErrors, setUserFormError] = useState({
+  userEmailErr: null,
+  passwordErr: null,
+});
+const handleFormSubmit=async (e)=>{
+  e.preventDefault();
+  try{
+    let res = await login(userForm)
+     if(res.data){
         //save user and token in localstorage
-        console.log("here");
-        window.localStorage.setItem("auth", JSON.stringify(res.data));
-        toast.success("Success Login");
+        await toast.success("Success Login");
+         console.log("here")
+        window.localStorage.setItem("auth",JSON.stringify(res.data))
         //save user and token in redux
         dispatch({
           type: "LOGGED_IN_USER",

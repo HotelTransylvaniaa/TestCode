@@ -1,10 +1,13 @@
 .bg2
 { 
-    background: url("https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background: url("https://cdn.pixabay.com/photo/2018/04/27/05/25/water-3353811_960_720.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     position: fixed; 
-    top: 50; 
+    top: 5; 
     left: 0; 
 }
 
+.ovaerlay{
+    background-color: #28648a80;
+}
