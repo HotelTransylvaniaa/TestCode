@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -29,4 +32,7 @@ code {
 .css-319lph-ValueContainer{
  height: 50px;
 
+}
+.boxHover{
+  
 }

@@ -50,8 +50,8 @@ export default function Profile() {
   return (
     <div className="bg-light my-5">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-3 shadow py-4">
+        <div className="row ">
+          <div className="col-4 shadow py-4">
             <ul className="list-group">
               
               <Link className="me-3 list-group-item list-group-item-action  border-light fs-5" to={"/profile"} exact="true">Profile</Link>
@@ -110,10 +110,10 @@ export default function Profile() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 my-5">
+                <div className="col-md-6 mt-4">
                   <h6>Email</h6>
                 </div>
-                <div className="col-md-6 my-4">
+                <div className="col-md-6">
                   <h6 className="">{auth.userEmail}</h6>
                   <p className="fw-light">
                     This is the email address you use to sign in. It’s also
@@ -121,10 +121,10 @@ export default function Profile() {
                   </p>
                 </div>
                 <hr></hr>
-                <div className="col-md-6 my-5">
+                <div className="col-md-6 my-2">
                   <h6>Password</h6>
                 </div>
-                <div className="col-md-6 d-flex my-5">
+                <div className="col-md-6 d-flex my-2">
                   {openEdit ? (
                     <>
                       <h6 className=""></h6>

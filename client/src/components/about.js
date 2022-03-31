@@ -37,7 +37,7 @@ const About = () => {
               Many properties have updated us about their enhanced health and
               safety measures. So, during your search, you may find details like
             </p>
-            <div className="col hover-shadow">
+            <div className="col boxHover">
               <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
                 <i class="fa-solid fa-hand-holding-droplet fs-3"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
@@ -49,7 +49,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="col hover-shadow">
+            <div className="col boxHover">
               <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
                 <i class="fa-solid fa-hand-sparkles fs-3"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
@@ -61,7 +61,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="col hover-shadow">
+            <div className="col boxHover">
               <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
                 <i class="fa-solid fa-handshake-simple-slash fs-3"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
@@ -73,7 +73,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="col hover-shadow">
+            <div className="col boxHover">
               <div className="shadow px-2 border text-center py-5 bg-light h-100 rounded">
                 <i class="fa-solid fa-pump-soap fs-3"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
