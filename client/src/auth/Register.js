@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RegisterForm from "../components/RegisterForm";
+import RegisterForm from "../components/Forms/RegisterForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { register } from "../store/actions/auth";

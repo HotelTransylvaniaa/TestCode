@@ -29,7 +29,7 @@ export default function TopDestination() {
     {
       image:
         "https://pix6.agoda.net/geo/city/15897/1_15897_02.jpg?ca=6&ce=1&s=345x345&ar=1x1",
-      city: "Sharm El sheikh",
+      city: "Sharm El Sheikh",
       description: "573 accommodations",
     },
     {

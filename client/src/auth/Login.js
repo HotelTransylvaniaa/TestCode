@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/Forms/LoginForm";
 import { login } from "../store/actions/auth";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
