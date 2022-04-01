@@ -29,7 +29,7 @@ const city = [
 
 const Search = () => {
   const navigate = useNavigate();
-  // const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("");
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [room, setRoom] = useState("");
@@ -60,13 +60,13 @@ const Search = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     console.log(
-      searchTerm,
+      location,
       checkInDate.toString(),
       checkOutDate.toString(),
       room.label
     );
     navigate(
-      `/search-result?location=${searchTerm}&date-from=${checkInDate.toString()}to${checkOutDate.toString()}&room=${
+      `/search-result?location=${location}&date-from=${checkInDate.toString()}to${checkOutDate.toString()}&room=${
         room.label
       }`,
       {
