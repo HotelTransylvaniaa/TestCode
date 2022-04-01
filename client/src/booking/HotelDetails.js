@@ -57,7 +57,7 @@ export default function HotelDetails() {
             <div className="row gx-0">
               <div className="col-md-6">
                 <div className="position-relative">
-                  <img src={hotelDetails.images[0]} alt="" className="w-100" />
+                  <img src={hotelDetails.images[0]} alt="" className="w-100 h-100 mt-3 ps-2" />
                   <p className="position-absolute bottom-0 end-0 text-white me-5">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-camera-fill me-2" viewBox="0 0 16 16">
@@ -72,22 +72,50 @@ export default function HotelDetails() {
               <div className="col-md-6">
                 <div className="d-flex flex-wrap">
                   <div className="w-50">
-                    <img src={hotelDetails.images[1]} alt="" className="w-100" />
+                    <img src={hotelDetails.images[1]} alt="" className="w-100 h-100 mt-3 ps-2" />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[2]} alt="" className="w-100" />
+                    <img src={hotelDetails.images[2]} alt="" className="w-100 h-100 mt-3 ps-2 pe-2" />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[3]} alt="" className="w-100" />
+                    <img src={hotelDetails.images[3]} alt="" className="w-100 mt-4   ps-2 pe-2" />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[4]} alt="" className="w-100" />
+                    <img src={hotelDetails.images[4]} alt="" className="w-100  mt-4 ps-2 pe-2" />
                   </div>
                 </div>
               </div>
             </div>
           </Link>
         </div>
+
+        <div className='container border border-2 p-2 mt-3'>
+    <div className='row'>
+      <div className='col-md-12 p-1 '>
+      <span className='p-3 fs-3  '>{hotelDetails.name}</span>
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" className="bi bi-star-fill  me-1" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" className="bi bi-star-fill  me-1" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" className="bi bi-star-fill  me-1" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" className="bi bi-star-fill  me-1" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" className="bi bi-star-fill  me-1" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+          </svg>
+        <br></br>
+        <p className='ps-3 mt-2'>{hotelDetails.address.street} {hotelDetails.address.city}</p>
+        
+       
+      </div>
+    </div>
+
+</div> 
 
         <div className="bg-white mb-5">
           <div className="container">
@@ -233,7 +261,7 @@ export default function HotelDetails() {
                 <div className="card border rounded my-3 shadow" key={r.roomId}>
                   <div className="row g-0 text-center">
                     <div className="col-md-6 col-lg-4">
-                      <img src={r.images[0]} className="img-fluid h-100 p-1" alt="hotel" />
+                      <img src={r.images[0]} className="img-fluid w-100 h-75 p-1" alt="hotel" />
                     </div>
                     <div className="col-md-6 col-lg-3 border-end">
                       <div className="card-body text-start">
