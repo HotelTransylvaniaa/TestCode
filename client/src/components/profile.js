@@ -1,22 +1,21 @@
 import "./profile.css";
 import { useEffect, useState } from "react";
-// import NavAccount from "./navbar/NavAccount";
-import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
+ const passPattern=new  RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})")
  const { auth } = useSelector((state) => ({ ...state }));
- 
-  console.log(auth);
-  const dispatch = useDispatch();
 
   const [data, setData] = useState({
     userName: auth.userName,
     password: auth.userPassword,
   });
-
+  const [userFormErrors, setUserFormError] = useState({
+    userNameErr: null,
+    passwordErr: null,
+  });
   const [openEdit, setOpenEdit] = useState(false);
 
   useEffect(() => {}, [data]);
@@ -30,10 +29,28 @@ export default function Profile() {
         ...data,
         userName: e.target.value,
       });
+      setUserFormError({
+        ...userFormErrors,
+        userNameErr:
+          e.target.value.length === 0
+            ? "this filed is requird"
+            : e.target.value.length <2
+            ? "Name Length must bigger than 2"
+            : null,
+      });
     } else if (e.target.name === "password") {
       setData({
         ...data,
         password: e.target.value,
+      });
+      setUserFormError({
+        ...userFormErrors,
+        passwordErr:
+          e.target.value.length === 0
+            ? "this filed is requird"
+            :!passPattern.test(e.target.value)
+            ? "password lenght not less than 8 characters , contains at least one upercase"
+            : null,
       });
       
     }
@@ -104,8 +121,11 @@ export default function Profile() {
                             name="userName"
                             value={data.userName}
                             onChange={(e) => handelFormChange(e)}
-                            className="h-50 mt-auto ms-4"
+                            className="form-control w-50 h-50 mt-auto ms-4"
                           ></input>
+                            <div id="userName" className="text-danger form-text mt-5 ms-2">
+                              {userFormErrors.userNameErr}
+                           </div>
                         </>
                       ) : null}
                     </div>
@@ -140,8 +160,11 @@ export default function Profile() {
                         name="password"
                         value={data.password}
                         onChange={(e) => handelFormChange(e)}
-                        className=""
+                        className="form-control w-50"
                       ></input>
+                        <div id="password" className="text-danger form-text">
+                       {userFormErrors.passwordErr}
+                         </div>
                     </>
                   ) : null}
                   <div className="ms-auto">
@@ -158,6 +181,9 @@ export default function Profile() {
                     value="Save"
                     type="submit"
                     onClick={saveData}
+                    disabled={
+                      userFormErrors.userNameErr || userFormErrors.passwordErr
+                    }
                   >
                     Save
                   </button>
