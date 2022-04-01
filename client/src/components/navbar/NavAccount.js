@@ -2,9 +2,9 @@ import './NavAccount.css'
 import { NavLink } from "react-router-dom";
 import {useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 export default function NavAccount(){
-    const {auth}=useSelector((state)=>({...state}))
-     console.log(auth)
+   const {auth}=useSelector((state)=>({...state}))
     const dispatch=useDispatch()
     const logout=()=>{
         dispatch({
@@ -13,7 +13,9 @@ export default function NavAccount(){
         })
         window.localStorage.removeItem("auth")
     }
-    console.log(auth)
+    useEffect(()=>{
+     console.log(auth.userName,"in ues effect")
+    },[auth.userName])
     return(
         <div className="ms-1 d-flex">
             <div className="alpha-name d-flex justify-content-center align-items-center">

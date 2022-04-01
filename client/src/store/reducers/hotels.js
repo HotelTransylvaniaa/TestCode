@@ -1,6 +1,26 @@
 const INITIAL_STATE = {
     hotelsList: [],
-    hotelDetails: {},
+    hotelDetails: {
+      address: {},
+      images: [],
+      facilities: {
+        services: {},
+        relax: {},
+        internet: {},
+        access: {},
+        for_kids: {},
+        additional: [],
+        languages: {}
+      },
+      rooms: [{
+        images: [],
+        facilities: {},
+        roomOffers: {}
+      }],
+      contact: {
+        phone: []
+      }
+    }
   };
   
   export default function hotels(state = INITIAL_STATE, action) {

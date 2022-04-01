@@ -7,7 +7,8 @@ import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
-  const { auth } = useSelector((state) => ({ ...state }));
+ const { auth } = useSelector((state) => ({ ...state }));
+ 
   console.log(auth);
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ export default function Profile() {
     auth.userName = data.userName;
     auth.userPassword = data.password;
     console.log(auth);
-    localStorage.setItem("auth", JSON.stringify(auth));
+   window.localStorage.setItem("auth", JSON.stringify(auth));
     editProfile(auth);
   };
 

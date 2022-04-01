@@ -6,7 +6,7 @@ const Header = () => {
     <>
         <img 
           src="https://www.orbitaltravel.co.uk/application/files/6115/4808/7958/Complex.jpg"
-          height="500px"
+          height="550px"
           width="100%"
         />
         {/* <img 
@@ -19,10 +19,15 @@ const Header = () => {
           height="550px"
           width="100%"
         /> */}
+         {/* <img 
+          src="https://pix6.agoda.net/geo/city/6700/1_6700_02.jpg?ca=6&ce=1&s=1920x822"
+          height="500px"
+          width="100%"
+        /> */}
     </>
   );
 };
 
 export default Header;
-// 
+// https://pix6.agoda.net/geo/city/6700/1_6700_02.jpg?ca=6&ce=1&s=1920x822
 // "https://cdn.pixabay.com/photo/2016/07/01/14/55/hurghada-1491197_960_720.jpg"

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import queryString from "query-string";
-import Search from "../Forms/search";
-import HotelCard from "../cards/HotelCard";
+import Search from "../components/Forms/search";
+import HotelCard from "../components/cards/HotelCard";
 import { useDispatch, useSelector } from "react-redux";
-import { getSearchHotel } from "../../store/actions/hotels";
+import { getSearchHotel } from "../store/actions/hotels";
 
 import { useLocation } from "react-router-dom";
 const SearchResult = () => {

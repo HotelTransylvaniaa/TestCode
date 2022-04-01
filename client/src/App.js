@@ -1,13 +1,13 @@
-              import Home from "./booking/Home";
+import Home from "./booking/Home";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Navbar from "./components/navbar/MainNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hotels from "./booking/Hotels";
 import HotelDetails from "./booking/HotelDetails";
-import SearchResult from './components/hotels/SearchResult'
+import SearchResult from './booking/SearchResult'
 import TopDestinationPage from "./booking/TopdestinationPage";
-import ContactUs from './components/contactus'
+import ContactUs from './booking/contactus'
 import NotFound from "./booking/NotFound";
 import Profile from "./components/profile";
 import Booking from "./components/mybooking";

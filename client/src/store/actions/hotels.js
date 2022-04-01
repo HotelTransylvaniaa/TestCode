@@ -62,3 +62,5 @@ export const getSearchHotel = (query) => (dispatch) => {
     )
     .catch((err) => console.log(err));
 };
+
+export const postBookingData = async (bookingData) => await axiosInstance.post("/booking", bookingData)
