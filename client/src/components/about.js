@@ -38,7 +38,7 @@ const About = () => {
               safety measures. So, during your search, you may find details like
             </p>
             <div className="col-lg-3 col-md-6">
-              <div className="shadow bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
+              <div className="shadow bHover bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
                 <i class="fa-solid fa-hand-holding-droplet fs-3 pt-2 linner"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
                   Official health standards
@@ -50,7 +50,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="shadow bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
+              <div className="shadow bHover bg-light px-2 border text-center py-5 mb-3 h-100 rounded">
                 <i class="fa-solid fa-hand-sparkles fs-3 pt-2 linner"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
                   Essentials at the property
@@ -62,7 +62,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="shadow bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
+              <div className="shadow bHover bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
                 <i class="fa-solid fa-handshake-simple-slash fs-3 pt-2 linner"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
                   Social distancing
@@ -74,7 +74,7 @@ const About = () => {
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="shadow bg-primary px-2 border text-center py-5 text-light mb-3 h-100 rounded">
+              <div className="shadow bHover bg-light px-2 border text-center py-5 mb-3 h-100 rounded">
                 <i class="fa-solid fa-pump-soap fs-3 pt-2 linner"></i>
                 <h4 className="h-50 d-flex align-items-center justify-content-center">
                   Hygiene and sanitization

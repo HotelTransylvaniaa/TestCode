@@ -36,6 +36,14 @@ code {
 .linner{
   height: 50px;
   width: 50px;
-  background-color: rgba(255, 255, 255, 0.473);
+  background-color: rgba(128, 128, 128, 0.795);
   border-radius: 50%;
+}
+.bHover {
+  transition: transform 0.3s;
+  
+}
+.bHover:hover {
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1, 1.1);
 }

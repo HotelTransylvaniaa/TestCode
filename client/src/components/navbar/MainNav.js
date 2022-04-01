@@ -15,16 +15,16 @@ export default function Navbar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse text-end" id="navbarSupportedContent">
                     <ul className="navbar-nav mb-2 mb-lg-0">
                         <li className="nav-item me-2 fs-5">
-                        <Link className="nav-link"  to={"/"} exact="true">Home</Link>
+                        <Link className="nav-link text-end"  to={"/"} exact="true">Home</Link>
                         </li>
                         <li className="nav-item me-2 fs-5">
-                        <Link className="nav-link"  to={"/hotels"} exact="true">Hotels</Link>
+                        <Link className="nav-link text-end"  to={"/hotels"} exact="true">Hotels</Link>
                         </li>
                         <li className="nav-item me-2 fs-5">
-                        <Link className="nav-link"  to={"/contact-us"} exact="true">Contact Us</Link>
+                        <Link className="nav-link text-end"  to={"/contact-us"} exact="true">Contact Us</Link>
                         </li>
                     </ul>
                     {/* <div className="navUl d-flex justify-content-center align-items-center me-auto">
@@ -35,7 +35,7 @@ export default function Navbar() {
                         <NavLink className="me-3 text-decoration-none" to={""}>About</NavLink>
                         <NavLink className="me-3 text-decoration-none" to={"/contact-us"}>Contact Us</NavLink>
                     </div> */}
-                    <div className="d-flex ms-auto">
+                    <div className="d-flex ms-auto text-end">
                         {auth !== null && (<NavAccount />)}
                         {auth === null && (<NavSign />)}
                     </div>
