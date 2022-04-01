@@ -57,7 +57,7 @@ const Search = () => {
       <div className="searchBar p-0 mt-5">
         <div className="container my-1">
           <div className="row gx-2 py-4 justify-content-center">
-            <div className="col-4">
+            <div className="col-sm-12 col-md-4">
               <AlgoliaPlaces
                 placeholder="location"
                 defaultValue={location}
@@ -66,7 +66,7 @@ const Search = () => {
                 style={{ height: "50px" }}
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-12 col-md-2">
               <DatePicker
                 placeholder="checkInDate"
                 defaultValue={checkInDate}
@@ -77,7 +77,7 @@ const Search = () => {
                 style={{ height: "50px" }}
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-12 col-md-2">
               <DatePicker
                 placeholder="checkOutDate"
                 defaultValue={checkOutDate}
@@ -88,10 +88,10 @@ const Search = () => {
                 style={{ height: "50px" }}
               />
             </div>
-            <div className="col-2">
+            <div className="col-sm-12 col-md-2">
               <Select onChange={(value) => setRoom(value)} options={rooms} />
             </div>
-            <div className="col-1">
+            <div className="col-sm-12 col-md-1">
               <SearchOutlined
                 onClick={handleSubmit}
                 className="btn btn-primary btn-square p-2 mt-1 px-3"
