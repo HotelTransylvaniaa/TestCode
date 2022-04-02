@@ -6,7 +6,7 @@ const searchListings = require('../controllers/hotels')
 
 //get all hotels in db
 router.get("/hotels",(req,res,next)=>{
-    const data =controlHotels.find({}).then((data)=>{
+   controlHotels.find({}).then((data)=>{
         res.json(data);
     }).catch((err)=>{
         res.status(404).end()
@@ -17,17 +17,18 @@ router.get("/hotels",(req,res,next)=>{
 router.get("/hotels/:id",(req,res,next)=>{
     const {id}=req.params;
     controlHotels.findOne(id)
-    .then((user)=>{
-        res.json(user);
+    .then((hotel)=>{
+        res.json(hotel);
     })
     .catch(()=>{
         res.status(404).json({"err":"in valid id"})
     })
 })
 
+
 //get all hotels in city
 router.get("/hotels/city/:city",(req,res,next)=>{
-    const data =controlHotels.findByCityAndRating(req.params.city).then((data)=>{
+    controlHotels.findByCityAndRating(req.params.city).then((data)=>{
         res.json(data);
     }).catch((err)=>{
         res.status(404).json({"err":"in valid city"})

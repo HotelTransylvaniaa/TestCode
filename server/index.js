@@ -7,8 +7,6 @@ const fs =require("fs");
 require("dotenv").config()
 const port=process.env.PORT
 const url=process.env.DATABASE
-
-
 const app =express();
 
 app.use(express.json());

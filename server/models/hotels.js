@@ -178,7 +178,7 @@ const hotelsSchema=mongoose.Schema({
                 required:true 
             },
             capacity:{
-                type:String,
+                type:String, //number
                 required:true
             },
             images:{

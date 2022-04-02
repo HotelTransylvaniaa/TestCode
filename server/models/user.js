@@ -1,5 +1,5 @@
 const mongoose =require("mongoose");
-const bcrypt=require("bcrypt")
+const bcrypt=require("bcrypt");
 const userSchema=mongoose.Schema({
     userName:{
         type:String,
@@ -14,9 +14,6 @@ const userSchema=mongoose.Schema({
         type:String,
         required:true
     },
-    stripe_account_id:"",
-    srripe_seller:{},
-    srripeSession:{}
     
 },{timestamps:true})
 
@@ -24,7 +21,6 @@ const userSchema=mongoose.Schema({
 userSchema.pre('save',function(){
     const salt = bcrypt.genSaltSync(10);
     this.password = bcrypt.hashSync(this.password, salt);
-
 })
 
 

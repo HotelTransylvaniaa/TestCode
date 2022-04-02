@@ -14,7 +14,6 @@ const login = async (body) => {
   const userName = user.userName;
   const userPassword = user.password;
   const userId = user._id;
-
   console.log("auth Controllers", userId);
   console.log("auth Controllers", userPassword);
 
@@ -38,10 +37,10 @@ const login = async (body) => {
   }
 };
 const contactUs = async (body) => {
-  const { name, email, msg } = body;
   console.log(body);
   return Contact.create(body);
 };
+
 const profileEdit = async (body) => {
   let password = "";
   console.log("server auth", body.userPassword.charAt(0));
@@ -52,7 +51,6 @@ const profileEdit = async (body) => {
     const salt = bcrypt.genSaltSync(10);
     password = bcrypt.hashSync(body.userPassword, salt);
   }
-
   User.findByIdAndUpdate(
     body.userId,
     { userName: body.userName, password : password },

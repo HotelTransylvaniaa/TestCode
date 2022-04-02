@@ -44,7 +44,7 @@ const searchListings= (body) => {
   console.log(city[0])
   const roomType=room.toLowerCase();
   console.log(roomType)
-  return  Hotels.find({"address.city" :city[0] ,"rooms.roomType":roomType}).exec();
+  return  Hotels.find({"address.city" :city[0] ,"rooms.roomType":roomType});
 };
 
 
