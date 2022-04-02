@@ -30,7 +30,7 @@ export default function NavAccount() {
                 <ul className="dropdown-menu dropdown-menu-end mt-3 pt-0" aria-labelledby="navbarDropdown">
                     <li className="px-4 py-2 bg-light text-secondary">MY ACCOUNT</li>
                     <li>
-                        <NavLink className="text-decoration-none px-4 py-2" to={""}>My Bookings</NavLink>
+                        <NavLink className="text-decoration-none px-4 py-2" to={"booking"}>My Bookings</NavLink>
                     </li>
                     <li>
                         <NavLink className="text-decoration-none px-4 py-2" to={"profile"}>Profile</NavLink>
