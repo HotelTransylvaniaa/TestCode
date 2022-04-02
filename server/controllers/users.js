@@ -13,7 +13,8 @@ const create = (body) => {
 };
 
 const delOne = (id) => {
-  return User.findOneAndRemove(id.id);
+  console.log(id)
+  return User.findByIdAndDelete(id.id);
 };
 
 const editOne = (id, body) => {

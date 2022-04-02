@@ -10,5 +10,8 @@ export class UsersService {
   getUserList() {
     return this.http.get('http://localhost:8000/api/admin/users')
   }
+  deletUser(id:any){
+    return this.http.delete(`http://localhost:8000/api/admin/users/${id}`)
+  }
 
 }
