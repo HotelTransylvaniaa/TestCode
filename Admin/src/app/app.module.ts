@@ -14,6 +14,7 @@ import { EditBookingComponent } from './components/booking/edit-booking/edit-boo
 import { AddBookingComponent } from './components/booking/add-booking/add-booking.component';
 import { SideNavComponent } from './components/dashboard/side-nav/side-nav.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
     EditBookingComponent,
     AddBookingComponent,
     SideNavComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
