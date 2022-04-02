@@ -44,7 +44,7 @@ export default function TopDestination() {
       <div className="row">
         <h3 className="text-center my-5">Top Destinations in Egypt</h3>
         {destinations.map((destination) => (
-          <div className="col-6 col-md-2" key={destination.city}>
+          <div className="col-12 col-lg-2 col-md-6" key={destination.city}>
             <div>
             <Link to={`/hotels/city/${destination.city}`}> 
             <img src={destination.image} className="rounded-circle mx-auto d-block w-75 topDestImg"alt="destination"/></Link>

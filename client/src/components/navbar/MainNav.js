@@ -12,7 +12,7 @@ export default function Navbar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <NavLink className="navbar-brand mx-auto" to={"/"}>
+                <NavLink className="navbar-brand mx-auto ms-3" to={"/"}>
                     <img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" alt="" style={{ width: '75px' }} />
                 </NavLink>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,7 +24,7 @@ export default function Navbar() {
                             <Link className="nav-link" to={"/hotels"} exact="true">Hotels</Link>
                         </li>
                         <li className="nav-item me-2 fs-5 me-auto">
-                            <Link className="nav-link" to={"/contact-us"} exact="true">Contact Us</Link>
+                            <Link className="nav-link" to={"/contact-us"} exact="true">Contact us</Link>
                         </li>
                         <li className="nav-item my-auto">
                             {auth !== null && (<NavAccount />)}
