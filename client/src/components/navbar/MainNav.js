@@ -16,7 +16,7 @@ export default function Navbar() {
                     <img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" alt="" style={{ width: '75px' }} />
                 </NavLink>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mb-2 mb-lg-0 w-100">
+                    <ul className="navbar-nav ps-5 mb-2 mb-lg-0 w-100">
                         <li className="nav-item me-2 fs-5">
                             <Link className="nav-link" to={"/"} exact="true">Home</Link>
                         </li>
