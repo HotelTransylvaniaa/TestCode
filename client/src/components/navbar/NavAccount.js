@@ -19,7 +19,7 @@ export default function NavAccount() {
     return (
         <>
             <div className="dropdown">
-                <button className="border-0 bg-white pt-1 alpha-name d-flex justify-content-center align-items-center" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="border-0 bg-light pt-1 alpha-name d-flex justify-content-center align-items-center" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                     <span className="alpha d-flex rounded-pill me-1 justify-content-center align-items-center fw-bold text-white fs-5 text-capitalize">{auth.userName.charAt(0)}</span>
                     <span className='text-capitalize'>{auth.userName}</span>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-fill" viewBox="0 0 16 16">
