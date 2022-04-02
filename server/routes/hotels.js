@@ -75,5 +75,6 @@ router.post("/hotels/search-listings",(req,res,next)=>{
     })
 })
 //router.post("/hotels/search-listings",controlHotels.searchListings);
+//.....................................................................//
 
 module.exports=router;

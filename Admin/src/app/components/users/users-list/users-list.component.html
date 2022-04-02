@@ -1,1 +1,9 @@
-<p>users-list works!</p>
+
+{{Users}}
+<div class="container">
+  <div class="row">
+    <div class="col-4 rounded shadow m-2 p-0" style="width: 32%;" *ngFor=" let user of Users">
+      {{user.userEmail}}
+    </div>
+  </div>
+</div>
