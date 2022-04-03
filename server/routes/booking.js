@@ -45,6 +45,15 @@ router.patch("/booking/:id", (req, res, next) => {
         res.status(422).send(err.message);
     })
 })
-
+///////////////////////////////////////////////////
+router.get("/admin/booking/:id", (req, res, next) => {
+    const id=req.params
+    console.log(id)
+    controlBooking. findByid(id).then((data) => {
+        res.json(data);
+    }).catch((err) => {
+        res.status(404).end()
+    })
+})
 
 module.exports = router;
