@@ -30,7 +30,7 @@ import { UsersComponent } from './components/users/users.component';
     AddBookingComponent,
     SideNavComponent,
     DashboardComponent,
-    UsersComponent
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
