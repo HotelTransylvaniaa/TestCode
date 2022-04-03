@@ -13,6 +13,7 @@ router.get("/booking", (req, res, next) => {
 
 router.get("/booking/:id", (req, res, next) => {
     const id=req.params
+    console.log(id);
     controlBooking. findForUser(id).then((data) => {
         res.json(data);
     }).catch((err) => {
