@@ -259,7 +259,7 @@ export default function HotelDetails() {
           <div className="container">
             <p className="fs-1">Rooms Type</p>
             {
-              hotelDetails.rooms.map((r) => (
+              hotelDetails.rooms.map((r, index) => (
                 <div className="card border rounded my-3 shadow" key={r.roomId}>
                   <div className="row g-0 text-center">
                     <div className="col-md-6 col-lg-4">
@@ -372,7 +372,7 @@ export default function HotelDetails() {
                     </div>
                   </div>
                   <div className="d-flex p-3">
-                    {auth && auth.token ? <button className="btn btn-primary mt-5 ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    {auth && auth.token ? <button className="btn btn-primary mt-5 ms-auto" data-bs-toggle="modal" data-bs-target={`#exampleModal${index}`}>
                       Book
                     </button>
                       :
@@ -381,7 +381,7 @@ export default function HotelDetails() {
                       </button>}
                   </div>
 
-                  <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div className="modal fade" id={`exampleModal${index}`} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <ToastContainer />
                     <div className="modal-dialog modal-lg">
                       <div className="modal-content">
