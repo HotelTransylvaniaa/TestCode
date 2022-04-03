@@ -35,24 +35,6 @@ router.get("/hotels/city/:city", (req, res, next) => {
     })
 })
 
-router.delete("/hotels/:id", (req, res, next) => {
-    const id = req.params
-    controlHotels.delOne(id).then(() => {
-        res.status(200).end()
-    }).catch((err) => {
-        res.status(422).end()
-    })
-})
-
-router.post("/hotels", (req, res, next) => {
-    console.log(req.body);
-    controlHotels.create(req.body).then((user) => {
-        res.json(user);
-    }).catch((err) => {
-        res.status(422).send(err.message)
-    })
-})
-
 //hotels for search results
 router.post("/hotels/search-listings", (req, res, next) => {
     console.log("in search")
@@ -69,13 +51,12 @@ router.post("/hotels/search-listings", (req, res, next) => {
 
 
 router.get("/admin/hotels", (req, res, next) => {
-    controlHotels.find({}).then((data) => {
-        res.json(data);
+    controlHotels.find({}).then((hotels) => {
+        res.json(hotels);
     }).catch((err) => {
         res.status(404).end()
     })
 })
-
 router.get("/admin/hotels/:id", (req, res, next) => {
     const { id } = req.params;
     controlHotels.findOne(id)
@@ -96,8 +77,8 @@ router.delete("/admin/hotels/:id", (req, res, next) => {
 })
 router.patch("/admin/hotels/:id", (req, res, next) => {
     const id = req.params;
-    controlHotels.editOne(id, req.body).then((user) => {
-        res.json(user);
+    controlHotels.editOne(id, req.body).then((hotel) => {
+        res.json(hotel);
     }).catch((err) => {
         res.status(422).send(err.message);
     })
