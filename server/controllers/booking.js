@@ -7,7 +7,7 @@ const find = () => {
 
 //find by userID
 const findForUser = (id) => {
-    return BOOKING.find({userId:id});
+    return BOOKING.find({userId:id.id}).populate("hotelId");
 };
 
 const findByid = (id) => {
