@@ -49,25 +49,27 @@ export default function Profile() {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Hotel</th>
-                  <th scope="col">Date</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
                 </tr>
               </thead>
               <tbody>
-                  <div className="row">
-                    <div className="col-6">
+                <tr>
+                  <th scope="row"></th>
+                  <div className="col">
                     {bookingList.map((book) => (
-                    <h5>{book.hotelId.name}</h5>
-                  ))}
-                    </div>
-                    <div className="col-6">
-                    {bookingList.map((days) => (
-                    <h5>{days.BookingStartDate}</h5>
-                  ))}
-                    </div>
-
+                      <h5>{book.name}</h5>
+                    ))}
                   </div>
-                
+
+                  <div className="col">
+                    {bookingList.map((days) => (
+                      <h5>{Date(days.BookingStartDate)}</h5>
+                      // <h5>{days.BookingStartDate}</h5>
+                    ))}
+                  </div>
+                </tr>
               </tbody>
             </table>
 
