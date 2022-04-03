@@ -13,7 +13,7 @@ export default function Profile() {
 
   let bookingList = useSelector((state) => state.hotels.bookingList);
   console.log(bookingList);
-  console.log(bookingList[0].hotelId);
+  console.log(bookingList[3].hotelId);
 
   useEffect(() => {
     dispatch(getUserBooking(auth.userId));
@@ -42,16 +42,22 @@ export default function Profile() {
             </ul>
           </div>
           <div className="col-8 ps-5 mt-5">
-            <h4 className="fw-bold">My Booking count</h4>
-            <h5>{bookingList.length}</h5>
-
+            <div className="row">
+              <div className="col-6">
+                <h4 className="fw-bold">Your Booking count :</h4>
+              </div>
+              <div className="col">
+                <h5>{bookingList.length}</h5>
+              </div>
+            </div>
+            <h6 className="fw-bold">My Booking Details</h6>
             <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  
+                  <th scope="col-6">Hotel</th>
+                  <th scope="col-6">Time</th>
+                  {/* <th scope="col">Handle</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -59,21 +65,20 @@ export default function Profile() {
                   <th scope="row"></th>
                   <div className="col">
                     {bookingList.map((book) => (
-                      <h5>{book.name}</h5>
+                      <h5>{book.hotelId.name}</h5>
                     ))}
                   </div>
 
                   <div className="col">
                     {bookingList.map((days) => (
-                      <h5>{Date(days.BookingStartDate)}</h5>
-                      // <h5>{days.BookingStartDate}</h5>
+                      // <h5>{Date(days.BookingStartDate)}</h5>
+                      <h5>{days.BookingStartDate}</h5>
                     ))}
                   </div>
                 </tr>
               </tbody>
             </table>
 
-            {/* <h6 className="fw-bold">My Booking Details</h6> */}
             {/* {bookingList.map((book) => (
               <h5>{book.hotelId.name}</h5>
             ))}
