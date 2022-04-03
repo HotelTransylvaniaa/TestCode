@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
       <div class="col-4 rounded shadow m-2 p-0" style="width: 32%;" *ngFor=" let book of booking">
-           {{book._id}} 
+           {{book._id}} {{book.hotelId.name}} {{book.userId.userName}} 
            <input type="button" (click)="del(book._id)" class="bg-dark text-white "  value="delete">
       </div>
   

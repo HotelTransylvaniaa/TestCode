@@ -36,6 +36,7 @@ export default function Profile() {
           </div>
           <div className="col-8 ps-5 mt-5">
             <h4 className="fw-bold">My Booking count</h4>
+            <h6></h6>
             <h6 className="fw-bold">My Booking Details</h6>
           </div>
         </div>
