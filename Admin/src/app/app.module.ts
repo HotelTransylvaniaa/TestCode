@@ -12,9 +12,9 @@ import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.co
 import { BookingListComponent } from './components/booking/booking-list/booking-list.component';
 import { EditBookingComponent } from './components/booking/edit-booking/edit-booking.component';
 import { AddBookingComponent } from './components/booking/add-booking/add-booking.component';
-import { SideNavComponent } from './components/dashboard/side-nav/side-nav.component';
-import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { UsersComponent } from './components/users/users.component';
+import { AdminPageComponent } from './components/dashboard/admin-page/admin-page.component';
+import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,9 @@ import { UsersComponent } from './components/users/users.component';
     BookingListComponent,
     EditBookingComponent,
     AddBookingComponent,
-    SideNavComponent,
+    UsersComponent,
+    AdminPageComponent,
     DashboardComponent,
-    UsersComponent
   ],
   imports: [
     BrowserModule,
