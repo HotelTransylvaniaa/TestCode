@@ -7,11 +7,12 @@ import { useSelector } from "react-redux";
 import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
+import Moment from 'moment'
 
 export default function Profile() {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
-
+  Moment.locale('en');
   let bookingList = useSelector((state) => state.hotels.bookingList);
   console.log(bookingList);
   console.log(bookingList[0].hotelId);
@@ -19,6 +20,9 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUserBooking(auth.userId));
   }, []);
+  const deleteBooking =()=>{
+    
+  }
 
   return (
     <div className="bg-light my-5">
@@ -60,6 +64,7 @@ export default function Profile() {
                     <th scope="col-6">Hotel</th>
                     <th scope="col-6">Start Date</th>
                     <th scope="col-6">End Date</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -69,8 +74,9 @@ export default function Profile() {
                     <tr>
                       
                       <td>{book.hotelId.name}</td>
-                      <td>{book.BookingStartDate}</td>
-                      <td>{book.BookingEndDate}</td>
+                      <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
+                      <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
+                      <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td>
                     </tr>
                   ))}
                   {/* </>
