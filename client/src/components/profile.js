@@ -72,7 +72,7 @@ export default function Profile() {
           <div className="col-4 shadow py-4">
             <ul className="list-group">
               
-              <Link className="me-3 list-group-item list-group-item-action  border-light fs-5" to={"/profile"} exact="true">Profile</Link>
+              <Link className="me-3 active list-group-item list-group-item-action  border-light fs-5" to={"/profile"} exact="true">Profile</Link>
 
               <Link className="me-3 list-group-item list-group-item-action  border-light fs-5" to={"/booking"} exact="true">My Booking</Link>
             </ul>
