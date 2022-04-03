@@ -1,9 +1,26 @@
-
-{{Users}}
 <div class="container">
   <div class="row">
-    <div class="col-4 rounded shadow m-2 p-0" style="width: 32%;" *ngFor=" let user of Users">
-      {{user.userEmail}}
+    <div class="col-9 rounded  m-2 p-0">
+      <table class="table table-bordered border-primary shadow  caption-top">
+        <caption class="fs-4">List of users</caption>
+        <thead class="table-dark">
+          <tr class="mt-3">
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor="let user of Users">
+          <tr class="mt-3">
+            <th scope="row">{{user.userName}}</th>
+            <td>{{user.userEmail}}</td>
+            <td><i class="fa-solid fa-pen" ></i></td>
+          <td> <i class="fa-solid fa-trash-can" (click)="deleteUser(user._id)"></i></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+

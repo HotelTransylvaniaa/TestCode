@@ -2,12 +2,16 @@ const BOOKING = require("../models/Booking");
 
 //find all
 const find = () => {
-    return BOOKING.find();
+    return BOOKING.find().populate("userId").populate("hotelId");
 };
 
 //find by userID
 const findForUser = (id) => {
     return BOOKING.find({userId:id});
+};
+
+const findByid = (id) => {
+    return BOOKING.findById(id.id).populate("hotelId").populate("userId");
 };
 
 const create = (body) => {
@@ -17,7 +21,7 @@ const create = (body) => {
 
 const delOne = (id) => {
     //   User.find(title).remove().exec()
-    return BOOKING.findOneAndRemove(id.id);
+    return BOOKING.findByIdAndDelete(id.id);
 };
 
 const editOne = (id, body) => {
@@ -29,5 +33,6 @@ module.exports = {
     find,
     delOne,
     editOne,
-    findForUser
+    findForUser,
+    findByid
 };
