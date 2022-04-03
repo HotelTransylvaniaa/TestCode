@@ -2,7 +2,7 @@ const BOOKING = require("../models/Booking");
 
 //find all
 const find = () => {
-    return BOOKING.find();
+    return BOOKING.find().populate("userId").populate("hotelId");
 };
 
 //find by userID
@@ -11,7 +11,7 @@ const findForUser = (id) => {
 };
 
 const findByid = (id) => {
-    return BOOKING.findById(id.id).populate("hotelId");
+    return BOOKING.findById(id.id).populate("hotelId").populate("userId");
 };
 
 const create = (body) => {
