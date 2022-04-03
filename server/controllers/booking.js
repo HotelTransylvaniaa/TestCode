@@ -21,7 +21,7 @@ const create = (body) => {
 
 const delOne = (id) => {
     //   User.find(title).remove().exec()
-    return BOOKING.findOneAndRemove(id.id);
+    return BOOKING.findByIdAndDelete(id.id);
 };
 
 const editOne = (id, body) => {

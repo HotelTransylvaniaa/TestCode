@@ -56,4 +56,21 @@ router.get("/admin/booking/:id", (req, res, next) => {
     })
 })
 
-module.exports = router;
+router.get("/admin/booking", (req, res, next) => {
+    const data = controlBooking.find({}).then((data) => {
+        res.json(data);
+    }).catch((err) => {
+        res.status(404).end()
+    })
+})
+router.delete("/admin/booking/:id", (req, res, next) => {
+    const id = req.params
+    controlBooking.delOne(id).then(() => {
+        res.status(200).end()
+    }).catch((err) => {
+        res.status(422).end()
+    })
+})
+
+
+module.exports = router
