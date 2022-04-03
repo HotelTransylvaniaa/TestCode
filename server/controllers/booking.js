@@ -7,6 +7,7 @@ const find = () => {
 
 //find by userID
 const findForUser = (id) => {
+    console.log(id)
     return BOOKING.find({userId:id.id}).populate("hotelId");
 };
 
@@ -20,7 +21,6 @@ const create = (body) => {
 };
 
 const delOne = (id) => {
-    //   User.find(title).remove().exec()
     return BOOKING.findByIdAndDelete(id.id);
 };
 
