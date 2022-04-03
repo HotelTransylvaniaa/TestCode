@@ -13,6 +13,18 @@ export const getHotelsList = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
+export const getUserBooking = (id)=> (dispatch) =>{
+  axiosInstance
+  .get(`/booking/${id}`)
+    .then((res) =>
+      dispatch({
+        type: "GET_BOOKING_LIST",
+        payload: res.data,
+      })
+    )
+    .catch((err) => console.log(err));
+}
+
 export const getHotelsCity = (city) => (dispatch) => {
  console.log(city,"in action");
   axiosInstance
