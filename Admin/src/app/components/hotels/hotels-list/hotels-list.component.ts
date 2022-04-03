@@ -10,9 +10,18 @@ Hotels:any
   constructor(private service:HotelsService) { }
 
   ngOnInit(): void {
-    this.service.getHotelsList().subscribe(
-    (res)=>this.Hotels=res,
+    this.getHotels()
+  }
+
+  deleteHotel(id:any){
+    this.service.deleteHotelsById(id).subscribe(
+    (res)=>this.getHotels(),
     (err)=> {console.log(err)})
   }
 
+  getHotels(){
+    this.service.getHotelsList().subscribe(
+      (res)=>this.Hotels=res,
+      (err)=> {console.log(err)})
+  }
 }
