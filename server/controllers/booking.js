@@ -8,8 +8,6 @@ const find = () => {
 //find by userID
 const findForUser = (id) => {
     console.log(id)
-    const book= BOOKING.find({userId:id.id}).populate("hotelId");
-    console.log(book);
     return BOOKING.find({userId:id.id}).populate("hotelId");
 };
 
@@ -23,7 +21,6 @@ const create = (body) => {
 };
 
 const delOne = (id) => {
-    //   User.find(title).remove().exec()
     return BOOKING.findByIdAndDelete(id.id);
 };
 
