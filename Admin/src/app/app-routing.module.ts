@@ -4,7 +4,7 @@ import { HotelsListComponent } from './components/hotels/hotels-list/hotels-list
 
 
 const routes: Routes = [
-  {path:"/admin/hotels",component:HotelsListComponent }
+  // {path:"/admin/hotels",component:HotelsListComponent }
 ];
 
 @NgModule({
