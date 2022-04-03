@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
     hotelsList: [],
+    bookingList:[],
     hotelDetails: {
       address: {},
       images: [],
@@ -45,6 +46,11 @@ const INITIAL_STATE = {
           return {
             ...state,
             hotelsList: action.payload,
+          };
+          case "GET_BOOKING_LIST":
+          return {
+            ...state,
+            bookingList: action.payload,
           };
       default:
         return state;
