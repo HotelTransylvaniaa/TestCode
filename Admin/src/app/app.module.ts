@@ -13,6 +13,10 @@ import { AddBookingComponent } from './components/booking/add-booking/add-bookin
 import { UsersComponent } from './components/users/users.component';
 import { AdminPageComponent } from './components/dashboard/admin-page/admin-page.component';
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ ],
   bootstrap: [AppComponent]
