@@ -32,7 +32,7 @@ router.delete("/admin/users/:id",(req,res,next)=>{
     })
 })
 
-router.post("/admin/users/",(req,res,next)=>{
+router.post("/admin/users",(req,res,next)=>{
     console.log(req.body);
     controlUser.create(req.body).then((user)=>{
         res.json(user);
