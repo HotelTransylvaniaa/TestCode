@@ -20,9 +20,22 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUserBooking(auth.userId));
   }, []);
-  const deleteBooking =()=>{
-    
-  }
+
+  // const deleteBooking = (bookId)=>{
+  //   const newBook = [...bookingList];
+  //   const index = bookingList.findIndex((bookingList)=> bookingList.id === bookId);
+  //   newBook.splice(index ,1);
+  //   // setBookList(newBook);
+  // }
+  const [books ,setBooks] =useState ({
+    hotelName : auth.name,
+    startDate : auth.BookingStartDate,
+    endDate : auth.BookingEndDate
+  })
+//   const deleteBooking = (index) => {
+//     // const newItems = items && items.splice((element , i) => i !== index);
+//     // setItems(newItems);
+// }
 
   return (
     <div className="bg-light my-5">
@@ -76,7 +89,8 @@ export default function Profile() {
                       <td>{book.hotelId.name}</td>
                       <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
-                      <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td>
+                      {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
+                      <td><i class="fa-solid fa-trash" onClick={()=> setBooks((books)=> books.splice((_,i)=> i !==books.length -1))}></i></td>
                     </tr>
                   ))}
                   {/* </>
