@@ -1,0 +1,29 @@
+.app-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th,
+td{
+    border: 1px solid #ffffff;
+    padding: 8px;
+    font-size: 18px;
+}
+th{
+    background-color: rgb(117, 201, 250) !important;
+}
+td{
+    background-color: rgb(205, 235, 253) !important;
+}
+form td:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+form * {
+    font-size: 28px;
+}

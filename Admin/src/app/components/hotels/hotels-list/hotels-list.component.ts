@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HotelsService } from 'src/app/services/hotels.service';
 @Component({
   selector: 'app-hotels-list',
@@ -7,7 +8,7 @@ import { HotelsService } from 'src/app/services/hotels.service';
 })
 export class HotelsListComponent implements OnInit {
 Hotels:any
-  constructor(private service:HotelsService) { }
+  constructor(private service:HotelsService , private router:Router) { }
 
   ngOnInit(): void {
     this.getHotels()
@@ -23,5 +24,9 @@ Hotels:any
     this.service.getHotelsList().subscribe(
       (res)=>this.Hotels=res,
       (err)=> {console.log(err)})
+  }
+
+  goToEditHotel(id:any){
+    this.router.navigate([`/admin/hotel-edit/${id}`])
   }
 }

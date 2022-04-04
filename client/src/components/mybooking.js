@@ -1,4 +1,5 @@
 import "./profile.css";
+import "./mybooking.css";
 import { useEffect, useState } from "react";
 // import NavAccount from "./navbar/NavAccount";
 import { useDispatch } from "react-redux";
@@ -6,11 +7,12 @@ import { useSelector } from "react-redux";
 import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
+import Moment from 'moment'
 
 export default function Profile() {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
-
+  Moment.locale('en');
   let bookingList = useSelector((state) => state.hotels.bookingList);
   console.log(bookingList);
   console.log(bookingList[0].hotelId);
@@ -18,6 +20,9 @@ export default function Profile() {
   useEffect(() => {
     dispatch(getUserBooking(auth.userId));
   }, []);
+  const deleteBooking =()=>{
+    
+  }
 
   return (
     <div className="bg-light my-5">
@@ -42,42 +47,43 @@ export default function Profile() {
             </ul>
           </div>
           <div className="col-8 ps-5 mt-5">
-            <h4 className="fw-bold">My Booking count</h4>
-            <h5>{bookingList.length}</h5>
-
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Hotel</th>
-                  <th scope="col">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <div className="row">
-                    <div className="col-6">
-                    {bookingList.map((book) => (
-                    <h5>{book.hotelId.name}</h5>
+            <div className="row">
+              <div className="col-sm-8 col-lg-4">
+                <h4 className="fw-bold">Your Booking count :</h4>
+              </div>
+              <div className="col">
+                <h5>{bookingList.length}</h5>
+              </div>
+            </div>
+            <h5 className="fw-bold my-4">My Booking Details :</h5>
+            <div className="app-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col-6">Hotel</th>
+                    <th scope="col-6">Start Date</th>
+                    <th scope="col-6">End Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* {!bookingList.hotelId ? (
+                  <> */}
+                  {bookingList.map((book) => (
+                    <tr>
+                      
+                      <td>{book.hotelId.name}</td>
+                      <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
+                      <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
+                      <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td>
+                    </tr>
                   ))}
-                    </div>
-                    <div className="col-6">
-                    {bookingList.map((days) => (
-                    <h5>{days.BookingStartDate}</h5>
-                  ))}
-                    </div>
-
-                  </div>
-                
-              </tbody>
-            </table>
-
-            {/* <h6 className="fw-bold">My Booking Details</h6> */}
-            {/* {bookingList.map((book) => (
-              <h5>{book.hotelId.name}</h5>
-            ))}
-            {bookingList.map((days) => (
-              <h5>{days.BookingStartDate.toString()}</h5>
-            ))} */}
+                  {/* </>
+                ) : null} */}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
