@@ -18,6 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { UserBookingComponent } from './components/users/user-booking/user-booki
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatSliderModule,
   ],
   providers: [ ],
   bootstrap: [AppComponent]
