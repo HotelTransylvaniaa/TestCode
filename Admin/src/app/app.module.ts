@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UsersComponent,
     AdminPageComponent,
     DashboardComponent,
+    UserBookingComponent,
   ],
   imports: [
     BrowserModule,

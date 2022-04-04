@@ -1,26 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-9 rounded  m-2 p-0">
-      <table class="table table-bordered border-primary shadow  caption-top">
-        <caption class="fs-4">List of users</caption>
-        <thead class="table-dark">
-          <tr class="mt-3">
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Booking</th>
-            <th scope="col">Delete</th>
+      <p class="fs-4">List of users</p>
+      <table class="table table-borderless table-responsive p-4 shadow w-100">
+        <thead>
+          <tr class="mt-3 border-bottom" >
+            <th>Name</th>
+            <th>Email</th>
+            <th>Booking</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody  *ngFor="let user of Users">
-          <tr class="mt-3">
+          <tr class="mt-3 border-bottom">
             <th scope="row">{{user.userName}}</th>
             <td>{{user.userEmail}}</td>
-            <td><i class="fa-solid fa-pen" ></i></td>
-          <td> <i class="fa-solid fa-trash-can" (click)="deleteUser(user._id)"></i></td>
+            <td><i class="fa-solid fa-square-check" (click)="goTobooking(user._id)"></i></td>
+           <td> <i class="fa-solid fa-trash-can text-danger" (click)="deleteUser(user._id)"></i></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>
 

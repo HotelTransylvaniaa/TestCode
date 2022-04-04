@@ -1,0 +1,36 @@
+<div *ngIf="booking?.length === 0 ;then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>This user doesn't have any booking yet</ng-template>
+  <ng-template #elseBlock>
+    <div class="container">
+      <div class="row">
+          <p class="fs-4">List of users</p>
+          <table class="table table-borderless table-responsive p-4 shadow w-100">
+            <thead>
+              <tr class="mt-3 border-bottom" >
+                <th>Hotel Name</th>
+                <th>City</th>
+                <th>Room Type</th>
+                <th>Number Of Nights </th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Payment Price</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let book of booking">
+              <tr class="mt-3 border-bottom">
+                <th scope="row">{{book.hotelId.name}}</th>
+                <td>{{book.hotelId.address.city}}</td>
+                <td>{{book.hotelId.rating}}</td>
+                <td>{{book.numberOfNights}}</td>
+                <td>{{book.BookingStartDate|date : "fullDate"}}</td>
+                <td>{{book.BookingEndDate|date : "fullDate"}}</td>
+                 <td>{{book.PaymentPrice | currency:'USD':'symbol' }}</td>
+               <td> <i class="fa-solid fa-trash-can text-danger"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </ng-template>
+
