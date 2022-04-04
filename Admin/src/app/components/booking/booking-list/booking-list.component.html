@@ -18,6 +18,7 @@
         <h2>User Name : {{ book.userId.userName }}</h2>
         <p>booking ID : {{ book._id }}</p>
         <h2>Hotel Name : {{ book.hotelId.name }}</h2>
+        <h2>Hotel Address : {{ book.hotelId.address.city }}</h2>
         <div class="d-flex justify-content-center mb-4 mt-5">
         <i class="fa-solid fa-trash fs-4 " (click)="del(book._id)"></i>
         </div>

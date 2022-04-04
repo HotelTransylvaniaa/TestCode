@@ -70,6 +70,9 @@ export default function Profile() {
                   <tr>
                     
                     <th scope="col-6">Hotel</th>
+                    <th scope="col-6">Address</th>
+                    {/* <th scope="col-6">Payment Price</th> */}
+                    {/* <th scope="col-6">Count of rooms</th> */}
                     <th scope="col-6">Start Date</th>
                     <th scope="col-6">End Date</th>
                     <th></th>
@@ -81,6 +84,7 @@ export default function Profile() {
                   {bookingList.map((book) => (
                     <tr>  
                       <td>{book.hotelId.name}</td>
+                      <td>{book.hotelId.address.city}</td>
                       <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
