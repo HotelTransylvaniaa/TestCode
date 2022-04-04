@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from 'src/app/services/booking.service';
+import {MatTreeModule} from '@angular/material/tree';
 
 @Component({
   selector: 'app-booking-list',
@@ -8,10 +9,12 @@ import { BookingService } from 'src/app/services/booking.service';
 })
 export class BookingListComponent implements OnInit {
   booking:any
+  
   constructor(private service:BookingService) { }
 
   ngOnInit(): void {
     this.getbooking()
+    
   }
   del(id:any){
     this.service.deletebookingList(id).subscribe(

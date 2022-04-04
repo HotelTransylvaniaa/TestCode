@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 // import NavAccount from "./navbar/NavAccount";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
 import Moment from 'moment'
@@ -27,11 +26,7 @@ export default function Profile() {
   //   newBook.splice(index ,1);
   //   // setBookList(newBook);
   // }
-  const [books ,setBooks] =useState ({
-    hotelName : auth.name,
-    startDate : auth.BookingStartDate,
-    endDate : auth.BookingEndDate
-  })
+  const [books ,setBooks] =useState ("")
 //   const deleteBooking = (index) => {
 //     // const newItems = items && items.splice((element , i) => i !== index);
 //     // setItems(newItems);
@@ -84,13 +79,12 @@ export default function Profile() {
                   {/* {!bookingList.hotelId ? (
                   <> */}
                   {bookingList.map((book) => (
-                    <tr>
-                      
+                    <tr>  
                       <td>{book.hotelId.name}</td>
                       <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
-                      <td><i class="fa-solid fa-trash" onClick={()=> setBooks((books)=> books.splice((_,i)=> i !==books.length -1))}></i></td>
+                      <td><i class="fa-solid fa-trash" onClick={()=> setBooks((books)=> books.filter((_,i)=> i !==books.length -1))}></i></td>
                     </tr>
                   ))}
                   {/* </>
