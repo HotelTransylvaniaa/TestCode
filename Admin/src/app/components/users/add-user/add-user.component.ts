@@ -41,7 +41,13 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
   showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!',{
+    this.toastr.success('success',"",{
+      timeOut: 3000,
+      positionClass:'toast-top-right',
+    });
+  }
+  showError() {
+    this.toastr.error('error',"",{
       timeOut: 3000,
       positionClass:'toast-top-right',
     });
@@ -59,7 +65,7 @@ export class AddUserComponent implements OnInit {
     console.log(userName,userEmail,password);
    this.service.addUser({userName,userEmail,password}).subscribe(
     (res)=>this.showSuccess(),
-    (err)=> {console.log(err)
+    (err)=> {this.showError()
     })
   }
 
