@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
 import { deletBookingData } from "../store/actions/hotels";
 import Moment from 'moment'
-
+import { ToastContainer, toast } from "react-toastify";
 export default function Profile() {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
@@ -27,6 +27,7 @@ const deletBooking=(id,startdate)=>{
     dispatch(getUserBooking(auth.userId));
    }else{
      console.log("false can't be calceled");
+     toast.error("You can't delete this Please contact with Hotel");
 
    }
 }
@@ -35,6 +36,7 @@ useEffect(() => {
 }, []);
   return (
     <div className="bg-light py-5">
+            <ToastContainer />
       <div className="container">
         <div className="row ">
           <div className="col-4 shadow py-4">
