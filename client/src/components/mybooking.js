@@ -27,7 +27,7 @@ const deletBooking=(id,startdate)=>{
     dispatch(getUserBooking(auth.userId));
    }else{
      console.log("false can't be calceled");
-     toast.error("You can't delete this Please contact with Hotel");
+     toast.error("You can't cancel this, Please contact with Hotel");
 
    }
 }
