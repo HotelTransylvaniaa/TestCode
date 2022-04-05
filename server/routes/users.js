@@ -1,6 +1,7 @@
 
 const express=require("express");
 const controlUser=require("../controllers/users");
+const controlBooking = require("../controllers/booking");
 const router=express.Router();
 
 router.get("/admin/users",(req,res,next)=>{
@@ -14,7 +15,7 @@ controlUser.find({}).then((data)=>{
 
 router.get("/admin/users/:id",(req,res,next)=>{
     const {id}=req.params;
-    controlUser.findOne(id)
+    controlBooking.findUserBooking(id)
     .then((user)=>{
         res.json(user);
     })

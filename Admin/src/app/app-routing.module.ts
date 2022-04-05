@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
 import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.component';
 import { HotelsListComponent } from './components/hotels/hotels-list/hotels-list.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
   {path:"admin/hotel-edit/:id",component:EditHotelComponent },
   {path:"admin/booking",component:BookingListComponent},
   {path:"admin/users/add-user",component:AddUserComponent},
+  {path:"admin/users/user-booking/:id",component:UserBookingComponent},
+
 ];
 
 @NgModule({

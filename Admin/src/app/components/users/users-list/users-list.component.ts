@@ -1,5 +1,7 @@
 import { Component, OnInit,DoCheck ,OnChanges} from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -7,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UsersListComponent implements OnInit {
 Users:any
-  constructor(private service:UsersService) { }
+  constructor(private service:UsersService,private router :Router) { }
   ngOnInit(): void {
    this.getUsers()
   }
@@ -24,5 +26,7 @@ Users:any
       (err)=> {console.log(err)
       })
     }
-
+    goTobooking(id:any){
+      this.router.navigate(['/admin/users/user-booking',id])
+    }
 }

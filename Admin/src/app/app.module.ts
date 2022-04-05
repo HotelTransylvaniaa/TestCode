@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
 import { MatSliderModule } from '@angular/material/slider';
 
 
@@ -33,6 +34,7 @@ import { MatSliderModule } from '@angular/material/slider';
     UsersComponent,
     AdminPageComponent,
     DashboardComponent,
+    UserBookingComponent,
   ],
   imports: [
     BrowserModule,

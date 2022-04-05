@@ -14,8 +14,11 @@ export class UsersService {
     return this.http.delete(`http://localhost:8000/api/admin/users/${id}`)
   }
   addUser(user:any){
-    console.log(user)
     return this.http.post(`http://localhost:8000/api/admin/users`,user)
+  }
+  userBooking(id:any){
+    console.log(id)
+    return this.http.get(`http://localhost:8000/api/admin/users/${id}`)
   }
 
 }

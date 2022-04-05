@@ -11,6 +11,10 @@ const findForUser = (id) => {
     return BOOKING.find({userId:id.id}).populate("hotelId");
 };
 
+const findUserBooking = (id) => {
+    console.log(id)
+    return BOOKING.find({userId:id}).populate("hotelId").populate("userId");
+};
 const findByid = (id) => {
     return BOOKING.findById(id.id).populate("hotelId").populate("userId");
 };
@@ -34,5 +38,6 @@ module.exports = {
     delOne,
     editOne,
     findForUser,
-    findByid
+    findByid,
+    findUserBooking
 };
