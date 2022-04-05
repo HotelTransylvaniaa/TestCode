@@ -33,7 +33,7 @@ export default function Profile() {
 // }
 
   return (
-    <div className="bg-light my-5">
+    <div className="bg-light py-5">
       <div className="container">
         <div className="row ">
           <div className="col-4 shadow py-4">
