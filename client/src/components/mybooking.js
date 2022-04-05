@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
+import { deletBookingData } from "../store/actions/hotels";
 import Moment from 'moment'
 
 export default function Profile() {
@@ -13,25 +14,25 @@ export default function Profile() {
   const dispatch = useDispatch();
   Moment.locale('en');
   let bookingList = useSelector((state) => state.hotels.bookingList);
-  console.log(bookingList);
-  console.log(bookingList[0].hotelId);
-
-  useEffect(() => {
+  
+const deletBooking=(id,startdate)=>{
+   console.log(id,startdate);
+    let date=new Date(startdate);
+    console.log(date,"date")
+   var currentDate = new Date();
+   console.log(currentDate,"current Date");
+   if(date >currentDate){
+     console.log("true can be canceled")
+    deletBookingData(id)
     dispatch(getUserBooking(auth.userId));
-  }, []);
+   }else{
+     console.log("false can't be calceled");
 
-  // const deleteBooking = (bookId)=>{
-  //   const newBook = [...bookingList];
-  //   const index = bookingList.findIndex((bookingList)=> bookingList.id === bookId);
-  //   newBook.splice(index ,1);
-  //   // setBookList(newBook);
-  // }
-  const [books ,setBooks] =useState ("")
-//   const deleteBooking = (index) => {
-//     // const newItems = items && items.splice((element , i) => i !== index);
-//     // setItems(newItems);
-// }
-
+   }
+}
+useEffect(() => {
+  dispatch(getUserBooking(auth.userId));
+}, []);
   return (
     <div className="bg-light py-5">
       <div className="container">
@@ -65,7 +66,7 @@ export default function Profile() {
             </div>
             <h5 className="fw-bold my-4">My Booking Details :</h5>
             <div className="app-container mb-5 bg-gray table-responsive p-3">
-              <table class="table">
+              <table class="table shadow">
                 <thead>
                   <tr>
                     
@@ -75,6 +76,7 @@ export default function Profile() {
                     {/* <th scope="col-6">Count of rooms</th> */}
                     <th scope="col-6">Start Date</th>
                     <th scope="col-6">End Date</th>
+                    <th scope="col-6">Cancel</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -88,7 +90,7 @@ export default function Profile() {
                       <td>{Moment(book?.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book?.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
-                      <td><i class="fa-solid fa-trash text-danger" onClick={()=> setBooks((books)=> books.filter((_,i)=> i !==books.length -1))}></i></td>
+                      <td><i class="fa-solid fa-rectangle-xmark text-danger" onClick={()=> deletBooking(book?._id,book?.BookingStartDate)}></i></td>
                     </tr>
                   ))}
                   {/* </>

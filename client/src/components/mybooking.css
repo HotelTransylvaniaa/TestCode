@@ -28,7 +28,7 @@ td {
   border: none;
 }
 small {
-  color: darken(#ccc, 10%);
+  color: darken(rgb(243, 227, 227), 10%);
   font-weight: 600;
 }
 tr {
@@ -83,7 +83,7 @@ a:hover {
 }
 .custom-table tbody th small,
 .custom-table tbody td small {
-  color: #b3b3b3;
+  color: #d3cbcb;
   font-weight: 600;
 }
 .custom-table tbody tr {
@@ -109,7 +109,7 @@ a:hover {
   border: none !important;
 }
 .bg-gray {
-  background-color: rgb(227, 226, 226);
+  background-color: rgba(232, 232, 232, 0.145);
 }
 i {
   cursor: pointer;
