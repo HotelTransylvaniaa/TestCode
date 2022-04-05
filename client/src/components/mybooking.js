@@ -64,7 +64,7 @@ export default function Profile() {
               </div>
             </div>
             <h5 className="fw-bold my-4">My Booking Details :</h5>
-            <div className="app-container">
+            <div className="app-container mb-5 bg-gray table-responsive p-3">
               <table class="table">
                 <thead>
                   <tr>
@@ -88,7 +88,7 @@ export default function Profile() {
                       <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
-                      <td><i class="fa-solid fa-trash" onClick={()=> setBooks((books)=> books.filter((_,i)=> i !==books.length -1))}></i></td>
+                      <td><i class="fa-solid fa-trash text-danger" onClick={()=> setBooks((books)=> books.filter((_,i)=> i !==books.length -1))}></i></td>
                     </tr>
                   ))}
                   {/* </>
