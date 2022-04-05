@@ -19,13 +19,13 @@
             </thead>
             <tbody  *ngFor="let book of booking">
               <tr class="mt-3">
-                <th scope="row">{{book.hotelId.name}}</th>
-                <td>{{book.hotelId.address.city}}</td>
-                <td class="text-center">{{book.hotelId.rating}}</td>
-                <td class="text-center">{{book.numberOfNights}}</td>
-                <td>{{book.BookingStartDate|date : "fullDate"}}</td>
-                <td>{{book.BookingEndDate|date : "fullDate"}}</td>
-                 <td>{{book.PaymentPrice | currency:'USD':'symbol' }}</td>
+                <th scope="row">{{book.hotelId?.name}}</th>
+                <td>{{book.hotelId?.address.city}}</td>
+                <td class="text-center">{{book?.hotelId?.rating}}</td>
+                <td class="text-center">{{book?.numberOfNights}}</td>
+                <td>{{book?.BookingStartDate|date : "fullDate"}}</td>
+                <td>{{book?.BookingEndDate|date : "fullDate"}}</td>
+                 <td>{{book?.PaymentPrice | currency:'USD':'symbol' }}</td>
                <td> <i class="fa-solid fa-trash-can text-danger"></i></td>
               </tr>
             </tbody>
