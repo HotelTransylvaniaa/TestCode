@@ -83,10 +83,10 @@ export default function Profile() {
                   <> */}
                   {bookingList.map((book) => (
                     <tr>  
-                      <td>{book.hotelId.name}</td>
-                      <td>{book.hotelId.address.city}</td>
-                      <td>{Moment(book.BookingStartDate).format('ddd DD MMM YYYY')}</td>
-                      <td>{Moment(book.BookingEndDate).format('ddd DD MMM YYYY')}</td>
+                      <td>{book?.hotelId?.name}</td>
+                      <td>{book?.hotelId?.address.city}</td>
+                      <td>{Moment(book?.BookingStartDate).format('ddd DD MMM YYYY')}</td>
+                      <td>{Moment(book?.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
                       <td><i class="fa-solid fa-trash text-danger" onClick={()=> setBooks((books)=> books.filter((_,i)=> i !==books.length -1))}></i></td>
                     </tr>
