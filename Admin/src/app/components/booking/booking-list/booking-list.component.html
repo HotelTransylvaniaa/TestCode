@@ -1,17 +1,22 @@
-
 <div class="container my-5">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center g-4">
     <div
-      class="col-sm-12 col-md-6 col-lg-3 rounded border m-3 p-0"
+      class="col-sm-12 col-md-6 col-lg-4 rounded border p-0"
       *ngFor="let book of booking"
     >
       <div class="head bg-gray">
         <h2>User Name : {{ book.userId.userName }}</h2>
         <p>booking ID : {{ book._id }}</p>
       </div>
-      <div class="body bg-light ps-3 mt-3">
-        <P>HOTEL NAME : {{ book.hotelId?.name }}</P>
-        <P>HOTEL ADDRESS : {{ book.hotelId?.address.city }}</P>
+      <div class="body bg-light">
+        <img
+          [src]="book.hotelId.images[0]"
+          alt=""
+          style="width: 100%; height: 150px"
+          class="text-center"
+        />
+        <P class="ps-3 mt-3">HOTEL NAME : {{ book.hotelId?.name }}</P>
+        <P class="ps-3">HOTEL ADDRESS : {{ book.hotelId?.address.city }}</P>
         <div class="d-flex justify-content-center my-4">
           <i class="fa-solid fa-trash fs-4" (click)="del(book._id)"></i>
         </div>
