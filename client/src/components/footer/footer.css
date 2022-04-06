@@ -1,0 +1,53 @@
+#footer{
+    background-color: rgb(42, 42, 46);
+
+}
+.par{
+    color: rgb(215, 215, 219);
+    text-align: center;
+    font-size: 14px;
+}
+.ebjHhI,.fkjtiw,.ggJhqA,.kpSzED,.fxHrBM,.gGRsJv {
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-image: url(https://cdn6.agoda.net/images/sprite/bg-sprite-partner_v3.png);
+    width: 144px;
+    height: 48px;
+   
+}
+.ebjHhI{
+    background-position: 0px -90px;
+}
+.fkjtiw {
+    background-position: -144px -148px;
+}
+.ggJhqA{
+    background-position: 0px -148px;
+}
+.kpSzED{
+    background-position: -288px -148px;
+}
+.fxHrBM{
+    background-position: -144px -90px;
+}
+.gGRsJv{
+    background-position: -288px -90px;
+}
+.fOIEZQ {
+    width: 1132px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+}
+.lastp{
+    font-size: 12px;
+}
+.bUPGBM {
+    padding-top: 48px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: rgb(215, 215, 219);
+}
+.bUPGBM i:hover{
+    cursor:default;
+}
