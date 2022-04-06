@@ -35,7 +35,7 @@ useEffect(() => {
   dispatch(getUserBooking(auth.userId));
 }, []);
   return (
-    <div className="bg-light py-5">
+    <div className="bg-white py-5">
             <ToastContainer />
       <div className="container">
         <div className="row ">
@@ -67,8 +67,8 @@ useEffect(() => {
               </div>
             </div>
             <h5 className="fw-bold my-4">My Booking Details :</h5>
-            <div className="app-container mb-5 bg-gray table-responsive p-3">
-              <table class="table shadow">
+            <div className="app-container mb-5 table-responsive p-2">
+              <table class="table shadow bg-gray">
                 <thead>
                   <tr>
                     
@@ -92,7 +92,7 @@ useEffect(() => {
                       <td>{Moment(book?.BookingStartDate).format('ddd DD MMM YYYY')}</td>
                       <td>{Moment(book?.BookingEndDate).format('ddd DD MMM YYYY')}</td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
-                      <td><i class="fa-solid fa-rectangle-xmark text-danger" onClick={()=> deletBooking(book?._id,book?.BookingStartDate)}></i></td>
+                      <td><i class="fa-solid fa-rectangle-xmark text-danger d-flex justify-content-center" onClick={()=> deletBooking(book?._id,book?.BookingStartDate)}></i></td>
                     </tr>
                   ))}
                   {/* </>

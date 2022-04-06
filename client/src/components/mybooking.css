@@ -34,10 +34,10 @@ small {
 tr {
   transition: 0.3s all ease;
 }
-tr:focus {
+tbody tr:focus {
   background: white;
 }
-tr:hover {
+tbody tr:hover {
   background: white;
 }
 .td-box-wrap {
@@ -81,36 +81,27 @@ a:hover {
   font-weight: 600;
   border: none;
 }
-.custom-table tbody th small,
-.custom-table tbody td small {
-  color: #d3cbcb;
-  font-weight: 600;
-}
+
 .custom-table tbody tr {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-.custom-table tbody tr:hover,
-.custom-table tbody tr:focus {
-  background: #fff;
-}
+
 .custom-table .td-box-wrap {
   padding: 0;
 }
-.custom-table .box {
-  background: #fff;
-  border-radius: 4px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+
 .custom-table .box td,
 .custom-table .box th {
   border: none !important;
 }
 .bg-gray {
-  background-color: rgba(232, 232, 232, 0.145);
+  background-color: rgba(232, 232, 232, 0.982);
 }
 i {
   cursor: pointer;
+}
+.bg-white{
+  background-color: white;
 }
