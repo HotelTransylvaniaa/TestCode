@@ -28,5 +28,5 @@ export class BookingListComponent implements OnInit {
       (res)=>this.booking=res,
       (err)=> {console.log(err)})
   }
-
+ 
 }
