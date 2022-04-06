@@ -11,6 +11,7 @@ import ContactUs from './booking/contactus'
 import NotFound from "./booking/NotFound";
 import Profile from "./components/profile";
 import Booking from "./components/mybooking";
+import Footer from "./components/footer/footer";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
        <Route exact path="/search-result" element ={<SearchResult/>} />
        <Route path={"*"} element={<NotFound/>}/>
      </Routes>
+     <Footer/>
     </BrowserRouter>
   );
 }
