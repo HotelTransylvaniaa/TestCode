@@ -7,12 +7,14 @@ import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.co
 import { HotelsListComponent } from './components/hotels/hotels-list/hotels-list.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
+import { AddHotelComponent } from './components/hotels/add-hotel/add-hotel.component';
 
 
 const routes: Routes = [
   {path:"",component:DashboardComponent},
   {path:"admin/users",component:UsersComponent},
   {path:"admin/hotels",component:HotelsListComponent },
+  {path:"admin/hotel-add",component:AddHotelComponent},
   {path:"admin/hotel-edit/:id",component:EditHotelComponent },
   {path:"admin/booking",component:BookingListComponent},
   {path:"admin/users/add-user",component:AddUserComponent},
