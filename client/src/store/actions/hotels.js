@@ -13,17 +13,6 @@ export const getHotelsList = () => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const getUserBooking = (id)=> (dispatch) =>{
-  axiosInstance
-  .get(`/booking/${id}`)
-    .then((res) =>
-      dispatch({
-        type: "GET_BOOKING_LIST",
-        payload: res.data,
-      })
-    )
-    .catch((err) => console.log(err));
-}
 
 export const getHotelsCity = (city) => (dispatch) => {
  console.log(city,"in action");
@@ -75,4 +64,17 @@ export const getSearchHotel = (query) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const postBookingData = async (bookingData) => await axiosInstance.post("/booking", bookingData)
+export const getUserBooking = (id)=> (dispatch) =>{
+  axiosInstance
+  .get(`/booking/${id}`)
+    .then((res) =>
+      dispatch({
+        type: "GET_BOOKING_LIST",
+        payload: res.data,
+      })
+    )
+    .catch((err) => console.log(err));
+}
+
+export const postBookingData = async (bookingData) => await axiosInstance.post("/booking", bookingData);
+export const deletBookingData = async (id) => await axiosInstance.delete(`/booking/${id}`)

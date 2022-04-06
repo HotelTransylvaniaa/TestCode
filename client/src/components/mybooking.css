@@ -1,11 +1,3 @@
-body {
-  background-color: #efefef;
-  font-weight: 600;
-}
-p {
-  color: darken(#ccc, 10%);
-  font-weight: 600;
-}
 
 a {
   transition: 0.3s all ease;
@@ -16,10 +8,6 @@ a:hover {
 .content {
   padding: 7rem 0;
 }
-h2 {
-  font-size: 20px;
-}
-
 .custom-table {
   min-width: 900px;
 }
@@ -40,61 +28,25 @@ td {
   border: none;
 }
 small {
-  color: darken(#ccc, 10%);
+  color: darken(rgb(243, 227, 227), 10%);
   font-weight: 600;
 }
 tr {
   transition: 0.3s all ease;
 }
-tr:focus {
+tbody tr:focus {
   background: white;
 }
-tr:hover {
+tbody tr:hover {
   background: white;
 }
 .td-box-wrap {
   padding: 0;
 }
-.box {
-  background: white;
-  border-radius: 4px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+
 td,
 th {
   border: none !important;
-}
-
-body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  background-color: #efefef;
-  font-weight: 600;
-  font-size: large;
-}
-
-p {
-  color: #b3b3b3;
-  font-weight: 600;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 a {
@@ -111,9 +63,6 @@ a:hover {
   padding: 7rem 0;
 }
 
-h2 {
-  font-size: 20px;
-}
 
 .custom-table {
   min-width: 900px;
@@ -132,36 +81,27 @@ h2 {
   font-weight: 600;
   border: none;
 }
-.custom-table tbody th small,
-.custom-table tbody td small {
-  color: #b3b3b3;
-  font-weight: 600;
-}
+
 .custom-table tbody tr {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }
-.custom-table tbody tr:hover,
-.custom-table tbody tr:focus {
-  background: #fff;
-}
+
 .custom-table .td-box-wrap {
   padding: 0;
 }
-.custom-table .box {
-  background: #fff;
-  border-radius: 4px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+
 .custom-table .box td,
 .custom-table .box th {
   border: none !important;
 }
 .bg-gray {
-  background-color: rgb(227, 226, 226);
+  background-color: rgba(232, 232, 232, 0.982);
 }
 i {
   cursor: pointer;
+}
+.bg-white{
+  background-color: white;
 }

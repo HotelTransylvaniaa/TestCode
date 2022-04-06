@@ -19,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatSliderModule } from '@angular/material/slider';
     AdminPageComponent,
     DashboardComponent,
     UserBookingComponent,
+    EditHotelComponent,
   ],
   imports: [
     BrowserModule,
