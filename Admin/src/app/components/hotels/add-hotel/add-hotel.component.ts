@@ -11,11 +11,31 @@ export class AddHotelComponent implements OnInit {
   constructor(private fb : FormBuilder) {
     this.AddHotel = this.fb.group({
       inputName:['',[Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
-
       inputCountry: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(10)]],
       inputCity: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
       inputStreet: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(30)]],
-
+      inputImage: ['',[Validators.required]],
+      inputEnglish:[],
+      inputArabic:[],
+      inputFrench:[],
+      inputCashWithdrawal:[],
+      inputDailyHousekeeping:[],
+      inputDryCleaning:[],
+      inputSalon:[],
+      inputTours:[],
+      inputNightClub:[],
+      inputSauna:[],
+      inputSpa:[],
+      inputWifiPublic:[],
+      inputWifiInRoom:[],
+      inputPetsAllow:[],
+      inputSecurity:[],
+      inputFrontDesk:[],
+      inputKidsClub:[],
+      inputPlayground:[],
+      inputSwimmingPool:[],
+      inputRoomType:[],
+      inputRoomCount:[],
       }
     )
    }
