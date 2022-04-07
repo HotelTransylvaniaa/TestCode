@@ -16,7 +16,6 @@ const login = async (body) => {
   const userId = user._id;
   console.log("auth Controllers", userId);
   console.log("auth Controllers", userPassword);
-
   if (!valid) {
     throw "UN_AUTH";
   } else {
