@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +13,7 @@ import { AddHotelComponent } from './components/hotels/add-hotel/add-hotel.compo
 
 const routes: Routes = [
   {path:"",component:DashboardComponent},
+  {path:"admin/login",component:LoginComponent},
   {path:"admin/users",component:UsersComponent},
   {path:"admin/hotels",component:HotelsListComponent },
   {path:"admin/hotel-add",component:AddHotelComponent},

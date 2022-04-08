@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserBookingComponent } from './components/users/user-booking/user-booking.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.co
     DashboardComponent,
     UserBookingComponent,
     EditHotelComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
