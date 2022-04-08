@@ -1,38 +1,60 @@
-
-
 <section class="bg-light p-5">
-  <div class="container-fluid">
-    <div
-      class="card shadow border border-rounded bg-white mb-3"
-      *ngFor="let book of booking"
-    >
-      <div class="row p-3 justify-content-center align-items-center">
-        <div class="col-md-6 col-lg-2 border-end mb-2 py-3">
-          <p class="text-center">User Name : {{ book?.userId?.userName }}</p>
+  <div class="container">
+    <div class="card shadow border border-rounded bg-dark mb-3">
+      <div class="row p-2 justify-content-center align-items-center">
+        <div class="col-md-3 col-lg-2 border-end mb-2 border-white">
+          <p class="text-center text-white fw-bold mb-0">User Name</p>
         </div>
-        <div class="col-md-6 col-lg-2 border-end text-center mb-2">
-          <img
-            [src]="book?.hotelId?.images[0]"
-            alt=""
-            style="width: 90%; height: 100px"
-            class="text-center"
-          />
+        <div class="col-md-3 col-lg-2 border-end mb-2 border-white">
+          <p class="text-center text-white fw-bold mb-0">Hotel Image</p>
         </div>
-        <div class="col-md-6 col-lg-3 border-end mb-2 py-3">
-          <p class="text-center">HOTEL NAME : {{ book?.hotelId?.name }}</p>
+        <div class="col-md-3 col-lg-3 border-end mb-2">
+          <p class="text-center text-white fw-bold mb-0">Hotel Name</p>
         </div>
-        <div class="col-md-3 col-lg-2 border-end mb-2 py-3">
-          <p class="text-center">
-            HOTEL CITY : {{ book?.hotelId?.address?.city }}
-          </p>
+        <div class="col-md-3 col-lg-2 border-end mb-2">
+          <p class="text-center text-white fw-bold mb-0">Hotel Country</p>
         </div>
-        <div class="col-md-3 col-lg-2 border-end mb-2 py-3">
-          <p class="text-center">
-            HOTEL COUNTRY : {{ book?.hotelId?.address?.country }}
-          </p>
+        <div class="col-md-3 col-lg-2 border-end mb-2">
+          <p class="text-center text-white fw-bold mb-0">Hotel City</p>
         </div>
-        <div class="col-md-3 col-lg-1 border-end mb-2 py-3 text-center">
-          <i class="fa-solid fa-trash fs-4" (click)="del(book?._id)"></i>
+        <div class="col-md-3 col-lg-1 border-end mb-2 text-center">
+          <p class="text-center text-white fw-bold mb-0">Delete</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div
+        class="card shadow border border-rounded bg-white mb-3"
+        *ngFor="let book of booking"
+      >
+        <div class="row p-3 justify-content-center align-items-center">
+          <div class="col-md-6 col-lg-2 border-end mb-2 py-3">
+            <p class="text-center">{{ book?.userId?.userName }}</p>
+          </div>
+          <div class="col-md-6 col-lg-2 border-end text-center mb-2">
+            <img
+              [src]="book?.hotelId?.images[0]"
+              alt=""
+              style="width: 90%; height: 100px"
+              class="text-center"
+            />
+          </div>
+          <div class="col-md-6 col-lg-3 border-end mb-2 py-3">
+            <p class="text-center">{{ book?.hotelId?.name }}</p>
+          </div>
+          <div class="col-md-3 col-lg-2 border-end mb-2 py-3">
+            <p class="text-center">
+              {{ book?.hotelId?.address?.city }}
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 border-end mb-2 py-3">
+            <p class="text-center">
+             {{ book?.hotelId?.address?.country }}
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-1 border-end mb-2 py-3 text-center">
+            <i class="fa-solid fa-trash fs-4" (click)="del(book?._id)"></i>
+          </div>
         </div>
       </div>
     </div>
