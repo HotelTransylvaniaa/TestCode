@@ -28,7 +28,7 @@ router.post("/login", (req, res, next) => {
       res.status(422).send("wrong please try again");
     });
 });
-
+//auth
 router.post("/contactus", (req, res, next) => {
   console.log("in contactUs", req.body);
   authController
