@@ -20,233 +20,258 @@
           </div>
         </div>
 
-        <div class="row ">
+        <div class="row" formGroupName="inputAddress">
           <label class="fw-bold fs-5">Hotel Address</label>
-          <div class="mb-2 col-md-6 col-lg-4">
-            <label for="inputCountry" class="form-label fw-bold">Hotel Country</label>
-            <input type="text" class="form-control" id="inputCountry" required aria-describedby="inputCountry"
-              name="inputCountry" formControlName="inputCountry" />
-            <div class="pt-1 text-danger"
-              *ngIf="formControls['inputCountry'].touched && !formControls['inputCountry'].valid">
-              <small *ngIf="formControls['inputCountry'].errors?.['required']">
-                * this field is required
-              </small>
-              <small *ngIf="formControls['inputCountry'].errors?.['minlength']">
-                * Country should be more than 2
-              </small>
-              <small *ngIf="formControls['inputCountry'].errors?.['maxlength']">
-                * Country should be less than 10
-              </small>
+            <div class="mb-2 col-md-6 col-lg-4">
+              <label for="inputCountry" class="form-label fw-bold">Hotel Country</label>
+              <input type="text" class="form-control" id="inputCountry" required aria-describedby="inputCountry"
+                name="inputCountry" formControlName="inputCountry" />
+              <div class="pt-1 text-danger"
+                *ngIf="inputCountry?.touched && !inputCountry?.valid">
+                <small *ngIf="inputCountry?.errors?.['required']">
+                  * this field is required
+                </small>
+                <small *ngIf="inputCountry?.errors?.['minlength']">
+                  * Country should be more than 2
+                </small>
+                <small *ngIf="inputCountry?.errors?.['maxlength']">
+                  * Country should be less than 10
+                </small>
+              </div>
             </div>
-          </div>
-          <div class="mb-2 col-md-6 col-lg-4">
-            <label for="inputCity" class="form-label fw-bold">Hotel City</label>
-            <input type="text" class="form-control" id="inputCity" required aria-describedby="inputCity"
-              name="inputCity" formControlName="inputCity" />
-            <div class="pt-1 text-danger"
-              *ngIf="formControls['inputCity'].touched && !formControls['inputCity'].valid">
-              <small *ngIf="formControls['inputCity'].errors?.['required']">
-                * this field is required
-              </small>
-              <small *ngIf="formControls['inputCity'].errors?.['minlength']">
-                * City should be more than 2
-              </small>
-              <small *ngIf="formControls['inputCity'].errors?.['maxlength']">
-                * City should be less than 15
-              </small>
+            <div class="mb-2 col-md-6 col-lg-4">
+              <label for="inputCity" class="form-label fw-bold">Hotel City</label>
+              <input type="text" class="form-control" id="inputCity" required aria-describedby="inputCity"
+                name="inputCity" formControlName="inputCity" />
+              <div class="pt-1 text-danger"
+                *ngIf="inputCity?.touched && !inputCity?.valid">
+                <small *ngIf="inputCity?.errors?.['required']">
+                  * this field is required
+                </small>
+                <small *ngIf="inputCity?.errors?.['minlength']">
+                  * City should be more than 2
+                </small>
+                <small *ngIf="inputCity?.errors?.['maxlength']">
+                  * City should be less than 15
+                </small>
+              </div>
             </div>
-          </div>
-          <div class="mb-2 col-lg-4">
-            <label for="inputStreet" class="form-label fw-bold">Hotel Street</label>
-            <input type="text" class="form-control" id="inputStreet" required aria-describedby="inputStreet"
-              name="inputStreet" formControlName="inputStreet" />
-            <div class="pt-1 text-danger"
-              *ngIf="formControls['inputStreet'].touched && !formControls['inputStreet'].valid">
-              <small *ngIf="formControls['inputStreet'].errors?.['required']">
-                * this field is required
-              </small>
-              <small *ngIf="formControls['inputStreet'].errors?.['minlength']">
-                * Street should be more than 2
-              </small>
-              <small *ngIf="formControls['inputStreet'].errors?.['maxlength']">
-                * Street should be less than 30
-              </small>
+            <div class="mb-2 col-lg-4">
+              <label for="inputStreet" class="form-label fw-bold">Hotel Street</label>
+              <input type="text" class="form-control" id="inputStreet" required aria-describedby="inputStreet"
+                name="inputStreet" formControlName="inputStreet" />
+              <div class="pt-1 text-danger"
+                *ngIf="inputStreet?.touched && !inputStreet?.valid">
+                <small *ngIf="inputStreet?.errors?.['required']">
+                  * this field is required
+                </small>
+                <small *ngIf="inputStreet?.errors?.['minlength']">
+                  * Street should be more than 2
+                </small>
+                <small *ngIf="inputStreet?.errors?.['maxlength']">
+                  * Street should be less than 30
+                </small>
+              </div>
             </div>
-          </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3" formArrayName="inputImage">
           <div class="d-flex justify-content-center align-items-center">
             <label class="fw-bold fs-5">Hotel Images</label>
             <button type="button" class="ms-auto mb-1 btn btn-primary rounded-circle" (click)="addImageInput()">+</button>
           </div>
-          <div class="mb-2 d-flex justify-content-center align-items-center" *ngFor="let image of images.controls;let i=index">
-            <input type="text" class="form-control" required  name="inputImage{{i}}" formControlName="inputImage"/>
-            <button type="button" class="ms-2 btn btn-danger rounded-circle" (click)="removeImageInput(i)" *ngIf="images.length >1">-</button>
-          </div>
-          <div class="pt-1 text-danger" *ngIf="formControls['inputImage'].touched && !formControls['inputImage'].valid">
-            <small *ngIf="formControls['inputImage'].errors?.['required']">
-              * this field is required
-            </small>
+          <div *ngFor="let image of inputImage.controls;let i=index">
+            <span class="fw-bold">Hotel Image: {{i+1}}</span>
+            <div  class="mt-2 d-flex justify-content-center align-items-center">
+            <input type="text" class="form-control" required  name="inputImage{{i}}" [formControlName]="i"/>
+            <button type="button" class="ms-2 btn btn-danger rounded-circle" (click)="removeImageInput(i)" *ngIf="inputImage.length >1">-</button>
+            </div>
+            <div class="text-danger" *ngIf="inputImage.controls[i]?.touched && !inputImage.controls[i]?.valid">
+              <small *ngIf="inputImage.controls[i]?.errors?.['required']">
+                * this field is required
+              </small>
+            </div>
           </div>
         </div>
 
         <div>
           <label class="fw-bold fs-5">Facilities</label>
-            <div class="row ms-3 my-2">
-              <div class="clo-md-6 col-lg-3">
-                <span class="fw-bold">Languages</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputEnglish" formControlName="inputEnglish">
-                <span> English</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputArabic" formControlName="inputArabic">
-                <span> Arabic</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputFrench" formControlName="inputFrench">
-                <span> French</span>
-              </div>
-            </div>
-
-            <div class="row ms-3 my-2">
-              <div class="col-md-4">
-                <span class="fw-bold">Services</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputCashWithdrawal" formControlName="inputCashWithdrawal">
-                <span> Cash Withdrawal</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputDailyHousekeeping" formControlName="inputDailyHousekeeping">
-                <span> Daily Housekeeping</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputDryCleaning" formControlName="inputDryCleaning">
-                <span> Dry Cleaning</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputSalon" formControlName="inputSalon">
-                <span> Salon</span>
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputLanguage">
+                <div class="clo-md-6 col-lg-3">
+                  <span class="fw-bold">Languages</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputEnglish" formControlName="inputEnglish">
+                  <span> English</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputArabic" formControlName="inputArabic">
+                  <span> Arabic</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputFrench" formControlName="inputFrench">
+                  <span> French</span>
+                </div>
               </div>
             </div>
 
-            <div class="row ms-3 my-2">
-              <div class="col-sm-4">
-                <span class="fw-bold">Relax</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputTours" formControlName="inputTours">
-                <span> Tours</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputNightClub" formControlName="inputNightClub">
-                <span> Night Club</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputSauna" formControlName="inputSauna">
-                <span> Sauna</span>
-              </div>
-              <div class="col-md-4 col-lg-2">
-                <input type="checkbox" name="inputSpa" formControlName="inputSpa">
-                <span> Spa</span>
-              </div>
-            </div>
-
-            <div class="row ms-3 my-2">
-              <div class="col-md-4">
-                <span class="fw-bold"> Internet</span>
-              </div>
-              <div class="col-md-4">
-                <input type="checkbox" name="inputWifiPublic" formControlName="inputWifiPublic">
-                <span> Wifi Public</span>
-              </div>
-              <div class="col-md-4">
-                <input type="checkbox" name="inputWifiInRoom" formControlName="inputWifiInRoom">
-                <span> Wifi in Room</span>
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputServices">
+                <div class="col-md-4">
+                  <span class="fw-bold">Services</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputCashWithdrawal" formControlName="inputCashWithdrawal">
+                  <span> Cash Withdrawal</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputDailyHousekeeping" formControlName="inputDailyHousekeeping">
+                  <span> Daily Housekeeping</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputDryCleaning" formControlName="inputDryCleaning">
+                  <span> Dry Cleaning</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputSalon" formControlName="inputSalon">
+                  <span> Salon</span>
+                </div>
               </div>
             </div>
 
-            <div class="row ms-3 my-2">
-              <div class="clo-md-6 col-lg-3">
-                <span class="fw-bold"> Access</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputPetsAllow" formControlName="inputPetsAllow">
-                <span> Pets Allow</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputSecurity" formControlName="inputSecurity">
-                <span> Security</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputFrontDesk" formControlName="inputFrontDesk">
-                <span> Front Desk</span>
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputRelax">
+                <div class="col-sm-4">
+                  <span class="fw-bold">Relax</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputTours" formControlName="inputTours">
+                  <span> Tours</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputNightClub" formControlName="inputNightClub">
+                  <span> Night Club</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputSauna" formControlName="inputSauna">
+                  <span> Sauna</span>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                  <input type="checkbox" name="inputSpa" formControlName="inputSpa">
+                  <span> Spa</span>
+                </div>
               </div>
             </div>
 
-            <div class="row ms-3 my-2">
-              <div class="clo-md-6 col-lg-3">
-                <span class="fw-bold"> For Kids</span>
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputInternet">
+                <div class="col-md-4">
+                  <span class="fw-bold"> Internet</span>
+                </div>
+                <div class="col-md-4">
+                  <input type="checkbox" name="inputWifiPublic" formControlName="inputWifiPublic">
+                  <span> Wifi Public</span>
+                </div>
+                <div class="col-md-4">
+                  <input type="checkbox" name="inputWifiInRoom" formControlName="inputWifiInRoom">
+                  <span> Wifi in Room</span>
+                </div>
               </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputKidsClub" formControlName="inputKidsClub">
-                <span> Kids Club</span>
+            </div>
+
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputAccess">
+                <div class="clo-md-6 col-lg-3">
+                  <span class="fw-bold"> Access</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputPetsAllow" formControlName="inputPetsAllow">
+                  <span> Pets Allow</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputSecurity" formControlName="inputSecurity">
+                  <span> Security</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputFrontDesk" formControlName="inputFrontDesk">
+                  <span> Front Desk</span>
+                </div>
               </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputPlayground" formControlName="inputPlayground">
-                <span> Playground</span>
-              </div>
-              <div class="clo-md-6 col-lg-3">
-                <input type="checkbox" name="inputSwimmingPool" formControlName="inputSwimmingPool">
-                <span> Swimming Pool</span>
+            </div>
+
+            <div formGroupName="inputFacilities">
+              <div class="row ms-3 my-2" formGroupName="inputForKids">
+                <div class="clo-md-6 col-lg-3">
+                  <span class="fw-bold"> For Kids</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputKidsClub" formControlName="inputKidsClub">
+                  <span> Kids Club</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputPlayground" formControlName="inputPlayground">
+                  <span> Playground</span>
+                </div>
+                <div class="clo-md-6 col-lg-3">
+                  <input type="checkbox" name="inputSwimmingPool" formControlName="inputSwimmingPool">
+                  <span> Swimming Pool</span>
+                </div>
               </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" formArrayName="inputRoom">
           <div class="d-flex justify-content-center align-items-center">
             <label class="fw-bold fs-5">Hotel Rooms</label>
-            <!-- <button type="button" class="ms-auto mb-1 btn btn-primary rounded-circle" (click)="addRoomInput()">+</button> -->
+            <button type="button" class="ms-auto mb-1 btn btn-primary rounded-circle" (click)="addRoomInput()">+</button>
           </div>
-          <div class="ms-3 mb-2 row">
-            <div class="col-md-6 col-lg-3">
-              <span class="fw-bold">Room Type</span>
+          <div>
+            <div class="ms-3 mb-2 row">
+              <div class="col-md-6 col-lg-3">
+                <span class="fw-bold">Room Type</span>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="single"/>
+                <span> Single</span>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="double"/>
+                <span> Double</span>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="triple"/>
+                <span> Triple</span>
+              </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="single"/>
-              <span> Single</span>
+            <div class="ms-3 mb-2 row">
+              <div class="col-md-6 col-lg-3">
+                <span class="fw-bold">Room Count</span>
+              </div>
+              <div class="col-md-6 col-lg-9">
+                <input type="number" required  name="inputRoomCount" formControlName="inputRoomCount" min="1" />
+              </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="double"/>
-              <span> Double</span>
-            </div>
-            <div class="col-md-6 col-lg-3">
-              <input type="radio" name="inputRoomType" formControlName="inputRoomType" value="triple"/>
-              <span> Triple</span>
-            </div>
-          </div>
-          <div class="ms-3 mb-2 row">
-            <div class="col-md-6 col-lg-3">
-              <span class="fw-bold">Room Count</span>
-            </div>
-            <div class="col-md-6 col-lg-9">
-              <input type="number" required  name="inputRoomCount" formControlName="inputRoomCount" />
-              <span> Single</span>
+            <div class="ms-3 mb-2 row">
+              <div class="col-md-6 col-lg-3">
+                <span class="fw-bold">Room Capacity</span>
+              </div>
+              <div class="col-md-6 col-lg-9">
+                <input type="number" required  name="inputRoomCapacity" formControlName="inputRoomCapacity" min="1"/>
+              </div>
             </div>
           </div>
           <!-- <button type="button" class="ms-2 btn btn-danger rounded-circle" (click)="removeRoomInput(i)" *ngIf="images.length >1">-</button> -->
-          <div class="pt-1 text-danger" *ngIf="formControls['inputImage'].touched && !formControls['inputImage'].valid">
+          <!-- <div class="pt-1 text-danger" *ngIf="formControls['inputImage'].touched && !formControls['inputImage'].valid">
             <small *ngIf="formControls['inputImage'].errors?.['required']">
               * this field is required
             </small>
-          </div>
+          </div> -->
         </div>
 
         <div class="d-flex">
-          <button type="submit" class="btn btn-primary fw-bold ms-auto" [disabled]="AddHotel.invalid">Add Hotel</button>
+          <!-- [disabled]="AddHotel.invalid" -->
+          <button type="submit" class="btn btn-primary fw-bold ms-auto" >Add Hotel</button>
         </div>
       </form>
 
