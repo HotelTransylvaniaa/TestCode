@@ -27,7 +27,7 @@ export default function Mybooking() {
       deletBookingData(id);
       dispatch(getUserBooking(auth.userId));
     } else {
-      console.log("false can't be calceled");
+      console.log("false can't be canceled");
       toast.error("You can't cancel this, Please contact with Hotel");
     }
   };
