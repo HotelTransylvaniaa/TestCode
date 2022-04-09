@@ -3,6 +3,17 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Contact = require("../models/contactus");
 
+// let hashedPassword;
+// try{
+//   hashedPassword = await bcrypt.hash(password,12);
+// } catch (err){
+//   const error = new HttpError(
+//     'cold not create user ,please try again', 
+//     500
+//   );
+//   return next(error);
+// }
+
 const register = (body) => {
   return User.create(body);
 };
