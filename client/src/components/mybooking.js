@@ -25,7 +25,7 @@ export default function Mybooking() {
     if (date > currentDate) {
       console.log("true can be canceled");
       deletBookingData(id);
-      dispatch(getUserBooking(auth.userId));
+      dispatch(getUserBooking(auth?.userId));
     } else {
       console.log("false can't be calceled");
       toast.error("You can't cancel this, Please contact with Hotel");
@@ -33,7 +33,7 @@ export default function Mybooking() {
   };
 
   useEffect(() => {
-    dispatch(getUserBooking(auth.userId));
+    dispatch(getUserBooking(auth?.userId));
   }, []);
 
   return (

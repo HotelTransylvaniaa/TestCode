@@ -1,7 +1,7 @@
 import { axiosInstance } from "../../network/axios";
 import { useNavigate } from "react-router-dom";
 
-const authToken = JSON.parse(localStorage.getItem("auth"));
+
 
 // export const allHotels=()=>axiosInstance.get("/hotels")
 export const getHotelsList = () => (dispatch) => {
@@ -67,11 +67,12 @@ export const getSearchHotel = (query) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const getUserBooking = (id) => (dispatch) => {
+export const getUserBooking =(id) => (dispatch) => {
+  const authToken = JSON.parse(localStorage.getItem("auth"));
   axiosInstance
     .get(`/booking/${id}`, {
       headers: {
-        authorization: authToken.token,
+        authorization: authToken?.token,
       },
     })
     .then((res) =>
