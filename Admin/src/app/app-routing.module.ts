@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './components/notfound/not-found/not-found.component';
 import { IsauthGuard } from './isauth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"admin/booking",component:BookingListComponent,canActivate:[IsauthGuard]},
   {path:"admin/users/add-user",component:AddUserComponent,canActivate:[IsauthGuard]},
   {path:"admin/users/user-booking/:id",component:UserBookingComponent,canActivate:[IsauthGuard]},
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

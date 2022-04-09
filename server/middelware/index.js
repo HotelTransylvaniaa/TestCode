@@ -1,13 +1,3 @@
-// const expressJwt =require("express-jwt")
-
-//  const requireSignin=expressJwt({
-//     secret:"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh",
-//     algorithms:["HS256"]
-// })
-
-// module.exports=requireSignin
-
-
 
 const {promisify}=require("util")
 const jwt=require("jsonwebtoken")
