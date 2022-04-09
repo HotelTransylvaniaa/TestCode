@@ -1,6 +1,8 @@
 const express = require("express");
 const authController = require("../controllers/auth");
 const router = express.Router();
+const {userAuth} = require('../middelware/index');
+
 
 router.post("/register", (req, res, next) => {
   authController
@@ -27,7 +29,7 @@ router.post("/login", (req, res, next) => {
     });
 });
 
-router.post("/contactus", (req, res, next) => {
+router.post("/contactus",userAuth, (req, res, next) => {
   console.log("in contactUs", req.body);
   authController
     .contactUs(req.body)
@@ -40,7 +42,7 @@ router.post("/contactus", (req, res, next) => {
     });
 });
 
-router.patch("/profile", (req, res, next) => {
+router.patch("/profile",userAuth, (req, res, next) => {
   console.log("profile edit");
   authController
     .profileEdit(req.body)
