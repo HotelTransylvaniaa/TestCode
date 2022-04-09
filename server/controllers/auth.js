@@ -3,6 +3,17 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Contact = require("../models/contactus");
 
+// let hashedPassword;
+// try{
+//   hashedPassword = await bcrypt.hash(password,12);
+// } catch (err){
+//   const error = new HttpError(
+//     'cold not create user ,please try again', 
+//     500
+//   );
+//   return next(error);
+// }
+
 const register = (body) => {
   return User.create(body);
 };
@@ -16,7 +27,6 @@ const login = async (body) => {
   const userId = user._id;
   console.log("auth Controllers", userId);
   console.log("auth Controllers", userPassword);
-
   if (!valid) {
     throw "UN_AUTH";
   } else {
@@ -27,7 +37,7 @@ const login = async (body) => {
           userId: user.id,
         },
         "gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh",
-        { expiresIn: "8d" }
+        { expiresIn: "1h" }
       ),
       userEmail,
       userName,

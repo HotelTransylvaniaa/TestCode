@@ -59,7 +59,7 @@ export default function HotelDetails() {
             <div className="row gx-0">
               <div className="col-md-6">
                 <div className="position-relative">
-                  <img src={hotelDetails.images[0]} alt="" className="w-100 h-100 mt-3 ps-2" />
+                  <img src={hotelDetails.images[0]} alt="" className="w-100 h-100 mt-3 ps-2"style={{objectFit: "cover"}} />
                   <p className="position-absolute bottom-0 end-0 text-white me-5">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-camera-fill me-2" viewBox="0 0 16 16">
@@ -74,16 +74,16 @@ export default function HotelDetails() {
               <div className="col-md-6">
                 <div className="d-flex flex-wrap">
                   <div className="w-50">
-                    <img src={hotelDetails.images[1]} alt="" className="w-100 h-100 mt-3 ps-2" />
+                    <img src={hotelDetails.images[1]} alt="" className="w-100 h-100 mt-3 ps-2" style={{objectFit: "cover"}} />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[2]} alt="" className="w-100 h-100 mt-3 ps-2 pe-2" />
+                    <img src={hotelDetails.images[2]} alt="" className="w-100 h-100 mt-3 ps-2 pe-2"style={{objectFit: "cover"}} />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[3]} alt="" className="w-100 mt-4   ps-2 pe-2" />
+                    <img src={hotelDetails.images[3]} alt="" className="w-100 mt-4   ps-2 pe-2"style={{objectFit: "cover"}} />
                   </div>
                   <div className="w-50">
-                    <img src={hotelDetails.images[4]} alt="" className="w-100  mt-4 ps-2 pe-2" />
+                    <img src={hotelDetails.images[4]} alt="" className="w-100  mt-4 ps-2 pe-2"style={{objectFit: "cover"}} />
                   </div>
                 </div>
               </div>

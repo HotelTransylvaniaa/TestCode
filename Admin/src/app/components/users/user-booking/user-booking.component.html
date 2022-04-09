@@ -26,7 +26,7 @@
                 <td>{{book?.BookingStartDate|date : "fullDate"}}</td>
                 <td>{{book?.BookingEndDate|date : "fullDate"}}</td>
                  <td>{{book?.PaymentPrice | currency:'USD':'symbol' }}</td>
-               <td> <i class="fa-solid fa-trash-can text-danger"></i></td>
+               <td> <i class="fa-solid fa-trash-can text-danger" (click)="deleteUserBooking(book?._id)"></i></td>
               </tr>
             </tbody>
           </table>

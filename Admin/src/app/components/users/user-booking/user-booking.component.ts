@@ -21,5 +21,8 @@ export class UserBookingComponent implements OnInit {
       (err)=> {console.log(err)
       })
   }
+  deleteUserBooking(id:any){
+     console.log(id)
+  }
 
 }

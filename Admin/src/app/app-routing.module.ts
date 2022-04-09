@@ -1,3 +1,5 @@
+import { IsauthGuard } from './isauth.guard';
+import { LoginComponent } from './components/login/login.component';
 import { AddUserComponent } from './components/users/add-user/add-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,15 +13,15 @@ import { AddHotelComponent } from './components/hotels/add-hotel/add-hotel.compo
 
 
 const routes: Routes = [
-  {path:"",component:DashboardComponent},
-  {path:"admin/users",component:UsersComponent},
-  {path:"admin/hotels",component:HotelsListComponent },
-  {path:"admin/hotel-add",component:AddHotelComponent},
-  {path:"admin/hotel-edit/:id",component:EditHotelComponent },
-  {path:"admin/booking",component:BookingListComponent},
-  {path:"admin/users/add-user",component:AddUserComponent},
-  {path:"admin/users/user-booking/:id",component:UserBookingComponent},
-
+  {path:"",component:DashboardComponent,canActivate:[IsauthGuard]},
+  {path:"login",component:LoginComponent},
+  {path:"admin/users",component:UsersComponent,canActivate:[IsauthGuard]},
+  {path:"admin/hotels",component:HotelsListComponent,canActivate:[IsauthGuard] },
+  {path:"admin/hotel-add",component:AddHotelComponent,canActivate:[IsauthGuard]},
+  {path:"admin/hotel-edit/:id",component:EditHotelComponent,canActivate:[IsauthGuard] },
+  {path:"admin/booking",component:BookingListComponent,canActivate:[IsauthGuard]},
+  {path:"admin/users/add-user",component:AddUserComponent,canActivate:[IsauthGuard]},
+  {path:"admin/users/user-booking/:id",component:UserBookingComponent,canActivate:[IsauthGuard]},
 ];
 
 @NgModule({
