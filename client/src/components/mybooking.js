@@ -7,36 +7,38 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getUserBooking } from "../store/actions/hotels";
 import { deletBookingData } from "../store/actions/hotels";
-import Moment from 'moment'
+import Moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
-export default function Profile() {
+
+export default function Mybooking() {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
-  Moment.locale('en');
+  Moment.locale("en");
   let bookingList = useSelector((state) => state.hotels.bookingList);
-  
-const deletBooking=(id,startdate)=>{
-   console.log(id,startdate);
-    let date=new Date(startdate);
-    console.log(date,"date")
-   var currentDate = new Date();
-   console.log(currentDate,"current Date");
-   if(date >currentDate){
-     console.log("true can be canceled")
-    deletBookingData(id)
-    dispatch(getUserBooking(auth.userId));
-   }else{
-     console.log("false can't be calceled");
-     toast.error("You can't cancel this, Please contact with Hotel");
 
-   }
-}
-useEffect(() => {
-  dispatch(getUserBooking(auth.userId));
-}, []);
+  const deletBooking = (id, startdate) => {
+    console.log(id, startdate);
+    let date = new Date(startdate);
+    console.log(date, "date");
+    var currentDate = new Date();
+    console.log(currentDate, "current Date");
+    if (date > currentDate) {
+      console.log("true can be canceled");
+      deletBookingData(id);
+      dispatch(getUserBooking(auth.userId));
+    } else {
+      console.log("false can't be calceled");
+      toast.error("You can't cancel this, Please contact with Hotel");
+    }
+  };
+
+  useEffect(() => {
+    dispatch(getUserBooking(auth.userId));
+  }, []);
+
   return (
     <div className="bg-white py-5">
-            <ToastContainer />
+      <ToastContainer />
       <div className="container">
         <div className="row ">
           <div className="col-4 shadow py-4">
@@ -71,7 +73,6 @@ useEffect(() => {
               <table class="table shadow bg-gray">
                 <thead>
                   <tr>
-                    
                     <th scope="col-6">Hotel</th>
                     <th scope="col-6">Address</th>
                     {/* <th scope="col-6">Payment Price</th> */}
@@ -86,13 +87,26 @@ useEffect(() => {
                   {/* {!bookingList.hotelId ? (
                   <> */}
                   {bookingList.map((book) => (
-                    <tr>  
+                    <tr>
                       <td>{book?.hotelId?.name}</td>
                       <td>{book?.hotelId?.address.city}</td>
-                      <td>{Moment(book?.BookingStartDate).format('ddd DD MMM YYYY')}</td>
-                      <td>{Moment(book?.BookingEndDate).format('ddd DD MMM YYYY')}</td>
+                      <td>
+                        {Moment(book?.BookingStartDate).format(
+                          "ddd DD MMM YYYY"
+                        )}
+                      </td>
+                      <td>
+                        {Moment(book?.BookingEndDate).format("ddd DD MMM YYYY")}
+                      </td>
                       {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
-                      <td><i class="fa-solid fa-rectangle-xmark text-danger d-flex justify-content-center" onClick={()=> deletBooking(book?._id,book?.BookingStartDate)}></i></td>
+                      <td>
+                        <i
+                          class="fa-solid fa-rectangle-xmark text-danger d-flex justify-content-center"
+                          onClick={() =>
+                            deletBooking(book?._id, book?.BookingStartDate)
+                          }
+                        ></i>
+                      </td>
                     </tr>
                   ))}
                   {/* </>

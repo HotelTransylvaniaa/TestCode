@@ -1,6 +1,8 @@
 const express = require("express");
 const authController = require("../controllers/auth");
 const router = express.Router();
+const {userAuth} = require('../middelware/index');
+
 
 router.post("/register", (req, res, next) => {
   authController
@@ -39,8 +41,8 @@ router.post("/contactus", (req, res, next) => {
       res.status(422).send("contactUs wrong please try again");
     });
 });
-//auth
-router.patch("/profile", (req, res, next) => {
+
+router.patch("/profile",userAuth, (req, res, next) => {
   console.log("profile edit");
   authController
     .profileEdit(req.body)

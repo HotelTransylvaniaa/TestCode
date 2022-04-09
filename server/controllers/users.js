@@ -1,4 +1,19 @@
 const User = require("../models/user");
+const bcrypt = require("bcrypt");
+
+// let hashedPassword;
+// try {
+//   hashedPassword = await bcrypt.hash(password, 12);
+// } catch (err) {
+//   const error = new HttpError("could npt create user ,please true again.", 500);
+//   //return
+//   next(error);
+// }
+// const createUser = new User({
+//   userName ,
+//   userEmail ,
+//   password : hashedPassword,
+// })
 
 const findOne = (id) => {
   return User.findById(id);

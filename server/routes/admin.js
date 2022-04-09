@@ -5,7 +5,7 @@ const controlBooking = require("../controllers/booking");
 const adminControler=require("../controllers/admin");
 const controlHotels=require("../controllers/hotels");
 const router=express.Router();
-const auth=require("../middelware/index")
+const {auth} =require("../middelware/index")
 
 //admin
 router.get("/admin",auth,(req,res,next)=>{
