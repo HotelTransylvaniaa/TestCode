@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
@@ -10,8 +11,9 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
  token:any
-  constructor() {
-    this.token=localStorage.getItem("token")
+  constructor(private sevice:AuthService) {
+    console.log(localStorage.getItem("token"),"in interceptor")
+   this.token=localStorage.getItem("token")
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
       (res:any)=>{localStorage.setItem('token',res)
       this.router.navigate([""])
     },
-      (err)=>console.log(err)
+      (err)=>console.log(err,"in login ts")
     )
 
   }

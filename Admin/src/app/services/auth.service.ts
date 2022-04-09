@@ -8,7 +8,10 @@ export class AuthService {
 token:any;
   constructor(private router:Router) { }
   getToken(){
-    console.log(!!localStorage.getItem("token"))
+    console.log(!!localStorage.getItem("token"),"in auth")
    return !!localStorage.getItem("token")
+  }
+  getValueOfToken(){
+    return localStorage.getItem("token")
   }
 }

@@ -26,7 +26,7 @@ const login = async (body) => {
           userId: user.id,
         },
         "gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh",
-        { expiresIn: "8d" }
+        { expiresIn: "1h" }
       ),
       userEmail,
       userName,

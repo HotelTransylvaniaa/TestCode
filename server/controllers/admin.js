@@ -32,7 +32,7 @@ const login= async({email,password})=>{
    else{
     return jwt.sign({
         email,adminId:user._id
-    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '1d' })
+    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '1d' },)
 }}
 
 module.exports = {
