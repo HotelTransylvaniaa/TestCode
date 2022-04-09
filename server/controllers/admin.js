@@ -27,7 +27,6 @@ const editOne = (id, body) => {
 const login= async({email,password})=>{
     const user=await Admin.findOne({email});
     const valid=await bcrypt.compare(password,user.password);  
-    console.log(valid)
     if(!valid){throw "UN_AUTH"}
    else{
     return jwt.sign({

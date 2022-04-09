@@ -11,7 +11,4 @@ token:any;
     console.log(!!localStorage.getItem("token"),"in auth")
    return !!localStorage.getItem("token")
   }
-  getValueOfToken(){
-    return localStorage.getItem("token")
-  }
 }

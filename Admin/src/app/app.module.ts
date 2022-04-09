@@ -22,6 +22,7 @@ import { UserBookingComponent } from './components/users/user-booking/user-booki
 import { MatSliderModule } from '@angular/material/slider';
 import { EditHotelComponent } from './components/hotels/edit-hotel/edit-hotel.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/notfound/not-found/not-found.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { LoginComponent } from './components/login/login.component';
     UserBookingComponent,
     EditHotelComponent,
     LoginComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

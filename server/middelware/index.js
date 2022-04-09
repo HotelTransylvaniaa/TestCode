@@ -1,15 +1,7 @@
-// const expressJwt =require("express-jwt")
 
-//  const requireSignin=expressJwt({
-//     secret:"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh",
-//     algorithms:["HS256"]
-// })
-
-// module.exports=requireSignin
-
-const { promisify } = require("util");
-const jwt = require("jsonwebtoken");
-const verify = promisify(jwt.verify);
+const {promisify}=require("util")
+const jwt=require("jsonwebtoken")
+const verify=promisify(jwt.verify);
 const Admin = require("../models/admin");
 const User = require("../models/user");
 
