@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 const bcrypt=require("bcrypt");
 const adminSchema=mongoose.Schema({
-    name:{
+    email:{
         type:String,
         required:true,
     },
@@ -16,5 +16,5 @@ adminSchema.pre('save',function(){
 })
 
 const AdminModel=mongoose.model("Admin",adminSchema);
-// const admin=new AdminModel({name:"admin",password:"admin@123"});
+// const admin=new AdminModel({email:"admin123@gmail.com",password:"admin@123"});
 module.exports=AdminModel;

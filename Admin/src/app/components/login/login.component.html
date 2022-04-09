@@ -1,1 +1,40 @@
-<p>login works!</p>
+
+<form class="m-5" #RegisterForm="ngForm" (ngSubmit)="submitRegForm(RegisterForm)">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email"
+       class="form-control"
+       id="email"
+       aria-describedby="email"
+       required
+       ngModel
+       name="email"
+       [pattern]="emailPattern"
+      #emailadd="ngModel">
+      <div class="text-danger" *ngIf="emailadd.touched && !emailadd.valid">
+        <small *ngIf="emailadd.errors?.['required']">
+          this field is required
+        </small>
+        <small *ngIf="emailadd.errors?.['pattern']">
+          Email not valid
+        </small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+      type="password"
+      class="form-control"
+      id="password"
+      required
+      ngModel
+      name="password"
+      #pass="ngModel">
+      <div class="text-danger" *ngIf="pass.touched && !pass.valid">
+        <small *ngIf="pass.errors?.['required']">
+          this field is required
+        </small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

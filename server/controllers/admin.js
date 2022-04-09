@@ -24,15 +24,15 @@ const editOne = (id, body) => {
 };
 
 
-const login= async({name,password})=>{
-    const user=await Admin.findOne({name});
+const login= async({email,password})=>{
+    const user=await Admin.findOne({email});
     const valid=await bcrypt.compare(password,user.password);  
     console.log(valid)
     if(!valid){throw "UN_AUTH"}
    else{
     return jwt.sign({
-        name,adminId:user._id
-    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '1h' })
+        email,adminId:user._id
+    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '1d' })
 }}
 
 module.exports = {
