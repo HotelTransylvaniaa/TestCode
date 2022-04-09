@@ -29,7 +29,7 @@ router.post("/login", (req, res, next) => {
     });
 });
 
-router.post("/contactus",userAuth, (req, res, next) => {
+router.post("/contactus", (req, res, next) => {
   console.log("in contactUs", req.body);
   authController
     .contactUs(req.body)

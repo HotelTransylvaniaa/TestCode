@@ -29,7 +29,6 @@ function App() {
        <Route exact path="/register" element ={<Register/>} />
        <Route exact path="/Profile" element ={<Profile/>} />
        <Route exact path="/Booking" element ={<Booking/>} />
-
        <Route exact path="/search-result" element ={<SearchResult/>} />
        <Route path={"*"} element={<NotFound/>}/>
      </Routes>
