@@ -11,6 +11,7 @@ const find = () => {
 
 // for top destination
 const findByCityAndRating = (city) => {
+ console.log(city)
   return Hotels.find({ "address.city": city, rating: 5 });
 };
 
@@ -41,10 +42,10 @@ const searchListings = (body) => {
   console.log(location, date, room)
   console.log(location);
   const city = location.split(",");
-  console.log(city[0])
+  console.log(city[0]);
   const roomType = room.toLowerCase();
-  console.log(roomType)
-  return Hotels.find({ "address.city": city[0], "rooms.roomType": roomType });
+  console.log(roomType);
+  return Hotels.find({ "address.city": city[0], "rooms.roomType": roomType});
 };
 
 

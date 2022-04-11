@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
       this.router.navigate([""])
     },
       (err)=>console.log(err,"in login ts")
-    )
-
+    
   }
 }
