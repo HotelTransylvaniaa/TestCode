@@ -13,7 +13,7 @@ const auth = async (req, res, next) => {
   ).catch((err) => {
     res.status(401).end();
   });
-  console.log(admin);
+  console.log(admin,"admin");
   if (admin) {
     req.admin = await Admin.findById(admin.adminId);
     console.log(req.admin);

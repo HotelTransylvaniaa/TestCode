@@ -22,9 +22,9 @@ const findByCity = (city) => {
 };
 
 const create = (body) => {
-  const { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode } = body;
-  const hotel = { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode };
-  return Hotels.create(hotel);
+  // const { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode } = body;
+  // const hotel = { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode };
+  return Hotels.create(body);
 };
 
 const delOne = (id) => {

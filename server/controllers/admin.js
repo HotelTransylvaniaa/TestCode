@@ -27,11 +27,13 @@ const editOne = (id, body) => {
 const login= async({email,password})=>{
     const user=await Admin.findOne({email});
     const valid=await bcrypt.compare(password,user.password);
+    console.log(user)
+    console.log(valid)
     if(!valid){throw "UN_AUTH"}
    else{
     return jwt.sign({
         email,adminId:user._id
-    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '1d' },)
+    },"gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh", { expiresIn: '9d' },)
 }}
 
 module.exports = {
