@@ -47,4 +47,12 @@ router.post("/hotels/search-listings", (req, res, next) => {
     })
 })
 
+router.post("/hotels",(req,res,next)=>{
+    console.log(req.body);
+    controlHotels.create(req.body).then((user)=>{
+        res.json(user);
+    }).catch((err)=>{
+        res.status(422).send(err.message)
+    })
+})
 module.exports = router;

@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
  token:any=localStorage.getItem("token")
   constructor(private router: Router) {
-    // console.log(localStorage.getItem("token"),"in interceptor")
+    console.log(localStorage.getItem("token"),"in interceptor")
   }
 
 

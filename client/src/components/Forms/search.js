@@ -78,7 +78,7 @@ const Search = () => {
                 <option>Sharm El Sheikh</option>
                 <option>Hurghada</option>
                 <option>Giza</option>
-                <option>Assyut</option>
+                <option>Assuit</option>
                 <option>Luxor</option>
                 <option>Minia</option>
                 <option>Marsa Matroh</option>

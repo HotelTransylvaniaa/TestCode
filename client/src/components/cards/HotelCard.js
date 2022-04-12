@@ -21,16 +21,16 @@ export default function HotelCard({h}){
     </div>
     <div className="col-md-3">
       <div className="card-body text-end mt-1">
-        <div className="row">
-          <div className="col-9 p-0">
+        <div className="row justify-content-end">
+          <div className="col-8 p-0">
             <h6 className="m-0">Excellent</h6>
             <p style={{fontSize: "0.8rem"}} className="text-muted">349 reviews</p>
           </div>
-          <div className="col-2">
+          <div className="col-4">
             <span className="badge bg-primary rounded-pill">8.3</span>
           </div>
         </div>
-        <p className="text-danger fs-5">$ 85</p>
+        
         <Link to={`/hotel-details/${h._id}`}><button className="btn btn-primary mt-5">Select room</button></Link> 
       </div>
     </div>
