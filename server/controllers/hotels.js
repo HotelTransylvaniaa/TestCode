@@ -21,8 +21,8 @@ const findByCity = (city) => {
 };
 
 const create = (body) => {
-  const { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode } = body;
-  const hotel = { name, hotelType, rating, address, images, facilities, rooms, contact, postalCode };
+  const { name, rating, address, images, facilities, rooms, contact, postalCode } = body;
+  const hotel = { name, rating, address, images, facilities, rooms, contact, postalCode };
   return Hotels.create(hotel);
 };
 
