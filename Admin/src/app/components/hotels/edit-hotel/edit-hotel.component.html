@@ -114,23 +114,23 @@
               <span class="fw-bold">Rating By Star</span>
             </div>
             <div class="col-md-6 col-lg-2">
-              <input type="radio" formControlName="inputRating"  [value]="1"/>
+              <input type="radio" formControlName="inputRating"  [value]="1" [checked]="EHotel?.rating =='1'? true: false"/>
               <span class="fw-bold"> *</span>
             </div>
             <div class="col-md-6 col-lg-2">
-              <input type="radio" formControlName="inputRating" [value]="2"/>
+              <input type="radio" formControlName="inputRating" [value]="2" [checked]="EHotel?.rating =='2'? true: false"/>
               <span class="fw-bold"> * *</span>
             </div>
             <div class="col-md-6 col-lg-2">
-              <input type="radio" formControlName="inputRating" [value]="3"/>
+              <input type="radio" formControlName="inputRating" [value]="3" [checked]="EHotel?.rating =='3'? true: false"/>
               <span class="fw-bold"> * * *</span>
             </div>
             <div class="col-md-6 col-lg-2">
-              <input type="radio" formControlName="inputRating" [value]="4"/>
+              <input type="radio" formControlName="inputRating" [value]="4"[checked]="EHotel?.rating =='4'? true: false"/>
               <span class="fw-bold"> * * * *</span>
             </div>
             <div class="col-md-6 col-lg-2">
-              <input type="radio" formControlName="inputRating" [value]="5"/>
+              <input type="radio" formControlName="inputRating" [value]="5"[checked]="EHotel?.rating =='5'? true: false"/>
               <span class="fw-bold"> * * * * *</span>
             </div>
           </div>

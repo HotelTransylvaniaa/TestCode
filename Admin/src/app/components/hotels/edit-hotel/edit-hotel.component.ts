@@ -19,7 +19,7 @@ export class EditHotelComponent implements OnInit {
     this.EditHotel = this.fb.group({
       inputName:["",[Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
       inputPostalCode:[1,[Validators.required,Validators.min(1),Validators.max(100000),Validators.maxLength(6)]],
-      inputRating:[1,[Validators.required]],
+      inputRating:['',[Validators.required]],
       inputContact:this.fb.group({
         inputPhoneOne:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
         inputPhoneTwo:['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
