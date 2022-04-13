@@ -86,7 +86,6 @@ export class EditHotelComponent implements OnInit {
           inputRoomDinnerIncluded:[false]
         })
       })])
-
       }
     )
    }
@@ -98,6 +97,7 @@ export class EditHotelComponent implements OnInit {
         (err)=> {console.log(err)})
     });
   }
+
 
   showSuccess() {
     this.toastr.success('success',"",{
@@ -120,6 +120,7 @@ export class EditHotelComponent implements OnInit {
   get inputEmail() {return this.EditHotel.get("inputContact.inputEmail")}
   get inputImage() {return this.EditHotel.get("inputImage") as FormArray}
   get inputRoom() {return this.EditHotel.get("inputRoom") as FormArray}
+
 
 
 
