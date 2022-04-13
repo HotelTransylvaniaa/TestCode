@@ -27,14 +27,11 @@ export class AddUserComponent implements OnInit {
       inputPass: ['',[Validators.required,Validators.minLength(8),Validators.pattern("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
 
       inputConfiemPass: ['',[Validators.required]],
-
       },
       {
         validator: this.ConfirmedValidator('inputPass', 'inputConfiemPass')
       }
       )
-
-
     // this.signUpForm = new FormGroup({})
   }
 

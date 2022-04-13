@@ -5,7 +5,10 @@ const Header = () => {
   return (
     <>
         <img 
-          src="https://www.orbitaltravel.co.uk/application/files/6115/4808/7958/Complex.jpg"
+          // src="https://www.orbitaltravel.co.uk/application/files/6115/4808/7958/Complex.jpg"
+          src="https://ld-wt73.template-help.com/wt_prod-20476/images/slider-4-slide-1-1920x678.jpg"
+          // src="https://ld-wt73.template-help.com/wt_prod-20476/images/slider-4-slide-2-1920x678.jpg"
+          // src="https://ld-wt73.template-help.com/wt_prod-20476/images/slider-4-slide-3-1920x678.jpg"
           height="550px"
           width="100%"
         />
