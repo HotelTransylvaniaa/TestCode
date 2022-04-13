@@ -10,13 +10,10 @@ import { Router } from '@angular/router';
 export class IsauthGuard implements CanActivate {
   constructor(private service:AuthService,private router:Router){}
   canActivate(){
-
     if(this.service.getToken()){
       return true
     }
    this.router.navigate(["login"])
    return false
   }
-
-
 }
