@@ -30,7 +30,7 @@ export class EditHotelComponent implements OnInit {
         inputCity: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
         inputStreet: ['',[Validators.required,Validators.minLength(3),Validators.maxLength(30)]]
       }),
-      inputImage:this.fb.array([new FormControl('',Validators.required)]),
+      inputImage:this.fb.array([]),   ///
       inputFacilities:this.fb.group({
         inputLanguage:this.fb.group({
           inputEnglish:[false],
@@ -64,28 +64,7 @@ export class EditHotelComponent implements OnInit {
           inputSwimmingPool:[false],
         })
       }),
-      inputRoom:this.fb.array([this.fb.group({
-        inputRoomType:['single',[Validators.required]],
-        inputRoomCount:[1,[Validators.required]],
-        inputRoomCapacity:[1,[Validators.required]],
-        inputPricePerNight:[1,[Validators.required]],
-        inputRoomImage:["",[Validators.required]],
-        inputRoomFacilities:this.fb.group({
-          inputRoomInternetAccess:[false],
-          inputRoomWashingMachine:[false],
-          inputRoomKitchen:[false],
-          inputRoomAirConditioning:[false],
-          inputRoomCoffeeTeaMaker:[false],
-          inputRoomTv:[false],
-          inputRoomBathtub:[false],
-          inputRoomBalcony:[false]
-        }),
-        inputRoomOffers:this.fb.group({
-          inputRoomBreakfastIncluded:[false],
-          inputRoomEarlyCheckIn:[false],
-          inputRoomDinnerIncluded:[false]
-        })
-      })])
+      inputRoom:this.fb.array([])
       }
     )
    }
@@ -93,7 +72,44 @@ export class EditHotelComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const HotelId = params['id'];
       this.service.getHotelById(HotelId).subscribe(
-        (res)=>this.EHotel=res,
+        (res)=>{this.EHotel=res
+          this.EditHotel.get('inputName')?.setValue(this.EHotel?.name)
+          let actorsForm:any;
+          let images:any
+          this.EHotel.rooms.map(
+            (room: any) => {
+              actorsForm = this.fb.group({
+                  inputRoomType:room.roomType,
+                  inputRoomCount:room.count,
+                  inputRoomCapacity:room.capacity,
+                  inputPricePerNight:room.pricePerNight,
+                  inputRoomImage:room.images[0],
+                  inputRoomFacilities:this.fb.group({
+                    inputRoomInternetAccess:room.facilities.internetAccess,
+                    inputRoomWashingMachine:room.facilities.washingMachine,
+                    inputRoomKitchen:room.facilities.kitchen,
+                    inputRoomAirConditioning:room.facilities.airConditioning,
+                    inputRoomCoffeeTeaMaker:room.facilities.coffeeteaMaker,
+                    inputRoomTv:room.facilities.tv,
+                    inputRoomBathtub:room.facilities.bathtub,
+                    inputRoomBalcony:room.facilities.balcony
+                  }),
+                  inputRoomOffers:this.fb.group({
+                    inputRoomBreakfastIncluded:room.roomOffers.breakfastIncluded,
+                    inputRoomEarlyCheckIn:room.roomOffers.dinnerIncluded,
+                    inputRoomDinnerIncluded:room.roomOffers.breakfastIncluded
+                  })
+              });
+              this.inputRoom.push(actorsForm);
+
+            }
+          );
+          this.EHotel?.images.map((image:any)=>{
+               images=new FormControl(image)
+              this.inputImage.push(images)
+          })
+
+        },
         (err)=> {console.log(err)})
     });
   }
@@ -126,7 +142,7 @@ export class EditHotelComponent implements OnInit {
 
   // add and remove hotel images
   addImageInput(){
-    this.inputImage.push(new FormControl('',Validators.required))
+    this.inputImage.push(new FormControl(''))
   }
   removeImageInput(i:number){
     this.inputImage.removeAt(i)
@@ -243,7 +259,9 @@ this.inputRoom.push(
         postalCode:this.EditHotel.get("inputPostalCode")?.value
         }
         console.log(this.Hotel)
-        console.log(this.EHotel.name)
+        // console.log(this.EHotel.name)
+        // console.log(this.EHotel?.images)
+        // console.log(this.inputImage.value)
         // this.activatedRoute.params.subscribe(params => {
         //   const HotelId = params['id'];
         //   this.service.editHotelById(HotelId,this.Hotel).subscribe(
