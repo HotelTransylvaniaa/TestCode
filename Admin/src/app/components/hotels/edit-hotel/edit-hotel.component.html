@@ -199,7 +199,7 @@
             <div *ngFor="let image of inputImage.controls;let i=index">
               <span class="fw-bold">Hotel Image: {{i+1}}</span>
               <div  class="mt-2 d-flex justify-content-center align-items-center">
-              <input type="text" class="form-control" required  name="inputImage{{i}}" [formControlName]="i" [value]=""/>
+              <input type="text" class="form-control" required  name="inputImage{{i}}" [formControlName]="i"/>
               <button type="button" class="ms-2 btn btn-danger rounded-circle" (click)="removeImageInput(i)" *ngIf="inputImage.length >1">-</button>
               </div>
               <div class="text-danger" *ngIf="inputImage.controls[i]?.touched && !inputImage.controls[i]?.valid">

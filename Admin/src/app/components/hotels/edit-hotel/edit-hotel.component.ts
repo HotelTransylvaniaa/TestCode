@@ -122,8 +122,6 @@ export class EditHotelComponent implements OnInit {
   get inputRoom() {return this.EditHotel.get("inputRoom") as FormArray}
 
 
-
-
   // add and remove hotel images
   addImageInput(){
     this.inputImage.push(new FormControl('',Validators.required))
@@ -254,3 +252,7 @@ this.inputRoom.push(
 
   }
 }
+function index(index: any): FormGroup {
+  throw new Error('Function not implemented.');
+}
+
