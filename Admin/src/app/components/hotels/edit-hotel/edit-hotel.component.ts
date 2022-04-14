@@ -90,10 +90,14 @@ export class EditHotelComponent implements OnInit {
     )
    }
   ngOnInit(): void {
+    let images:FormArray;
     this.activatedRoute.params.subscribe(params => {
       const HotelId = params['id'];
       this.service.getHotelById(HotelId).subscribe(
-        (res)=>this.EHotel=res,
+        (res)=>{
+          this.EHotel=res,
+          this.EditHotel.get('inputName')?.setValue(this.EHotel.name)
+        },
         (err)=> {console.log(err)})
     });
   }
@@ -124,7 +128,7 @@ export class EditHotelComponent implements OnInit {
 
   // add and remove hotel images
   addImageInput(){
-    this.inputImage.push(new FormControl('',Validators.required))
+      // this.inputImage.push()
   }
   removeImageInput(i:number){
     this.inputImage.removeAt(i)

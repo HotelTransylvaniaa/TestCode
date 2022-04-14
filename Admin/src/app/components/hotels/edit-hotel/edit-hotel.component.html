@@ -6,7 +6,7 @@
         <div class="mb-2">
           <label for="inputName" class="form-label fw-bold fs-5">Hotel Name</label>
           <input type="text" class="form-control" id="inputName" required aria-describedby="inputName" name="inputName"
-            formControlName="inputName" [value]="EHotel?.name"/>
+            formControlName="inputName"/>
           <div class="pt-1 text-danger" *ngIf="formControls['inputName'].touched && !formControls['inputName'].valid">
             <small *ngIf="formControls['inputName'].errors?.['required']">
               * this field is required
@@ -199,7 +199,7 @@
             <div *ngFor="let image of inputImage.controls;let i=index">
               <span class="fw-bold">Hotel Image: {{i+1}}</span>
               <div  class="mt-2 d-flex justify-content-center align-items-center">
-              <input type="text" class="form-control" required  name="inputImage{{i}}" [formControlName]="i"/>
+              <input type="text" class="form-control" required  name="inputImage{{i}}" [formControlName]="i" [value]="EHotel?.images[i]"/>
               <button type="button" class="ms-2 btn btn-danger rounded-circle" (click)="removeImageInput(i)" *ngIf="inputImage.length >1">-</button>
               </div>
               <div class="text-danger" *ngIf="inputImage.controls[i]?.touched && !inputImage.controls[i]?.valid">
