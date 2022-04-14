@@ -69,6 +69,7 @@ export class EditHotelComponent implements OnInit {
     )
    }
   ngOnInit(): void {
+    let images:FormArray;
     this.activatedRoute.params.subscribe(params => {
       const HotelId = params['id'];
       this.service.getHotelById(HotelId).subscribe(
@@ -136,8 +137,6 @@ export class EditHotelComponent implements OnInit {
   get inputEmail() {return this.EditHotel.get("inputContact.inputEmail")}
   get inputImage() {return this.EditHotel.get("inputImage") as FormArray}
   get inputRoom() {return this.EditHotel.get("inputRoom") as FormArray}
-
-
 
 
   // add and remove hotel images
@@ -272,3 +271,7 @@ this.inputRoom.push(
 
   }
 }
+function index(index: any): FormGroup {
+  throw new Error('Function not implemented.');
+}
+
