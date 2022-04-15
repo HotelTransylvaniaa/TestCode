@@ -16,6 +16,10 @@ const bookingSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
+    roomType: {
+        type: String,
+        required: true
+    },
     PaymentPrice: {
         type: Number,
         required: true

@@ -37,13 +37,14 @@ export default function HotelDetails() {
   let timeDiff = Math.abs(date2.getTime() - date1.getTime());
   let numberOfNight = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-  const handelClick = async (h, rId, rPrice) => {
+  const handelClick = async (h, rId, rPrice, rType) => {
     let paymentPrice =
       parseInt(rPrice) * parseInt(numberOfNight) * parseInt(numberOfRooms);
     const BookData = {
       userId: auth.userId,
       hotelId: h,
       roomId: rId,
+      roomType: rType,
       BookingStartDate: checkInDate,
       BookingEndDate: checkOutDate,
       numberOfRooms: parseInt(numberOfRooms),
@@ -144,7 +145,7 @@ export default function HotelDetails() {
           <div className="row">
             <div className="col-md-12 p-1 ">
               <span className="p-3 fs-3  ">{hotelDetails.name}</span>
-              {new Array(hotelDetails.rating).fill(0).map((i,index) => (
+              {new Array(hotelDetails.rating).fill(0).map((i, index) => (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -550,9 +551,9 @@ export default function HotelDetails() {
                               </div>
                               <div className="col-sm-7">
                                 {numberOfNight &&
-                                numberOfRooms &&
-                                checkInDate &&
-                                checkOutDate ? (
+                                  numberOfRooms &&
+                                  checkInDate &&
+                                  checkOutDate ? (
                                   <span>
                                     {parseInt(r.pricePerNight) *
                                       parseInt(numberOfNight) *
@@ -578,20 +579,21 @@ export default function HotelDetails() {
                         <button
                           type="button"
                           className="btn btn-primary"
-                          
+
                           onClick={() =>
                             handelClick(
                               hotelDetails._id,
                               r.roomId,
-                              r.pricePerNight
+                              r.pricePerNight,
+                              r.roomType
                             )
                           }
-                          
+
                           disabled={
                             numberOfNight &&
-                            numberOfRooms &&
-                            checkInDate &&
-                            checkOutDate
+                              numberOfRooms &&
+                              checkInDate &&
+                              checkOutDate
                               ? false
                               : true
                           }
