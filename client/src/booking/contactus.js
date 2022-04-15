@@ -32,7 +32,7 @@ export default function ContactUs() {
             <form onSubmit={handelSubmit}>
               <h4 className="mb-3">Get in touch</h4>
               <div className="form-grou mb-2">
-                <label for="name" className="form-label">
+                <label htmlFor="name" className="form-label">
                   Enter Your name
                 </label>
                 <input
@@ -45,7 +45,7 @@ export default function ContactUs() {
                 />
               </div>
               <div className="form-grou mb-2">
-                <label for="email" className="form-label">
+                <label htmlFor="email" className="form-label">
                   Enter your email
                 </label>
                 <input
@@ -59,7 +59,7 @@ export default function ContactUs() {
               </div>
 
               <div className="form-group mb-3">
-                <label className="mb-2" for="floatingTextarea">
+                <label className="mb-2" htmlFor="floatingTextarea">
                   Comments
                 </label>
                 <textarea
@@ -109,16 +109,16 @@ export default function ContactUs() {
             </div>
             <div className="w-100 mt-4 d-flex justify-content-center">
               <a href="https://www.whatsapp.com" className="text-light">
-                <i class="fa-brands fa-whatsapp fs-3 me-5"></i>
+                <i className="fa-brands fa-whatsapp fs-3 me-5"></i>
               </a>
               <a href="https://www.facebook.com" className="text-light">
-                <i class="fa-brands fa-facebook fs-3 me-5"></i>
+                <i className="fa-brands fa-facebook fs-3 me-5"></i>
               </a>
               <a href="https://mail.google.com" className="text-light">
-                <i class="fa-solid fa-envelope fs-3 me-5"></i>
+                <i className="fa-solid fa-envelope fs-3 me-5"></i>
               </a>
               <a href="https://twitter.com/" className="text-light">
-                <i class="fa-brands fa-twitter fs-3 me-5"></i>
+                <i className="fa-brands fa-twitter fs-3 me-5"></i>
               </a>
             </div>
           </div>

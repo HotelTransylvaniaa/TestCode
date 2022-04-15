@@ -28,18 +28,6 @@ export const getHotelsCity = (city) => (dispatch) => {
     .catch((err) => console.log(err, "from"));
 };
 
-// export const userHotelBookings = async (token)=>
-// await axios.get(`${process.env.REACT_APP_API}/user-hotel-bookings`,{
-//   headers:{
-//     Authorization: `Bearer ${token}`,
-//   },
-// });
-//  export const isAlreadyBooked = async (token, hotelId)=>
-//  await axios.get(`${process.env.REACT_APP_API}/is-already-booked/${hotelId}`,{
-//    headers: {
-//      Authorization : `Bearer ${token}`,
-//    },
-//  });
 
 export const getHotelDetails = (params) => (dispatch) => {
   console.log(params.id);

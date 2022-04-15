@@ -17,7 +17,7 @@ export default function TopDestinationPage() {
   useEffect(() => {
     const { location, date, room } = queryString.parse(window.location.search);
      dispatch(getSearchHotel({ location, date, room }))
-    }, [search]);
+    }, []);
   useEffect(() => {
     dispatch(getHotelsCity(params.city));
   }, []);
@@ -25,13 +25,11 @@ export default function TopDestinationPage() {
     <div className="container">
       <div className="row">
         <Search/>
-        <div className="col-4 shadow">
-          {/* <Filter/> */}
-          </div>
-        <div className="col-8">
+        
+        <div className="col-12">
           <div className="container-fluid">
             {hotels.map((h) => (
-              <HotelCard h={h} key={h.id} />
+              <HotelCard h={h} key={h._id} />
             ))}
           </div>
         </div>

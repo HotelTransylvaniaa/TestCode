@@ -6,7 +6,6 @@ import { getSearchHotel } from "../store/actions/hotels";
 import { getHotelsList } from "../store/actions/hotels";
 import Search from "../components/Forms/search";
 import { useLocation } from "react-router-dom";
-import Filter from '../components/Filter'
 import Footer from "../components/footer/footer";
 
 
@@ -22,19 +21,17 @@ export default function Hotels() {
   useEffect(() => {
     const { location, checkInDate, checkOutDate, room } = queryString.parse(window.location.search);
      dispatch(getSearchHotel({ location, checkInDate, checkOutDate ,room }))
-  }, [search]);
+  }, []);
   return (
     <>
     <Search/>
     <div className="container">
       <div className="row">
-        <div className="col-4 shadow">
-          <Filter/>
-          </div>
-        <div className="col-8">
+        
+        <div className="col-12">
           <div className="container-fluid">
             {hotels.map((h) => (
-              <HotelCard h={h} key={h.id} />
+              <HotelCard h={h} key={h._id}/>
             ))}
           </div>
         </div>
