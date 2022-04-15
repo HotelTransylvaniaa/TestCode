@@ -43,8 +43,7 @@ const Search = () => {
       room.label
     );
     navigate(
-      `/search-result?location=${location}&date-from=${checkInDate.toString()}to${checkOutDate.toString()}&room=${
-        room.label
+      `/search-result?location=${location}&date-from=${checkInDate.toString()}to${checkOutDate.toString()}&room=${room.label
       }`,
       {
         replace: true,
@@ -53,89 +52,87 @@ const Search = () => {
   }
 
   return (
-    <>
-      <div className="searchBar p-0 mt-5 rounded-3">
-        <div className="container my-1">
-          <div className="row gx-2 py-4 justify-content-center">
-            <div className="col-sm-12 col-md-4">
-              <input
-                type="text"
-                id="wizards"
-                name="wizards"
-                list="wizards-list"
-                style={{ height: "50px" }}
-                placeholder="location"
-                className="form-control"
-                defaultValue={location}
-                option={config}
-                onChange={(e) => setLocation(e.target.value)}
-              />
+    <div className="searchBar p-0 rounded-3">
+      <div className="container my-1">
+        <div className="row gx-2 py-4 justify-content-center">
+          <div className="col-sm-12 col-md-4">
+            <input
+              type="text"
+              id="wizards"
+              name="wizards"
+              list="wizards-list"
+              style={{ height: "50px" }}
+              placeholder="location"
+              className="form-control"
+              defaultValue={location}
+              option={config}
+              onChange={(e) => setLocation(e.target.value)}
+            />
 
-              <datalist id="wizards-list">
-                <option>Cairo</option>
-                <option>Alexandria</option>
-                <option>Asswan</option>
-                <option>Sharm El Sheikh</option>
-                <option>Hurghada</option>
-                <option>Giza</option>
-                <option>Assuit</option>
-                <option>Luxor</option>
-                <option>Minia</option>
-                <option>Marsa Matroh</option>
-                <option>Dahb</option>
-                <option>Gona</option>
-                <option>Marsa Allam</option>
-                <option>Qena</option>
-                <option>Bani Suef</option>
-                <option>Port Said</option>
-                <option>Suez</option>
-                <option>Al-Mansura</option>
-                <option>Ismailia</option>
-                <option>Sohag</option>
-                <option>6th of October</option>
-                <option>Gona</option>
-                <option>Gona</option>
-                <option>Gona</option>
-
+            <datalist id="wizards-list">
+              <option>Cairo</option>
+              <option>Alexandria</option>
+              <option>Asswan</option>
+              <option>Sharm El Sheikh</option>
+              <option>Hurghada</option>
+              <option>Giza</option>
+              <option>Assuit</option>
+              <option>Luxor</option>
+              <option>Minia</option>
+              <option>Marsa Matroh</option>
+              <option>Dahb</option>
+              <option>Gona</option>
+              <option>Marsa Allam</option>
+              <option>Qena</option>
+              <option>Bani Suef</option>
+              <option>Port Said</option>
+              <option>Suez</option>
+              <option>Al-Mansura</option>
+              <option>Ismailia</option>
+              <option>Sohag</option>
+              <option>6th of October</option>
+              <option>Gona</option>
+              <option>Gona</option>
+              <option>Gona</option>
 
 
-              </datalist>
-            </div>
-            <div className="col-sm-12 col-md-2">
-              <DatePicker
-                placeholder="checkInDate"
-                defaultValue={checkInDate}
-                value={checkInDate}
-                selected={checkInDate}
-                minDate={new Date()}
-                onChange={handleCheckInDate}
-                style={{ height: "50px" }}
-              />
-            </div>
-            <div className="col-sm-12 col-md-2">
-              <DatePicker
-                placeholder="checkOutDate"
-                defaultValue={checkOutDate}
-                value={checkOutDate}
-                selected={checkOutDate}
-                minDate={checkInDate}
-                onChange={handleCheckOutDate}
-                style={{ height: "50px" }}
-              />
-            </div>
-            <div className="col-sm-12 col-md-2">
-              <Select onChange={(value) => setRoom(value)} options={rooms} />
-            </div>
-            <div className="col-sm-12 col-md-1 justify-content-center">
-              <SearchOutlined
-                onClick={handleSubmit}
-                className="btn btn-primary btn-square p-2 mt-1 px-3"
-              />
-            </div>
+
+            </datalist>
+          </div>
+          <div className="col-sm-12 col-md-2">
+            <DatePicker
+              placeholder="checkInDate"
+              defaultValue={checkInDate}
+              value={checkInDate}
+              selected={checkInDate}
+              minDate={new Date()}
+              onChange={handleCheckInDate}
+              style={{ height: "50px" }}
+            />
+          </div>
+          <div className="col-sm-12 col-md-2">
+            <DatePicker
+              placeholder="checkOutDate"
+              defaultValue={checkOutDate}
+              value={checkOutDate}
+              selected={checkOutDate}
+              minDate={checkInDate}
+              onChange={handleCheckOutDate}
+              style={{ height: "50px" }}
+            />
+          </div>
+          <div className="col-sm-12 col-md-2">
+            <Select onChange={(value) => setRoom(value)} options={rooms} />
+          </div>
+          <div className="col-sm-12 col-md-1 justify-content-center">
+            <SearchOutlined
+              onClick={handleSubmit}
+              className="btn btn-primary btn-square p-2 mt-1 px-3"
+            />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

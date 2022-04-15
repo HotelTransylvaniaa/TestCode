@@ -10,15 +10,16 @@ import Footer from "../components/footer/footer";
 export default function Home() {
   return (
     <>
-      <div className="position-relative">
+      <div className="position-relative" >
         <Header />
-      </div>
-      <div className="position-absolute search translate-middle w-75">
-        <Search />
+
+        <div className="position-absolute search translate-middle w-75">
+          <Search />
+        </div>
       </div>
       <TopDestination />
       <About />
-      <Footer/>
+      <Footer />
     </>
   );
 }

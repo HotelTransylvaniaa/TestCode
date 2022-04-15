@@ -58,7 +58,7 @@ export default function Mybooking() {
         <ToastContainer />
         <div className="container">
           <div className="row ">
-            <div className="col-4 shadow py-4">
+            <div className="col-3 shadow py-4">
               <ul className="list-group">
                 <Link
                   className="me-3 list-group-item list-group-item-action  border-light fs-5"
@@ -78,7 +78,7 @@ export default function Mybooking() {
             </div>
             {bookingList.length === 0 ? (
               <>
-                <div className="col-8 ps-5 mt-5">
+                <div className="col-9 ps-5 mt-5">
                   <div className="row">
                     <h3>YOU DOESN'T HAVE ANY BOOKING YET</h3>
                   </div>
@@ -86,7 +86,7 @@ export default function Mybooking() {
               </>
             ) : (
               <>
-                <div className="col-8 ps-5 mt-5">
+                <div className="col-9 ps-5 mt-5">
                   <div className="row">
                     <div className="col-sm-8 col-lg-4">
                       <h4 className="fw-bold">Your Booking count :</h4>
@@ -102,6 +102,7 @@ export default function Mybooking() {
                         <tr>
                           <th scope="col-6">Hotel</th>
                           <th scope="col-6">Address</th>
+                          <th scope="col-6">Room Type</th>
                           {/* <th scope="col-6">Payment Price</th> */}
                           {/* <th scope="col-6">Count of rooms</th> */}
                           <th scope="col-6">Start Date</th>
@@ -117,6 +118,7 @@ export default function Mybooking() {
                           <tr key={index}>
                             <td>{book?.hotelId?.name}</td>
                             <td>{book?.hotelId?.address.city}</td>
+                            <td className="text-capitalize">{book?.roomType}</td>
                             <td>
                               {Moment(book?.BookingStartDate).format(
                                 "ddd DD MMM YYYY"
