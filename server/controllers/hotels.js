@@ -41,11 +41,9 @@ const searchListings = (body) => {
   const { location, date, room } = body
   console.log(location, date, room)
   console.log(location);
-  const city = location.split(",");
-  console.log(city[0]);
   const roomType = room.toLowerCase();
   console.log(roomType);
-  return Hotels.find({ "address.city": city[0], "rooms.roomType": roomType });
+  return Hotels.find({ "address.city": location, "rooms.roomType": roomType });
 };
 
 
