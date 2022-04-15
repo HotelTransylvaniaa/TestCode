@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 export default function HotelCard({ h }) {
   return (
     <>
-    
+
       <div className="card my-3 shadow">
         <div className="row g-0">
-          <div className="col-md-4" style={{height:"18rem"}}>
+          <div className="col-lg-4" style={{ height: "18rem" }}>
             <img
               src={h.images[0]}
               className="img-fluid p-1"
               alt="hotel"
-              style={{height:"100%" ,width:"100%"}}
+              style={{ height: "100%", width: "100%" }}
             />
           </div>
-          <div className="col-md-5 border-end">
+          <div className="col-lg-5 border-end">
             <div className="card-body">
               <h5 className="card-title">{h.name}</h5>
               <div className="d-flex mt-3">
@@ -30,10 +30,10 @@ export default function HotelCard({ h }) {
           </div>
           <div
             className="col-lg-3 d-flex align-items-end flex-lg-column justify-content-sm-between px-3 py-4 pe-3"
-            
+
           >
             <div className="star">
-              {new Array(h.rating).fill(0).map((x,index) => (
+              {new Array(h.rating).fill(0).map((x, index) => (
                 <i className="fa-solid fa-star text-warning mt-1" key={index}></i>
               ))}
             </div>
