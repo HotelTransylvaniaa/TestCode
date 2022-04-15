@@ -24,6 +24,27 @@ export default function HotelCard({ h }) {
                           alt="Hotel Image"
                         />
                       </div>
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[1]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[2]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[3]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
                     </div>
                     <a
                       class="carousel-control-prev"
