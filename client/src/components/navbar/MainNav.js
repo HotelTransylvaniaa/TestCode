@@ -12,7 +12,7 @@ export default function Navbar() {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <NavLink className="navbar-brand mx-auto ms-3" to={"/"}>
+                <NavLink className="navbar-brand mx-auto ps-3" to={"/"}>
                     <img src="https://cdn6.agoda.net/images/kite-js/logo/agoda/color-default.svg" alt="" style={{ width: '75px' }} />
                 </NavLink>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
