@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators,FormBuilder ,FormArray} from '@angul
 import { HotelsService } from 'src/app/services/hotels.service';
 import { ActivatedRoute} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-hotel',
   templateUrl: './add-hotel.component.html',
@@ -12,7 +13,7 @@ export class AddHotelComponent implements OnInit {
   AddHotel : FormGroup;
   Room:any;
   Hotel:any;
-  constructor(private service:HotelsService,private activatedRoute: ActivatedRoute,private fb : FormBuilder,private toastr: ToastrService) {
+  constructor(private service:HotelsService,private activatedRoute: ActivatedRoute,private fb : FormBuilder,private toastr: ToastrService,private _router: Router) {
     this.Hotel={}
     this.Room=[]
     this.AddHotel = this.fb.group({
@@ -235,7 +236,7 @@ this.inputRoom.push(
         }
         console.log(this.Hotel)
         this.service.addHotel(this.Hotel).subscribe(
-          (res)=>this.showSuccess(),
+          (res)=>{this.showSuccess(),this._router.navigateByUrl('/admin/hotels')},
           (err)=> {this.showError()
           })
   }
