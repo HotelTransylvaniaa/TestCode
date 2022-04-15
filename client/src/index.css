@@ -15,6 +15,10 @@ body {
 .ant-modal-footer{
   display: none;
 }
+@viewport {
+  width: 980px;
+
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

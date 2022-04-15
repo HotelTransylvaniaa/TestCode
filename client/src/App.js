@@ -12,7 +12,7 @@ import NotFound from "./booking/NotFound";
 import Profile from "./components/profile";
 import Booking from "./components/mybooking";
 import Footer from "./components/footer/footer";
-
+import "./App.css"
 
 
 function App() {
