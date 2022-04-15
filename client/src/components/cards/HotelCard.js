@@ -13,24 +13,15 @@ export default function HotelCard({ h }) {
                 <div class="hotel-card_images">
                 {h.images.map((hotel,i)=>{
                   <div
-                    id={`carouselExampleControls${i}`}
-                    class="carousel slide h-100"
+                    id="bootstrapCarousel"
+                    className="carousel slide h-100"
                     data-ride="carousel"
                   >
-                    <div class="carousel-inner h-100">
- 
-                        <div class="carousel-item h-100 active">
-                        <img
-                          src={hotel}
-                          class="d-block w-100"
-                          alt="Hotel Image"
-                        />
-                      </div>
-                      
-                      {/* <div class="carousel-item h-100 active">
+                    <div className="carousel-inner h-100">
+                      <div className="carousel-item h-100 active">
                         <img
                           src={h.images[0]}
-                          class="d-block w-100"
+                          className="d-block w-100"
                           alt="Hotel Image"
                         />
                       </div>
@@ -128,22 +119,23 @@ export default function HotelCard({ h }) {
                         {h.address.city}
                       </div>
                       <div className="d-flex mb-4 ms-4">
-                        <i class="fa-solid fa-wifi me-3"></i>
-                        <i class="fa-solid fa-bed me-3"></i>
-                        <i class="fa-solid fa-snowflake me-3"></i>
-                        <i class="fa-solid fa-bell-concierge me-3"></i>
+                        <i className="fa-solid fa-wifi me-3"></i>
+                        <i className="fa-solid fa-bed me-3"></i>
+                        <i className="fa-solid fa-snowflake me-3"></i>
+                        <i className="fa-solid fa-bell-concierge me-3"></i>
                       </div>
-                      <ul class="hotel-checklist pl-0 mb-0">
+                      <ul className="hotel-checklist pl-0 mb-0">
                         <li>
-                          <i class="fa fa-check text-success me-2"></i> Swiming
-                          pools
+                          <i className="fa fa-check text-success me-2"></i>{" "}
+                          Swiming pools
                         </li>
                         <li>
-                          <i class="fa fa-check text-success me-2 my-2"></i>{" "}
+                          <i className="fa fa-check text-success me-2 my-2"></i>{" "}
                           Room service
                         </li>
                         <li>
-                          <i class="fa fa-check text-success me-2"></i> Parking
+                          <i className="fa fa-check text-success me-2"></i>{" "}
+                          Parking
                         </li>
                       </ul>
                     </div>
