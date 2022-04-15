@@ -75,13 +75,13 @@ export default function HotelDetails() {
         <div className="hotelDetailsImage mb-5">
           <Link to={""} className="text-decoration-none pointer">
             <div className="row gx-0">
-              <div className="col-md-6">
+              <div className="col-md-6" style={{ height: "600px" }}>
                 <div className="position-relative">
                   <img
                     src={hotelDetails.images[0]}
                     alt=""
-                    className="w-100 h-100 mt-3 ps-2"
-                    style={{ objectFit: "cover" }}
+                    className="w-100"
+                    style={{ objectFit: "cover", height: "600px" }}
                   />
                   <p className="position-absolute bottom-0 end-0 text-white me-5">
                     <span>
@@ -101,38 +101,38 @@ export default function HotelDetails() {
                   </p>
                 </div>
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6" style={{ height: "600px" }}>
                 <div className="d-flex flex-wrap">
                   <div className="w-50">
                     <img
                       src={hotelDetails.images[1]}
                       alt=""
-                      className="w-100 h-100 mt-3 ps-2"
-                      style={{ objectFit: "cover" }}
+                      className="w-100"
+                      style={{ objectFit: "cover", height: "300px" }}
                     />
                   </div>
                   <div className="w-50">
                     <img
                       src={hotelDetails.images[2]}
                       alt=""
-                      className="w-100 h-100 mt-3 ps-2 pe-2"
-                      style={{ objectFit: "cover" }}
+                      className="w-100"
+                      style={{ objectFit: "cover", height: "300px" }}
                     />
                   </div>
                   <div className="w-50">
                     <img
                       src={hotelDetails.images[3]}
                       alt=""
-                      className="w-100 mt-4   ps-2 pe-2"
-                      style={{ objectFit: "cover" }}
+                      className="w-100"
+                      style={{ objectFit: "cover", height: "300px" }}
                     />
                   </div>
                   <div className="w-50">
                     <img
                       src={hotelDetails.images[4]}
                       alt=""
-                      className="w-100  mt-4 ps-2 pe-2"
-                      style={{ objectFit: "cover" }}
+                      className="w-100"
+                      style={{ objectFit: "cover", height: "300px" }}
                     />
                   </div>
                 </div>
