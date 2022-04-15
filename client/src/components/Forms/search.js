@@ -89,16 +89,9 @@ const Search = () => {
                 <option>Bani Suef</option>
                 <option>Port Said</option>
                 <option>Suez</option>
-                <option>Al-Mansura</option>
                 <option>Ismailia</option>
                 <option>Sohag</option>
                 <option>6th of October</option>
-                <option>Gona</option>
-                <option>Gona</option>
-                <option>Gona</option>
-
-
-
               </datalist>
             </div>
             <div className="col-sm-12 col-md-2">
