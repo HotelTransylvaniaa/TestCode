@@ -17,7 +17,7 @@ export default function NotFound() {
             to={"/"}
             className="text-decoration-none position-absolute nntlink"
           >
-            <i class="fa-solid fa-arrow-left-long"></i> Back to our site
+            <i className="fa-solid fa-arrow-left-long"></i> Back to our site
           </Link>
         </div>
       </div>

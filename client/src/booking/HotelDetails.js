@@ -52,11 +52,12 @@ export default function HotelDetails() {
     };
     console.log(auth.token);
     try {
+      console.log(auth);
       await postBookingData(BookData, auth.token);
       toast.success("Success Booking");
     } catch (err) {
       console.log(err.response.status);
-      if (err.response.status == 401) {
+      if (err.response.status === 401) {
         navigate("/login");
         dispatch({
           type: "LOGOUT",
@@ -577,7 +578,7 @@ export default function HotelDetails() {
                         <button
                           type="button"
                           className="btn btn-primary"
-                          data-bs-dismiss="modal"
+                          
                           onClick={() =>
                             handelClick(
                               hotelDetails._id,
@@ -585,6 +586,7 @@ export default function HotelDetails() {
                               r.pricePerNight
                             )
                           }
+                          
                           disabled={
                             numberOfNight &&
                             numberOfRooms &&

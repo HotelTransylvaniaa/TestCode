@@ -118,7 +118,7 @@ export default function Profile() {
                     <h4 className="fw-bold">User Details</h4>
 
                     <i
-                      class="fa-solid fa-pen ms-auto fs-5 mt-3"
+                      className="fa-solid fa-pen ms-auto fs-5 mt-3"
                       onClick={toggleBox}
                     ></i>
                   </div>

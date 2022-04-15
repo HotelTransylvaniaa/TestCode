@@ -127,10 +127,9 @@ export default function Mybooking() {
                                 "ddd DD MMM YYYY"
                               )}
                             </td>
-                            {/* <td><i class="fa-solid fa-trash" onClick={deleteBooking}></i></td> */}
                             <td>
                               <i
-                                class="fa-solid fa-rectangle-xmark text-danger d-flex justify-content-center"
+                                className="fa-solid fa-rectangle-xmark text-danger d-flex justify-content-center"
                                 onClick={() =>
                                   deletBooking(
                                     book?._id,

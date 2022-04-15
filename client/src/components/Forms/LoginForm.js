@@ -46,7 +46,7 @@ export default function LoginForm({
                 controlid="formBasicPassword"
               >
                 <span className="input-group-text">
-                  <i class="fa-solid fa-lock fa-2x"></i>
+                  <i className="fa-solid fa-lock fa-2x"></i>
                 </span>
                 <input
                   className="form-control"
