@@ -466,7 +466,7 @@ export default function HotelDetails() {
                         </div>
                         <div className="modal-footer">
                           <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" className="btn btn-primary" onClick={() => handelClick(hotelDetails._id, r.roomId, r.pricePerNight)}>Book Now</button>
+                          <button type="button" className="btn btn-primary" onClick={() => handelClick(hotelDetails._id, r.roomId, r.pricePerNight)} disabled={numberOfNight&&numberOfRooms&&checkInDate&&checkOutDate? false:true}>Book Now</button>
                         </div>
                       </div>
                     </div>
