@@ -54,7 +54,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="searchBar p-0 mt-5">
+      <div className="searchBar p-0 mt-5 rounded-3">
         <div className="container my-1">
           <div className="row gx-2 py-4 justify-content-center">
             <div className="col-sm-12 col-md-4">
