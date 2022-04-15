@@ -23,13 +23,14 @@ const auth = async (req, res, next) => {
 
 const userAuth = async (req, res, next) => {
   const { authorization } = req.headers;
+  console.log(authorization)
   const user = await verify(
     authorization,
     "gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh"
   ).catch((err) => {
     res.status(401).end();
   });
-  console.log(user);
+  console.log(user,"user");
   if (user) {
     req.user = await User.findById(user.userId);
     console.log(req.user);

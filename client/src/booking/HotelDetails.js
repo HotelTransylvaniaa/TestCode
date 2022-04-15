@@ -40,15 +40,23 @@ export default function HotelDetails() {
   const handelClick = async (h, rId, rPrice) => {
     let paymentPrice = parseInt(rPrice) * parseInt(numberOfNight) * parseInt(numberOfRooms)
     const BookData = { userId: auth.userId, hotelId: h, roomId: rId, BookingStartDate: checkInDate, BookingEndDate: checkOutDate, numberOfRooms: parseInt(numberOfRooms), numberOfNights: numberOfNight, PaymentPrice: paymentPrice }
+     console.log(auth.token)
     try {
-      await postBookingData(BookData)
+      await postBookingData(BookData,auth.token)
       toast.success("Success Booking");
     }
     catch (err) {
-      console.log(err.response.data)
-      toast.error(err.response.data)
+      console.log(err.response.status)
+      if(err.response.status==401){
+        navigate("/login");
+        dispatch({
+          type: "LOGOUT",
+          payload: null,
+        });
+        window.localStorage.removeItem("auth");
+        console.log(err.response.status)
+      }
     }
-
   };
   return (
     <>

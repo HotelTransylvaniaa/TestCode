@@ -92,7 +92,15 @@ export const getUserBooking =(id) => (dispatch) => {
     });
 };
 
-export const postBookingData = async (bookingData) =>
-  await axiosInstance.post("/booking", bookingData);
-export const deletBookingData = async (id) =>
-  await axiosInstance.delete(`/booking/${id}`);
+export const postBookingData = async (bookingData,token) =>
+  await axiosInstance.post("/booking", bookingData, {
+    headers: {
+      authorization:token ,
+    },
+  });
+export const deletBookingData = async (id,token) =>
+  await axiosInstance.delete(`/booking/${id}`,{
+    headers: {
+      authorization: token ,
+    },
+  });

@@ -9,14 +9,16 @@ import { getUserBooking } from "../store/actions/hotels";
 import { deletBookingData } from "../store/actions/hotels";
 import Moment from "moment";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function Mybooking() {
   const { auth } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   Moment.locale("en");
   let bookingList = useSelector((state) => state.hotels.bookingList);
 
-  const deletBooking = (id, startdate) => {
+  const deletBooking = async(id, startdate) => {
     console.log(id, startdate);
     let date = new Date(startdate);
     console.log(date, "date");
@@ -24,8 +26,22 @@ export default function Mybooking() {
     console.log(currentDate, "current Date");
     if (date > currentDate) {
       console.log("true can be canceled");
-      deletBookingData(id);
-      dispatch(getUserBooking(auth?.userId));
+      try{
+        await deletBookingData(id,auth.token);
+        dispatch(getUserBooking(auth?.userId));
+      }
+      catch (err){
+        console.log(err.response.status)
+        if(err.response.status==401){
+          navigate("/login");
+          dispatch({
+            type: "LOGOUT",
+            payload: null,
+          });
+          window.localStorage.removeItem("auth");
+          console.log(err.response.status)
+        }
+      }
     } else {
       console.log("false can't be canceled");
       toast.error("You can't cancel this, Please contact with Hotel");
