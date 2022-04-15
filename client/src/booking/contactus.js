@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { contactus } from "../store/actions/auth";
 import {Link} from "react-router-dom";
+import Footer from "../components/footer/footer";
 
 export default function ContactUs() {
   const [name, setName] = useState("");
@@ -123,6 +124,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

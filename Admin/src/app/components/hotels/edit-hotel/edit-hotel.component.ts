@@ -3,6 +3,7 @@ import { HotelsService } from 'src/app/services/hotels.service';
 import { ActivatedRoute} from '@angular/router';
 import { FormControl, FormGroup, Validators,FormBuilder ,FormArray} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-hotel',
   templateUrl: './edit-hotel.component.html',
@@ -13,7 +14,7 @@ export class EditHotelComponent implements OnInit {
   EHotel:any
   Room:any;
   Hotel:any;
-  constructor(private service:HotelsService,private activatedRoute: ActivatedRoute,private fb : FormBuilder,private toastr: ToastrService) {
+  constructor(private service:HotelsService,private activatedRoute: ActivatedRoute,private fb : FormBuilder,private toastr: ToastrService,private _router:Router) {
     this.Hotel={}
     this.Room=[]
     this.EditHotel = this.fb.group({
@@ -74,17 +75,44 @@ export class EditHotelComponent implements OnInit {
       const HotelId = params['id'];
       this.service.getHotelById(HotelId).subscribe(
         (res)=>{this.EHotel=res
-          this.EditHotel.get('inputName')?.setValue(this.EHotel?.name)
           let actorsForm:any;
           let images:any
+          this.EditHotel.get('inputName')?.setValue(this.EHotel?.name),
+          this.EditHotel.get("inputRating")?.setValue(this.EHotel?.rating)
+          this.EditHotel.get("inputAddress.inputCountry")?.setValue(this.EHotel?.address.country)
+          this.EditHotel.get("inputAddress.inputCity")?.setValue(this.EHotel?.address.city)
+          this.EditHotel.get("inputAddress.inputStreet")?.setValue(this.EHotel?.address.street)
+          this.EditHotel.get("inputFacilities.inputLanguage.inputEnglish")?.setValue(this.EHotel?.facilities.languages.English)
+          this.EditHotel.get("inputFacilities.inputLanguage.inputArabic")?.setValue(this.EHotel?.facilities.languages.Arabic)
+          this.EditHotel.get("inputFacilities.inputLanguage.inputFrench")?.setValue(this.EHotel?.facilities.languages.French)
+          this.EditHotel.get("inputFacilities.inputServices.inputCashWithdrawal")?.setValue(this.EHotel?.facilities.services.Cash_withdrawal)
+          this.EditHotel.get("inputFacilities.inputServices.inputDailyHousekeeping")?.setValue(this.EHotel?.facilities.services.Daily_housekeeping)
+          this.EditHotel.get("inputFacilities.inputServices.inputDryCleaning")?.setValue(this.EHotel?.facilities.services.Dry_cleaning)
+          this.EditHotel.get("inputFacilities.inputServices.inputSalon")?.setValue(this.EHotel?.facilities.services.Salon)
+          this.EditHotel.get("inputFacilities.inputRelax.inputTours")?.setValue(this.EHotel?.facilities.relax.tours)
+          this.EditHotel.get("inputFacilities.inputRelax.inputNightClub")?.setValue(this.EHotel?.facilities.relax.nightclub)
+          this.EditHotel.get("inputFacilities.inputRelax.inputSauna")?.setValue(this.EHotel?.facilities.relax.sauna)
+          this.EditHotel.get("inputFacilities.inputRelax.inputSpa")?.setValue(this.EHotel?.facilities.relax.spa)
+          this.EditHotel.get("inputFacilities.inputInternet.inputWifiPublic")?.setValue(this.EHotel?.facilities.internet.wifi_public)
+          this.EditHotel.get("inputFacilities.inputInternet.inputWifiInRoom")?.setValue(this.EHotel?.facilities.internet.wifi_inrooms)
+          this.EditHotel.get("inputFacilities.inputAccess.inputPetsAllow")?.setValue(this.EHotel?.facilities.access.pets_allow)
+          this.EditHotel.get("inputFacilities.inputAccess.inputSecurity")?.setValue(this.EHotel?.facilities.access.security)
+          this.EditHotel.get("inputFacilities.inputAccess.inputFrontDesk")?.setValue(this.EHotel?.facilities.access.front_desk)
+          this.EditHotel.get("inputFacilities.inputForKids.inputKidsClub")?.setValue(this.EHotel?.facilities.for_kids.kids_club)
+          this.EditHotel.get("inputFacilities.inputForKids.inputPlayground")?.setValue(this.EHotel?.facilities.for_kids.playground)
+          this.EditHotel.get("inputFacilities.inputForKids.inputSwimmingPool")?.setValue(this.EHotel?.facilities.for_kids.swimmingpool)
+          this.EditHotel.get("inputContact.inputPhoneOne")?.setValue(this.EHotel?.contact.phone[0])
+          this.EditHotel.get("inputContact.inputPhoneTwo")?.setValue(this.EHotel?.contact.phone[1])
+          this.EditHotel.get("inputContact.inputEmail")?.setValue(this.EHotel?.contact.email)
+          this.EditHotel.get("inputPostalCode")?.setValue(this.EHotel?.postalCode)
           this.EHotel.rooms.map(
             (room: any) => {
               actorsForm = this.fb.group({
                   inputRoomType:room.roomType,
-                  inputRoomCount:room.count,
-                  inputRoomCapacity:room.capacity,
-                  inputPricePerNight:room.pricePerNight,
-                  inputRoomImage:room.images[0],
+                  inputRoomCount:[room.count,[Validators.required]],
+                  inputRoomCapacity:[room.capacity,[Validators.required]],
+                  inputPricePerNight:[room.pricePerNight,[Validators.required]],
+                  inputRoomImage:[room.images[0],[Validators.required]],
                   inputRoomFacilities:this.fb.group({
                     inputRoomInternetAccess:room.facilities.internetAccess,
                     inputRoomWashingMachine:room.facilities.washingMachine,
@@ -257,17 +285,15 @@ this.inputRoom.push(
         },
         postalCode:this.EditHotel.get("inputPostalCode")?.value
         }
-        console.log(this.Hotel)
-        // console.log(this.EHotel.name)
-        // console.log(this.EHotel?.images)
-        // console.log(this.inputImage.value)
-        // this.activatedRoute.params.subscribe(params => {
-        //   const HotelId = params['id'];
-        //   this.service.editHotelById(HotelId,this.Hotel).subscribe(
-        //     (res)=>this.showSuccess(),
-        //   (err)=> {this.showError()
-        //   })
-        // })
+
+
+        this.activatedRoute.params.subscribe(params => {
+          const HotelId = params['id'];
+          this.service.editHotelById(HotelId,this.Hotel).subscribe(
+            (res)=>{this.showSuccess(),this._router.navigateByUrl('/admin/hotels')},
+          (err)=> {this.showError()
+          })
+        })
 
   }
 }

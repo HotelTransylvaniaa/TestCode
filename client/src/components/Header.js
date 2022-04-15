@@ -19,7 +19,11 @@ const Header = () => {
           alt=""
           style={{borderBottomLeftRadius:"25px"}}
         />
+        <div className="header-content text-white py-4 px-3">
+          <h2>- Welcome to AGODA -</h2>
+          <h5>Pay less with Agoda so you can spend more on yourself.</h5>
         </div>
+      </div>
     </>
   );
 };

@@ -32,7 +32,7 @@ function App() {
        <Route exact path="/search-result" element ={<SearchResult/>} />
        <Route path={"*"} element={<NotFound/>}/>
      </Routes>
-     <Footer/>
+     {/* <Footer/> */}
     </BrowserRouter>
   );
 }

@@ -11,23 +11,78 @@ export default function HotelCard({ h }) {
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
                 <div class="hotel-card_images">
+                {h.images.map((hotel,i)=>{
                   <div
-                    id="bootstrapCarousel"
+                    id={`carouselExampleControls${i}`}
                     class="carousel slide h-100"
                     data-ride="carousel"
                   >
                     <div class="carousel-inner h-100">
-                      <div class="carousel-item h-100 active">
+ 
+                        <div class="carousel-item h-100 active">
+                        <img
+                          src={hotel}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      
+                      {/* <div class="carousel-item h-100 active">
                         <img
                           src={h.images[0]}
                           class="d-block w-100"
                           alt="Hotel Image"
                         />
                       </div>
-                    </div>
-                    <a
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[1]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[2]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      <div class="carousel-item h-100 active">
+                        <img
+                          src={h.images[3]}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div> */}
+                    {/* </div>
+                    <button
                       class="carousel-control-prev"
-                      href="#bootstrapCarousel"
+                      type="button"
+                      data-bs-target={`#carouselExampleControls${i}`}
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target={`#carouselExampleControls${i}`}
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button> */}
+                    {/* <a
+                      class="carousel-control-prev"
+                      href="#bootstrapCarousel{{i}}"
                       role="button"
                       data-slide="prev"
                     >
@@ -39,7 +94,7 @@ export default function HotelCard({ h }) {
                     </a>
                     <a
                       class="carousel-control-next"
-                      href="#bootstrapCarousel"
+                      href="#bootstrapCarousel{{i}}"
                       role="button"
                       data-slide="next"
                     >
@@ -48,19 +103,20 @@ export default function HotelCard({ h }) {
                         aria-hidden="true"
                       ></span>
                       <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="hotel-card_info p-4">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h5 class="mb-0 mr-2 me-5">{h.name}</h5>
-                    <div>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                      <i class="fa fa-star text-warning"></i>
-                    </div> */}
+                    </a> */}
+                  {/* </div> */}
+                {/* {/* //   })} */}
+                {/* // </div> */}
+                {/* // <div class="hotel-card_info p-4">
+                //   <div class="d-flex align-items-center justify-content-between mb-2">
+                //     <h5 class="mb-0">{h.name}</h5>
+                //     <div>
+                //       <i class="fa fa-star text-warning"></i>
+                //       <i class="fa fa-star text-warning"></i>
+                //       <i class="fa fa-star text-warning"></i>
+                //       <i class="fa fa-star text-warning"></i>
+                //       <i class="fa fa-star text-warning"></i>
+                //     </div> */} 
                     {/* <a href="#!" class="text-dark ml-auto">
                       <i class="far fa-heart fa-lg"></i>
                     </a> */}
@@ -79,19 +135,23 @@ export default function HotelCard({ h }) {
                       </div>
                       <ul class="hotel-checklist pl-0 mb-0">
                         <li>
-                          <i class="fa fa-check text-success"></i> ...............
+                          <i class="fa fa-check text-success me-2"></i> Swiming
+                          pools
                         </li>
                         <li>
-                          <i class="fa fa-check text-success my-2"></i> ..............
+                          <i class="fa fa-check text-success me-2 my-2"></i>{" "}
+                          Room service
                         </li>
                         <li>
-                          <i class="fa fa-check text-success"></i> ..................
+                          <i class="fa fa-check text-success me-2"></i> Parking
                         </li>
                       </ul>
                     </div>
-                    <div class="hotel-card_pricing text-center">
-                      <button class="btn btn-primary">Check Rooms</button>
-                    </div>
+                    <Link to={`/hotel-details/${h._id}`}>
+                      <button className="btn btn-primary mt-5">
+                        Select room
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
