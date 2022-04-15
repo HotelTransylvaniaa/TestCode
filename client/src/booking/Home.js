@@ -4,6 +4,8 @@ import TopDestination from "../components/Topdestination";
 import Search from "../components/Forms/search";
 import About from "../components/about";
 import Header from "../components/Header";
+import Footer from "../components/footer/footer";
+
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       </div>
       <TopDestination />
       <About />
+      <Footer/>
     </>
   );
 }

@@ -5,6 +5,8 @@ import { editProfile } from "../store/actions/auth";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Footer from "../components/footer/footer";
+
 
 export default function Profile() {
   let navigate = useNavigate();
@@ -83,6 +85,7 @@ export default function Profile() {
   };
 
   return (
+    <>
     <div className="bg-light py-5">
       <div className="container">
         <div className="row ">
@@ -225,5 +228,9 @@ export default function Profile() {
         </div>
       </div>
     </div>
+    <Footer/>
+
+    </>
+    
   );
 }

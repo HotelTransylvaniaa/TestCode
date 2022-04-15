@@ -7,6 +7,9 @@ import { getHotelsList } from "../store/actions/hotels";
 import Search from "../components/Forms/search";
 import { useLocation } from "react-router-dom";
 import Filter from '../components/Filter'
+import Footer from "../components/footer/footer";
+
+
 export default function Hotels() {
   const  {search}  = useLocation();
   let hotels = useSelector((state) => state.hotels.hotelsList);
@@ -37,6 +40,8 @@ export default function Hotels() {
         </div>
       </div>
     </div>
+    <Footer/>
+    
     </>
   );
 }

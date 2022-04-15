@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./HotelCard.css";
-// import './HotelCard.scss'
+// import './HotelCard.scss';
 
 export default function HotelCard({ h }) {
   return (
@@ -11,13 +11,23 @@ export default function HotelCard({ h }) {
             <div class="col-sm-12 col-md-12 col-lg-12">
               <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
                 <div class="hotel-card_images">
+                {h.images.map((hotel,i)=>{
                   <div
-                    id="bootstrapCarousel"
+                    id={`carouselExampleControls${i}`}
                     class="carousel slide h-100"
                     data-ride="carousel"
                   >
                     <div class="carousel-inner h-100">
-                      <div class="carousel-item h-100 active">
+ 
+                        <div class="carousel-item h-100 active">
+                        <img
+                          src={hotel}
+                          class="d-block w-100"
+                          alt="Hotel Image"
+                        />
+                      </div>
+                      
+                      {/* <div class="carousel-item h-100 active">
                         <img
                           src={h.images[0]}
                           class="d-block w-100"
@@ -44,11 +54,35 @@ export default function HotelCard({ h }) {
                           class="d-block w-100"
                           alt="Hotel Image"
                         />
-                      </div>
+                      </div> */}
                     </div>
-                    <a
+                    <button
                       class="carousel-control-prev"
-                      href="#bootstrapCarousel"
+                      type="button"
+                      data-bs-target={`#carouselExampleControls${i}`}
+                      data-bs-slide="prev"
+                    >
+                      <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      class="carousel-control-next"
+                      type="button"
+                      data-bs-target={`#carouselExampleControls${i}`}
+                      data-bs-slide="next"
+                    >
+                      <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                      ></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    {/* <a
+                      class="carousel-control-prev"
+                      href="#bootstrapCarousel{{i}}"
                       role="button"
                       data-slide="prev"
                     >
@@ -60,7 +94,7 @@ export default function HotelCard({ h }) {
                     </a>
                     <a
                       class="carousel-control-next"
-                      href="#bootstrapCarousel"
+                      href="#bootstrapCarousel{{i}}"
                       role="button"
                       data-slide="next"
                     >
@@ -69,8 +103,9 @@ export default function HotelCard({ h }) {
                         aria-hidden="true"
                       ></span>
                       <span class="sr-only">Next</span>
-                    </a>
+                    </a> */}
                   </div>
+                  })}
                 </div>
                 <div class="hotel-card_info p-4">
                   <div class="d-flex align-items-center justify-content-between mb-2">

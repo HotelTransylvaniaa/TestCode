@@ -4,7 +4,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <div id="footer">
-      <div className="container pt-5  ">
+      <div className="container pt-5">
         <footer className="py-2 ">
           <p className="par">
             All material herein © 2005–2022 Agoda Company Pte. Ltd. All Rights
