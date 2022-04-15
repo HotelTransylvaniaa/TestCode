@@ -110,7 +110,6 @@ export default function HotelDetails() {
               <p className='ps-3 mt-2'>{hotelDetails.address.street} {hotelDetails.address.city}</p>
             </div>
           </div>
-
         </div>
 
         <div className="bg-white mb-5">
