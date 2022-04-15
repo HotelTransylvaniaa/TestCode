@@ -32,7 +32,7 @@ export default function Mybooking() {
         dispatch(getUserBooking(auth?.userId));
       } catch (err) {
         console.log(err.response.status);
-        if (err.response.status == 401) {
+        if (err.response.status === 401) {
           navigate("/login");
           dispatch({
             type: "LOGOUT",
@@ -76,7 +76,7 @@ export default function Mybooking() {
                 </Link>
               </ul>
             </div>
-            {bookingList.length == 0 ? (
+            {bookingList.length === 0 ? (
               <>
                 <div className="col-8 ps-5 mt-5">
                   <div className="row">
@@ -97,7 +97,7 @@ export default function Mybooking() {
                   </div>
                   <h5 className="fw-bold my-4">My Booking Details :</h5>
                   <div className="app-container mb-5 table-responsive p-2">
-                    <table class="table shadow bg-gray">
+                    <table className="table shadow bg-gray">
                       <thead>
                         <tr>
                           <th scope="col-6">Hotel</th>
@@ -113,8 +113,8 @@ export default function Mybooking() {
                       <tbody>
                         {/* {!bookingList.hotelId ? (
                   <> */}
-                        {bookingList.map((book) => (
-                          <tr>
+                        {bookingList.map((book, index) => (
+                          <tr key={index}>
                             <td>{book?.hotelId?.name}</td>
                             <td>{book?.hotelId?.address.city}</td>
                             <td>
