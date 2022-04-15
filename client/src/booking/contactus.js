@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { contactus } from "../store/actions/auth";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "../components/footer/footer";
 
 export default function ContactUs() {
@@ -26,7 +26,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <div className="container my-5 shadow-lg bg-body rounded">
+      <div className="container my-5 shadow-lg bg-body rounded" style={{ minHeight: "54.3vh" }}>
         <div className="row">
           <div className="col-7 container p-5">
             <form onSubmit={handelSubmit}>
@@ -124,7 +124,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

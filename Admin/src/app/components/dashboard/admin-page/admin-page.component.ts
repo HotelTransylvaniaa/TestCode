@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-page',
   templateUrl: './admin-page.component.html',
@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 token:any
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.token=localStorage.getItem("token");
     console.log(this.token)
   }
-  gotoLogin(){
-
+  logOut(){
+    localStorage.removeItem("token")
+    this.router.navigateByUrl('/login')
   }
 }
