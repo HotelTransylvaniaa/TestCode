@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./home.css"
 import TopDestination from "../components/Topdestination";
 import Search from "../components/Forms/search";
 import About from "../components/about";
@@ -10,7 +11,7 @@ export default function Home() {
       <div className="position-relative">
         <Header />
       </div>
-      <div className="position-absolute top-50 start-50 translate-middle w-75">
+      <div className="position-absolute search translate-middle w-75">
         <Search />
       </div>
       <TopDestination />

@@ -1,10 +1,11 @@
+import "./header.css";
 import React from "react";
 
 const Header = () => {
-
   return (
     <>
-        <img 
+      <div className="header">
+        <img
           // src="https://www.orbitaltravel.co.uk/application/files/6115/4808/7958/Complex.jpg"
           src="https://ld-wt73.template-help.com/wt_prod-20476/images/slider-4-slide-1-1920x678.jpg"
           // src="https://cdn6.agoda.net/images/MVC/default/background_image/illustrations/bg-agoda-homepage.png"

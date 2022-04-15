@@ -1,0 +1,82 @@
+.portfolio h2{
+    font-weight: bolder;
+}
+.portfolio img{
+    width: 100%;
+    transition: transform .8s;
+    overflow: hidden;
+    height: 100%;
+}
+.section{
+    margin-bottom: 3rem;
+    box-shadow: 1px 1px 9px 0px rgb(202, 202, 202);
+    border-radius: 10px;
+    height: 400px;
+}
+.sectio-photo{
+    overflow: hidden;
+    height: 85%;
+}
+.sectio-photo img:hover{
+    transform: scale(1.5);
+}
+.portfolio p{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.portfolio span{
+    color: rgb(38, 178, 202);
+}
+.portfolio-icons span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(15, 167, 218);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    color: rgb(38, 178, 202);   
+    position: absolute;
+    bottom: 40%;
+    right:5%;
+}
+.section-content{
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+    color: #09c;
+}
+.content-center {
+    position: relative;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.content-center::after {
+    content: "";
+    height: 5px;
+    background-color: #09c;
+    width: 5%;
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform:translateX(-50%) ;    
+}
+
+.about-compnent{
+    background-image: url("https://th.bing.com/th/id/R.6ca8a0bddb89286572e205e26ac44d14?rik=CrCsxwNLlbdKcA&riu=http%3a%2f%2fwww.drodd.com%2fimages15%2fvacation1.jpg&ehk=5a8d7LDPxU2OyS8luSfJZN0fJfM059nQWoqRAHHmiAA%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+}
+.layar{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 82, 94, 0.267);
+    
+}
+.about-card{
+    background-color: rgba(2, 2, 2, 0.410);
+}
