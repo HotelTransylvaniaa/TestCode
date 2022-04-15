@@ -130,7 +130,7 @@ router.delete("/admin/hotels/:id", auth, (req, res, next) => {
         res.status(422).end()
     })
 })
-router.patch("/admin/hotels/:id", auth, (req, res, next) => {
+router.put("/admin/hotels/:id", auth, (req, res, next) => {
     const id = req.params;
     controlHotels.editOne(id, req.body).then((hotel) => {
         res.json(hotel);

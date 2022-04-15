@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     console.log(form.form.value)
     this.service.adminLogin(form.form.value).subscribe(
       (res:any)=>{localStorage.setItem('token',res)
-      this.router.navigate([""])
+      this.router.navigate([''])
     },
       (err)=>console.log(err,"in login ts")
     )

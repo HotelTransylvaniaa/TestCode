@@ -21,7 +21,7 @@ export class HotelsService {
       return this.http.delete(`http://localhost:8000/api/admin/hotels/${id}`)
     }
     editHotelById(id:any,hotel:any){
-      return this.http.patch(`http://localhost:8000/api/admin/hotels/${id}`, hotel)
+      return this.http.put(`http://localhost:8000/api/admin/hotels/${id}`, hotel)
     }
 
 }
