@@ -86,7 +86,7 @@ export default function Profile() {
 
   return (
     <>
-      <div className="bg-light py-5" style={{ minHeight: "64vh" }}>
+      <div className="bg-light py-5" style={{ minHeight: "63.4vh" }}>
         <div className="container">
           <div className="row ">
             <div className="col-4 shadow py-4">

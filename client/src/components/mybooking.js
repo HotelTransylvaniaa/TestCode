@@ -54,7 +54,7 @@ export default function Mybooking() {
 
   return (
     <>
-      <div className="bg-white py-5" style={{ minHeight: "64vh" }}>
+      <div className="bg-white py-5" style={{ minHeight: "63.4vh" }}>
         <ToastContainer />
         <div className="container">
           <div className="row ">
