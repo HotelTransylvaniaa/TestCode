@@ -53,7 +53,7 @@ export default function HotelCard({ h }) {
                 </div>
                 <div class="hotel-card_info p-4">
                   <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h5 class="mb-0 mr-2 me-5">{h.name}</h5>
+                    <h5 class="mb-0">{h.name}</h5>
                     <div>
                       <i class="fa fa-star text-warning"></i>
                       <i class="fa fa-star text-warning"></i>
@@ -79,19 +79,23 @@ export default function HotelCard({ h }) {
                       </div>
                       <ul class="hotel-checklist pl-0 mb-0">
                         <li>
-                          <i class="fa fa-check text-success"></i> ...............
+                          <i class="fa fa-check text-success me-2"></i> Swiming
+                          pools
                         </li>
                         <li>
-                          <i class="fa fa-check text-success my-2"></i> ..............
+                          <i class="fa fa-check text-success me-2 my-2"></i>{" "}
+                          Room service
                         </li>
                         <li>
-                          <i class="fa fa-check text-success"></i> ..................
+                          <i class="fa fa-check text-success me-2"></i> Parking
                         </li>
                       </ul>
                     </div>
-                    <div class="hotel-card_pricing text-center">
-                      <button class="btn btn-primary">Check Rooms</button>
-                    </div>
+                    <Link to={`/hotel-details/${h._id}`}>
+                      <button className="btn btn-primary mt-5">
+                        Select room
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
