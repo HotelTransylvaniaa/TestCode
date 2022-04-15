@@ -458,7 +458,7 @@ export default function HotelDetails() {
                                   <span>Booking Price :</span>
                                 </div>
                                 <div className="col-sm-7">
-                                  <span>{parseInt(r.pricePerNight) * parseInt(numberOfNight) * parseInt(numberOfRooms)} $</span>
+                                  {numberOfNight&&numberOfRooms&&checkInDate&&checkOutDate ? <span>{parseInt(r.pricePerNight) * parseInt(numberOfNight) * parseInt(numberOfRooms)} $</span>: <span>0 $</span>}
                                 </div>
                               </div>
                             </div>
