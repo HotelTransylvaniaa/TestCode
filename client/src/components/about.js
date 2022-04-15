@@ -9,7 +9,7 @@ const About = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center mb-5">
-              <h2 className="content-center">PORTFOLIO</h2>
+              <h2 className="content-center">Facilities</h2>
             </div>
           </div>
           <div className="row">
@@ -141,7 +141,7 @@ const About = () => {
                 safety measures. So, during your search, you may find details
                 like
               </h6>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 mb-3">
                 <div className="shadow bHover about-card px-2 text-center py-4 mb-3 h-100 rounded">
                   <i className="fa-solid fa-hand-holding-droplet fs-3 pt-2 linner mb-3"></i>
                   <h4 className="h-25 mb-3 d-flex align-items-center justify-content-center">
@@ -153,7 +153,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 mb-3">
                 <div className="shadow bHover about-card px-2 text-center py-4 mb-3 h-100 rounded">
                   <i className="fa-solid fa-hand-sparkles fs-3 pt-2 linner mb-3"></i>
                   <h4 className="h-25 mb-3 d-flex align-items-center justify-content-center">
@@ -165,7 +165,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 mb-3">
                 <div className="shadow bHover about-card px-2 text-center py-4 mb-3 h-100 rounded">
                   <i className="fa-solid fa-handshake-simple-slash fs-3 pt-2 linner mb-3"></i>
                   <h4 className="h-25 mb-3 d-flex align-items-center justify-content-center">
@@ -177,7 +177,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 mb-3">
                 <div className="shadow bHover about-card px-2 text-center py-4 mb-3 h-100 rounded">
                   <i className="fa-solid fa-pump-soap fs-3 pt-2 linner mb-3"></i>
                   <h4 className="h-25 mb-3 d-flex align-items-center justify-content-center">
