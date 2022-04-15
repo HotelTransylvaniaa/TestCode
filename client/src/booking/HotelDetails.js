@@ -577,6 +577,7 @@ export default function HotelDetails() {
                         <button
                           type="button"
                           className="btn btn-primary"
+                          data-bs-dismiss="modal"
                           onClick={() =>
                             handelClick(
                               hotelDetails._id,
