@@ -1,7 +1,7 @@
 import "./filter.css";
 export default function Filter() {
   return (
-    <aside>
+    <aside className="my-5 ms-2">
       <div className="row">
         <div className="col-md-12">
           <figure
@@ -24,9 +24,9 @@ export default function Filter() {
         </div>
       </div>
       <div className=" row">
-        <h3>Popular filters for Cairo</h3>
+        <h3>Popular filters for Hotels</h3>
         <p>Price per night</p>
-        <div className="col-md-6 ">
+        <div className="col-md-6">
           <div className="PriceFilter-searchbox__label">Min</div>
           <input type="text" className="w-50" value="0"></input>
         </div>
@@ -35,7 +35,7 @@ export default function Filter() {
           <input type="text" className=" w-50" value="1,150"></input>
         </div>
       </div>
-      <div className=" row">
+      <div className=" row mt-2">
         <div className="col-md-12">
           <input type="checkbox"></input>
           <svg
@@ -43,7 +43,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2 ms-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -54,7 +54,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -64,7 +64,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -74,7 +74,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -84,7 +84,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -100,7 +100,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2 ms-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -111,7 +111,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -121,7 +121,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -131,7 +131,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -146,7 +146,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2 ms-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -157,7 +157,7 @@ export default function Filter() {
             width="16"
             height="16"
             fill="orange"
-            className="bi bi-star-fill"
+            className="bi bi-star-fill mb-2"
             viewBox="0 0 16 16"
           >
             <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
@@ -168,25 +168,25 @@ export default function Filter() {
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Location: 9+ Exceptional</span>
+          <span className="ms-2">Location: 9+ Exceptional</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Breakfast included</span>
+          <span className="ms-2">Breakfast included</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> Downtown</span>
+          <span className="ms-2">Downtown</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> Free cancellation</span>
+          <span className="ms-2">Free cancellation</span>
         </div>
       </div>
 
@@ -196,31 +196,31 @@ export default function Filter() {
         <h3>Distance to center</h3>
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Inside city center (1)</span>
+          <span className="ms-2">Inside city center (1)</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>2 km to cente </span>
+          <span className="ms-2">2 km to cente </span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> 2-5 km to center</span>
+          <span className="ms-2">2-5 km to center</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> 5-10 km to center</span>
+          <span className="ms-2">5-10 km to center</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>10 km to center</span>
+          <span className="ms-2">10 km to center</span>
         </div>
       </div>
 
@@ -230,26 +230,26 @@ export default function Filter() {
         <h3>Neighborhood</h3>
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Heliopolis </span>
+          <span className="ms-2">Heliopolis </span>
         </div>
       </div>
 
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> Maadi (3)</span>
+          <span className="ms-2">Maadi (3)</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Downtown (1)</span>
+          <span className="ms-2">Downtown (1)</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> New Cairo (2)</span>
+          <span className="ms-2">New Cairo (2)</span>
         </div>
       </div>
       <hr></hr>
@@ -257,20 +257,20 @@ export default function Filter() {
         <h3>Location highlights</h3>
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Culture (4) </span>
+          <span className="ms-2">Culture (4) </span>
         </div>
       </div>
 
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span> Sightseeing (4)</span>
+          <span className="ms-2">Sightseeing (4)</span>
         </div>
       </div>
       <div className=" row">
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>Transportation hub (4)</span>
+          <span className="ms-2">Transportation hub (4)</span>
         </div>
       </div>
 
@@ -280,7 +280,7 @@ export default function Filter() {
         <h3>Near popular attractions</h3>
         <div className="col-md-12">
           <input type="checkbox"></input>
-          <span>City Stars Mall (4) </span>
+          <span className="ms-2">City Stars Mall (4) </span>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ export default function Hotels() {
     <div className="container">
       <div className="row">
         <div className="col-4 shadow">
-          {/* <Filter/> */}
+          <Filter/>
           </div>
         <div className="col-8">
           <div className="container-fluid">

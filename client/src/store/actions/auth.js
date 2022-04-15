@@ -14,6 +14,6 @@ export const contactus = async (user) =>
 export const editProfile = async (user) =>
   await axiosInstance.patch("/profile", user, {
     headers: {
-      authorization: authToken.token ,
+      authorization: user.token ,
     },
   });

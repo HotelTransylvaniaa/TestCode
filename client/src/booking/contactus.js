@@ -11,12 +11,13 @@ export default function ContactUs() {
 
   const handelSubmit = async (e) => {
     // alert("send user msg to backend");
+    // e.
     try {
       console.table({ name, email, msg });
       const res = contactus({ name, email, msg });
       console.log("msg from contact us", res);
       // toast.success("Your message send successful");
-      toast.success("Success Login");
+      toast.success("Success");
     } catch (err) {
       console.log(err);
     }
@@ -72,7 +73,6 @@ export default function ContactUs() {
               <button type="submit" className="btn btn-primary">
                 Submit
               </button>
-              {""}
             </form>
           </div>
           <div className="col-5 bg-primary text-light container p-5">

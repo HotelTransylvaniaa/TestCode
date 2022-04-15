@@ -10,8 +10,8 @@ token:any
   constructor() { }
 
   ngOnInit(): void {
-    // this.token=localStorage.getItem("token");
-    // console.log(this.token)
+    this.token=localStorage.getItem("token");
+    console.log(this.token)
   }
   gotoLogin(){
 
