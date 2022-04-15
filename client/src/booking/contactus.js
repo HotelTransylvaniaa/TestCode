@@ -11,7 +11,7 @@ export default function ContactUs() {
 
   const handelSubmit = async (e) => {
     // alert("send user msg to backend");
-    // e.
+    e.preventDefault();
     try {
       console.table({ name, email, msg });
       const res = contactus({ name, email, msg });

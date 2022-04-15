@@ -19,6 +19,7 @@ const Header = () => {
           alt=""
           style={{borderBottomLeftRadius:"25px"}}
         />
+        </div>
     </>
   );
 };
