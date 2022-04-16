@@ -12,8 +12,8 @@ const About = () => {
               <h2 className="content-center">Facilities</h2>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-4">
+          <div className="row justify-content-center">
+            <div className="col-lg-3 me-4">
               <div className="section">
                 <div className="sectio-photo">
                   <img
@@ -26,7 +26,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-3 me-4">
               <div className="section">
                 <div className="sectio-photo">
                   <img
@@ -39,7 +39,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-3">
               <div className="section">
                 <div className="sectio-photo">
                   <img
@@ -52,7 +52,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-3 me-4">
               <div className="section">
                 <div className="sectio-photo">
                   <img
@@ -65,7 +65,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-3 me-4">
               <div className="section">
                 <div className="sectio-photo">
                   <img
@@ -84,7 +84,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-3">
               <div className="section">
                 <div className="sectio-photo">
                   <img
