@@ -1,6 +1,6 @@
 .search{
     position: absolute;
-    bottom: 15%;
+    bottom: 32%;
     left: 50%;
     transform: translateX(-50%);
    
@@ -8,4 +8,7 @@
 .bgImage{
     background-image: url("https://ld-wt73.template-help.com/wt_prod-20476/images/slider-4-slide-1-1920x678.jpg");
     height: 80vh;
+}
+.rmdp-calendar{
+    z-index: 999;
 }

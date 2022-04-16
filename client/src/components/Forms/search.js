@@ -102,7 +102,7 @@ const Search = () => {
                 selected={checkInDate}
                 minDate={new Date()}
                 onChange={handleCheckInDate}
-                style={{ height: "50px" }}
+                style={{ height: "50px",zIndex:"99" }}
               />
             </div>
             <div className="col-sm-12 col-md-2">
@@ -113,7 +113,7 @@ const Search = () => {
                 selected={checkOutDate}
                 minDate={checkInDate}
                 onChange={handleCheckOutDate}
-                style={{ height: "50px" }}
+                style={{ height: "50px",zIndex:"99" }}
               />
             </div>
             <div className="col-sm-12 col-md-2">
