@@ -55,6 +55,7 @@ export default function HotelDetails() {
     try {
       console.log(auth);
       await postBookingData(BookData, auth.token);
+      //close model
       toast.success("Success Booking");
     } catch (err) {
       console.log(err.response.status);

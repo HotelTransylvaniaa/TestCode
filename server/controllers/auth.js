@@ -37,7 +37,7 @@ const login = async (body) => {
           userId: user.id,
         },
         "gytrfdtrdjtfyuhnjinkjklsaaolkyygydssiphazemh",
-        { expiresIn: "1h" }
+        { expiresIn: "1d" }
       ),
       userEmail,
       userName,
@@ -53,7 +53,8 @@ const contactUs = async (body) => {
 
 const profileEdit = async (body) => {
   let password = "";
-  console.log("server auth", body.userPassword.charAt(0));
+  console.log(body)
+  // console.log("server auth", body.userPassword.charAt(0));
   const FChar = body.userPassword.charAt(0);
   if (FChar === "$") {
     password = body.userPassword;
