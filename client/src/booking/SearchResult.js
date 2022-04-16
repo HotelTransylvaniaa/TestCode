@@ -19,8 +19,8 @@ const SearchResult = () => {
 
   return (
     <>
+      <Search />
       <div className="container">
-        <Search />
         <div className="row justify-content-center">
           {hotels.length === 0 ? (
             <>
