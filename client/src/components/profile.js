@@ -67,10 +67,10 @@ export default function Profile() {
   const saveData = () => {
     setOpenEdit(false);
     console.log(auth);
+    auth.userName = data.userName;
+    auth.userPassword = data.password;
     editProfile(auth)
       .then((res) => {
-        auth.userName = data.userName;
-        auth.userPassword = data.password;
         window.localStorage.setItem("auth", JSON.stringify(auth));
       })
       .catch((err) => {
