@@ -42,7 +42,7 @@ export default function Profile() {
         ...userFormErrors,
         userNameErr:
           e.target.value.length === 0
-            ? "this filed is requird"
+            ? "this filed is required"
             : e.target.value.length < 2
               ? "Name Length must bigger than 2"
               : null,
@@ -56,9 +56,9 @@ export default function Profile() {
         ...userFormErrors,
         passwordErr:
           e.target.value.length === 0
-            ? "this filed is requird"
+            ? "this filed is required"
             : !passPattern.test(e.target.value)
-              ? "password lenght not less than 8 characters , contains at least one upercase"
+              ? "password length not less than 8 characters , contains at least one uppercase"
               : null,
       });
     }
@@ -67,13 +67,14 @@ export default function Profile() {
   const saveData = () => {
     setOpenEdit(false);
     console.log(auth);
+    auth.userName = data.userName;
+    auth.userPassword = data.password;
     editProfile(auth)
       .then((res) => {
-        auth.userName = data.userName;
-        auth.userPassword = data.password;
         window.localStorage.setItem("auth", JSON.stringify(auth));
       })
       .catch((err) => {
+        console.log(err)
         navigate("/login");
         dispatch({
           type: "LOGOUT",
@@ -109,7 +110,7 @@ export default function Profile() {
               </ul>
             </div>
             <div className="col-8 ps-5 mt-5">
-              <h4 className="fw-bold">Personail Details</h4>
+              <h4 className="fw-bold">Personal Details</h4>
               <p>Update your info and find out how it's used.</p>
               <div className="box my-3 py-3 ">
                 <div className="row">
